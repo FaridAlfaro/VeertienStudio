@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="33.23455mm"
+   height="33.23455mm"
+   viewBox="0 0 33.23455 33.23455"
+   version="1.1"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1">
+    <linearGradient
+       id="swatch2">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop2" />
+    </linearGradient>
+  </defs>
+  <g
+     id="layer1"
+     style="display:inline"
+     transform="translate(-21.220703,-50.764637)">
+    <g
+       id="g48">
+      <rect
+         style="fill:#000000;stroke-width:2.061;paint-order:markers fill stroke"
+         id="rect1"
+         width="33.23455"
+         height="33.23455"
+         x="21.220703"
+         y="50.764637" />
+      <text
+         xml:space="preserve"
+         style="font-size:38.5416px;font-family:'Bauhaus 93';-inkscape-font-specification:'Bauhaus 93, Normal';text-align:center;letter-spacing:1.04642px;word-spacing:0.165011px;text-anchor:middle;display:inline;fill:#ffffff;stroke-width:10.7885;paint-order:markers fill stroke"
+         x="37.828568"
+         y="76.377457"
+         id="text1-24"><tspan
+           id="tspan1-8"
+           style="fill:#ffffff;stroke-width:10.7885"
+           x="38.351776"
+           y="76.377457">s</tspan></text>
+    </g>
+  </g>
+</svg>

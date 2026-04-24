@@ -1,0 +1,100 @@
+---
+import Text from "./Text.jsx";
+import ScrambleText from "./ScrambleText.jsx";
+---
+
+<header>
+	<div class="container">
+		<h4>
+			<Text client:only="react" i18nKey="welcome.title_start" />
+			<ScrambleText client:only="react" i18nKey="welcome.emotions" />
+			<Text client:only="react" i18nKey="welcome.title_end" />
+		</h4>
+		<p><Text client:only="react" i18nKey="welcome.subtitle" /></p>
+	</div>
+	<video src="/video/file.mp4" autoplay muted playsinline loop></video>
+</header>
+
+<style>
+	header {
+		height: 200vh;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+	.container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		top: 40vh;
+		gap: 2rem;
+		position: fixed;
+		z-index: 1;
+		animation: difuminar-scroll 1s ease-in-out forwards;
+		animation-timeline: scroll(root);
+		animation-range: 0vh 100vh;
+	}
+	h4 {
+		font-size: clamp(2rem, calc(2vw * 1.618), 6rem);
+	}
+	p {
+		font-size: clamp(1rem, 2vw, 4rem);
+	}
+	span {
+		color: var(--azul3);
+	}
+	video {
+		object-fit: cover;
+		animation: expandir-video 2s ease-out forwards;
+		animation-timeline: scroll(root);
+		animation-range: 0vh 200vh;
+		position: fixed;
+		z-index: -1;
+	}
+
+	@keyframes difuminar-scroll {
+		0% {
+			opacity: 1;
+		}
+		80% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 0;
+			display: none;
+		}
+	}
+	@keyframes expandir-video {
+		0% {
+			width: 100vw;
+			height: 100vh;
+			top: 70%;
+			opacity: 1;
+			filter: brightness(1);
+		}
+
+		40% {
+			top: 0vh;
+			width: 100vw;
+			height: 100vh;
+			opacity: 1;
+			filter: brightness(1);
+		}
+
+		80% {
+			top: 0vh;
+			width: 100vw;
+			height: 100vh;
+		}
+
+		100% {
+			width: 100vw;
+			height: 100vh;
+			top: 0vh;
+			display: none;
+			filter: brightness(0);
+		}
+	}
+</style>

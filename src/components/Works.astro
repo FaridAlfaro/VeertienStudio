@@ -1,0 +1,124 @@
+---
+import Text from './Text.jsx';
+import ScrambleText from './ScrambleText.jsx';
+---
+<section class="works">
+    <div class="sticky-title-container">
+        <div class="title">
+            <h3>
+                <Text client:only="react" i18nKey="works.title_start" /><br />
+                <ScrambleText client:only="react" i18nKey="works.solve" /><br />
+                <Text client:only="react" i18nKey="works.title_end" />
+            </h3>
+        </div>
+    </div>
+
+    <div class="works-gallery">
+        <div class="work-card"><Text client:only="react" i18nKey="works.img_work1" /></div>
+        <div class="work-card"><Text client:only="react" i18nKey="works.img_work2" /></div>
+        <div class="work-card"><Text client:only="react" i18nKey="works.img_work3" /></div>
+    </div>
+</section>
+
+<style>
+    .works {
+        width: 100%;
+        position: relative;
+    }
+
+    .sticky-title-container {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 0;
+
+        /* 1. Aplicamos DOS animaciones distintas impulsadas por el scroll */
+        animation:
+            entrada-acelerada linear forwards,
+            difuminar-salida linear forwards;
+
+        /* 2. Ambas usan la vista del scroll como línea de tiempo */
+        animation-timeline: view(), view();
+
+        /* 3. Definimos CUÁNDO ocurre cada una: 
+           - La entrada ocurre mientra el elemento "entra" en pantalla (entry).
+           - La salida ocurre cuando el elemento empieza a "salir" (exit). */
+        animation-range:
+            entry 0% entry 100%,
+            exit -20% exit 100%;
+    }
+
+    .title {
+        width: 90%;
+        font-size: clamp(2rem, 4vw, 6rem);
+        text-align: center;
+    }
+
+    .scramble-title {
+        margin: 0;
+        font-weight: bold;
+        color: var(--azul3);
+    }
+
+    .works-gallery {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 80vh;
+        padding-top: 50vh;
+        padding-bottom: 100vh;
+    }
+
+    .work-card {
+        width: 80%;
+        height: 60vh;
+        background-color: var(--contrast);
+        color: var(--backround);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2rem;
+    }
+
+    /* ANIMACIÓN 1: El texto sube rápidamente al entrar en pantalla */
+    @keyframes entrada-acelerada {
+        0% {
+            transform: translateY(30vh); /* Empieza más abajo de lo normal */
+        }
+        100% {
+            transform: translateY(0); /* Se encaja rápidamente en el centro */
+        }
+    }
+
+    /* ANIMACIÓN 2: El texto se difumina al final de la sección */
+    @keyframes difuminar-salida {
+        0% {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+        100% {
+            opacity: 0;
+            transform: translateY(0) scale(0.9);
+        }
+    }
+    @keyframes difuminar-view {
+        0% {
+            opacity: 0;
+        }
+        10% {
+            opacity: 1;
+        }
+        90% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+            display: none;
+        }
+    }
+</style>

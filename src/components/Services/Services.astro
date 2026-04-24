@@ -1,0 +1,341 @@
+---
+import Text from "../Text.jsx";
+import ScrambleText from "../ScrambleText.jsx";
+import ServicesGrid from "./ServicesGrid.astro";
+
+const { hideButton = false, animateBg = true } = Astro.props;
+---
+
+<section class={`services ${animateBg ? "animated-bg" : ""}`}>
+    <div class="title">
+        <h3>
+            <Text client:only="react" i18nKey="services.title_start" />
+            <ScrambleText client:only="react" i18nKey="services.problems" />
+            <Text client:only="react" i18nKey="services.title_mid" />
+            <ScrambleText client:only="react" i18nKey="services.sales" />
+            <Text client:only="react" i18nKey="services.title_mid2" />
+            <ScrambleText client:only="react" i18nKey="services.identity" />
+            <Text client:only="react" i18nKey="services.title_end" />
+        </h3>
+    </div>
+
+    <ServicesGrid />
+
+    {
+        !hideButton && (
+            <a href="/services" class="services-button">
+                <Text client:only="react" i18nKey="services.view_all" />
+                <span>&gt;</span>
+            </a>
+        )
+    }
+</section>
+
+<script>
+    import { animate, remove } from "animejs";
+
+    function initAnimations() {
+        // Validación de seguridad para evitar errores si los elementos no existen
+        const section = document.querySelector(".services");
+        if (!section) return;
+
+        // --- 1. Animación Scramble y Glitch para los Spans ---
+        const scrambleElements = document.querySelectorAll(".scramble-title");
+        const letters = "abcdemano!@#%&*<>+";
+
+        const getRandomChar = () =>
+            letters[Math.floor(Math.random() * letters.length)];
+
+        scrambleElements.forEach((el, index) => {
+            const originalText = el.dataset.original;
+            if (!originalText) return; // Validación extra
+
+            let interval = null;
+            let glitchTimeout = null;
+            let isRevealed = false;
+
+            el.style.display = "inline-block";
+            el.style.minWidth = `${originalText.length}ch`;
+
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting && !isRevealed) {
+                            setTimeout(
+                                () => {
+                                    let iteration = 0;
+                                    clearInterval(interval);
+
+                                    interval = setInterval(() => {
+                                        el.innerText = originalText
+                                            .split("")
+                                            .map((letter, i) => {
+                                                if (i < iteration)
+                                                    return originalText[i];
+                                                return getRandomChar();
+                                            })
+                                            .join("");
+
+                                        if (iteration >= originalText.length) {
+                                            clearInterval(interval);
+                                            isRevealed = true;
+                                            startRandomGlitch(el, originalText);
+                                        }
+                                        iteration += 1 / 3;
+                                    }, 30);
+                                },
+                                500 + index * 200,
+                            );
+
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                },
+                { threshold: 0.5 },
+            );
+
+            observer.observe(el);
+
+            function startRandomGlitch(element, text) {
+                const nextGlitch = () => {
+                    const timeToNext = Math.random() * 1000 + 2000;
+
+                    glitchTimeout = setTimeout(() => {
+                        const targetIndex = Math.floor(
+                            Math.random() * text.length,
+                        );
+                        let glitchTicks = 0;
+                        const maxTicks = 20;
+
+                        const glitchInterval = setInterval(() => {
+                            element.innerText = text
+                                .split("")
+                                .map((char, i) => {
+                                    if (i === targetIndex)
+                                        return getRandomChar();
+                                    return char;
+                                })
+                                .join("");
+
+                            glitchTicks++;
+                            if (glitchTicks >= maxTicks) {
+                                clearInterval(glitchInterval);
+                                element.innerText = text;
+                                nextGlitch();
+                            }
+                        }, 10);
+                    }, timeToNext);
+                };
+
+                nextGlitch();
+            }
+        });
+
+        // --- 2. Animaciones internas de las Cards ---
+        // (Movidas al componente ServicesGrid)
+    }
+
+    document.addEventListener("DOMContentLoaded", initAnimations);
+    document.addEventListener("astro:page-load", initAnimations);
+</script>
+
+<style>
+    .services {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: transparent;
+        color: inherit;
+    }
+
+    .animated-bg {
+        animation: cambio-fondo 1s ease-in-out forwards;
+        animation-timeline: view();
+        animation-range: 20% 100%;
+    }
+
+    .services-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 10vh;
+        margin: 10vh auto;
+        width: 60%;
+        font-size: 6rem;
+        text-align: center;
+        cursor: pointer;
+        text-decoration: none;
+        color: inherit;
+        position: relative;
+        transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .services-button span {
+        margin-left: 1rem;
+        color: var(--azul3);
+        font-size: 6rem;
+        font-family: monospace;
+        transition: margin-left 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .services-button::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 4px;
+        bottom: 0;
+        left: 0;
+        background-color: var(--azul3);
+        transform: scaleX(0);
+        transform-origin: center;
+        transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .services-button:hover {
+        width: 90%;
+    }
+
+    .services-button:hover span {
+        margin-left: auto;
+    }
+
+    .services-button:hover::after {
+        transform: scaleX(1);
+    }
+
+    .title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 30vh;
+        width: 90%;
+        font-size: 6rem;
+        text-align: left;
+        margin: 10vh 0;
+    }
+
+    .scramble-title {
+        margin: 0;
+        font-weight: bold;
+        color: var(--azul3);
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2vw;
+        width: 90%;
+    }
+
+    .card {
+        position: relative;
+        height: 60vh;
+        border-radius: 2px;
+        overflow: hidden;
+        display: flex;
+        align-items: flex-start;
+        /* Usamos currentColor o var(--background) por defecto */
+        color: var(--background, #fff);
+        cursor: pointer;
+        will-change: transform;
+    }
+
+    .card-bg {
+        position: absolute;
+        top: -30px;
+        left: -30px;
+        right: -30px;
+        bottom: -30px;
+        background-size: cover;
+        background-position: center;
+        z-index: 1;
+        will-change: filter, transform;
+    }
+
+    .card-inner {
+        position: relative;
+        z-index: 2;
+        padding: 2rem;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+    }
+
+    /* --- ESTILOS DE LA CLASE MOD --- */
+    /* Cuando .card-inner tiene la clase .mod, cambia el color de todos sus descendientes */
+    .card-inner.mod {
+        color: var(--contrast);
+    }
+
+    .card h2 {
+        margin: 0;
+        font-size: 3rem;
+        color: inherit; /* Hereda el color de .card-inner */
+    }
+
+    .card-content {
+        height: 0px;
+        opacity: 0;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card-content p {
+        margin: 0 0 1.5rem 0;
+        font-size: 2rem;
+        line-height: 1.5;
+        color: inherit; /* Hereda el color de .card-inner */
+        opacity: 0;
+    }
+
+    .read-more {
+        background: transparent;
+        color: inherit; /* Hereda el color de .card-inner */
+        border: none;
+        padding: 0;
+        font-size: 2rem;
+        font-weight: 600;
+        cursor: pointer;
+        align-self: flex-end;
+        margin-top: auto;
+        position: relative;
+        display: inline-block;
+        opacity: 0;
+    }
+
+    .read-more::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: currentColor; /* currentColor usa el color activo del botón (var(--background) o var(--contrast)) */
+        transform: scaleX(0);
+        transform-origin: left center;
+        transition: transform 0.3s ease-out;
+    }
+
+    .read-more:hover::after {
+        transform: scaleX(1);
+    }
+    @keyframes cambio-fondo {
+        0% {
+            background: transparent;
+            color: var(--background);
+        }
+        20% {
+            background: var(--contrast);
+            color: var(--background);
+        }
+        100% {
+            background: var(--contrast);
+            color: var(--background);
+        }
+    }
+</style>

@@ -1,0 +1,224 @@
+---
+import Text from './Text.jsx';
+
+const cards = [
+    {
+        img: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1200&q=80",
+    },
+    {
+        img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+    },
+    {
+        img: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80",
+    },
+];
+---
+
+<section class="system-container">
+    {
+        cards.map((card, index) => (
+            <div class="sys-card">
+                <div
+                    class="sys-bg"
+                    style={`background-image: url('${card.img}');`}
+                />
+                <div class="overlay" />
+                <div class="sys-content-wrapper">
+                    <div class="sys-content">
+                        <h2><Text client:only="react" i18nKey={`sistem.card${index + 1}.title`} /></h2>
+                        <p><Text client:only="react" i18nKey={`sistem.card${index + 1}.text`} /></p>
+                        <button class="sys-btn">
+                            <Text client:only="react" i18nKey={`sistem.card${index + 1}.btn`} /> <span>&rarr;</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        ))
+    }
+</section>
+
+<style>
+    .system-container {
+        position: relative;
+        width: 100%;
+    }
+
+    .sys-card {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        width: 100vw;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    .sys-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-size: 115%;
+        background-position: center;
+        z-index: 1;
+        transition: background-size 0.05s linear;
+        will-change: background-size;
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 2;
+    }
+
+    /* Envolvemos el contenido en un contenedor del mismo tamaño que la tarjeta para rastrear perfectamente el Viewport */
+    .sys-content-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding-left: 10vw;
+        padding-right: 10vw;
+        box-sizing: border-box;
+        z-index: 3;
+        /* Animación CSS pura con timeline view */
+        animation: fade-slide-up linear forwards;
+        animation-timeline: view();
+        /* La animación de texto inicia al 40% de entrada de la tarjeta y termina al 100% */
+        animation-range: entry 40% entry 100%;
+    }
+
+    .sys-content {
+        max-width: 600px;
+        color: var(--background);
+    }
+
+    /* La primera tarjeta siempre visible (no entra desde abajo) */
+    .sys-card:first-child .sys-content-wrapper {
+        animation-range: entry 0% entry 0%;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    h2 {
+        font-size: clamp(3rem, 5vw, 6rem);
+        margin-bottom: 1.5rem;
+        line-height: 1.1;
+        font-family: inherit;
+    }
+
+    p {
+        font-size: clamp(1rem, 1.5vw, 2rem);
+        margin-bottom: 2.5rem;
+        line-height: 1.5;
+        font-weight: 300;
+        color: var(--background);
+    }
+
+    .sys-btn {
+        background: transparent;
+        color: var(--background);
+        border: none;
+        padding: 0;
+        font-size: clamp(1.2rem, 1.5vw, 2rem);
+        font-weight: 600;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.8rem;
+        position: relative;
+        font-family: inherit;
+    }
+
+    .sys-btn::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: -4px;
+        left: 0;
+        background-color: var(--background);
+        transform: scaleX(0);
+        transform-origin: right center;
+        transition: transform 0.3s ease-out;
+    }
+
+    .sys-btn:hover::after {
+        transform: scaleX(1);
+        transform-origin: left center;
+    }
+
+    @keyframes fade-slide-up {
+        0% {
+            opacity: 0;
+            transform: translateY(30vh);
+        }
+        50% {
+            opacity: 0.5;
+            transform: translateY(15vh);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>
+
+<script>
+    let sysScrollHandler;
+
+    function initSystemParallax() {
+        const cards = document.querySelectorAll(".sys-card");
+        if (cards.length === 0) return;
+
+        // Limpiar un handler anterior si astro-page-load vuelve a ejecutarse
+        if (sysScrollHandler) {
+            window.removeEventListener("scroll", sysScrollHandler);
+        }
+
+        sysScrollHandler = () => {
+            const windowHeight = window.innerHeight;
+
+            cards.forEach((card) => {
+                const bg = card.querySelector(".sys-bg") as HTMLElement;
+                if (!bg) return;
+
+                const rect = card.getBoundingClientRect();
+
+                // La tarjeta está entrando por debajo o actualmente visible y sticky en el top (0)
+                if (rect.top <= windowHeight && rect.top >= 0) {
+                    // progress va de 0 a 1 (1 cuando cubre toda la pantalla)
+                    const progress = 1 - rect.top / windowHeight;
+                    // size va de 115 a 100
+                    const size = 130 - 30 * progress;
+                    bg.style.backgroundSize = `${size}%`;
+                }
+                // La tarjeta sale por arriba de la pantalla (cuando la sección Sistem termina)
+                else if (rect.top < 0) {
+                    const exitProgress = Math.abs(rect.top) / windowHeight;
+                    const size = 100 + 15 * Math.min(exitProgress, 1); // Vuelve a subir a 115%
+                    bg.style.backgroundSize = `${size}%`;
+                }
+                // Aún no ha entrado
+                else {
+                    bg.style.backgroundSize = "115%";
+                }
+            });
+        };
+
+        window.addEventListener("scroll", sysScrollHandler, { passive: true });
+        // Llamada inicial
+        sysScrollHandler();
+    }
+
+    document.addEventListener("DOMContentLoaded", initSystemParallax);
+    document.addEventListener("astro:page-load", initSystemParallax);
+</script>

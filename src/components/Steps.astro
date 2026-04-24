@@ -1,0 +1,232 @@
+---
+import Text from './Text.jsx';
+
+const steps = [
+    {
+        number: "1",
+        img: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=800&q=80",
+    },
+    {
+        number: "2",
+        img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
+    },
+    {
+        number: "3",
+        img: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80",
+    },
+];
+---
+
+<section class="steps-section">
+    <div class="steps-wrapper">
+        <div class="sticky-container">
+            <div class="title-container">
+                <div class="title">
+                    <h3><Text client:only="react" i18nKey="steps.title" /></h3>
+                </div>
+            </div>
+
+            <div class="cards-track">
+                {
+                    steps.map((step, index) => (
+                        <div class="step-wrapper">
+                            <div class="step-card">
+                                <img
+                                    class="step-img"
+                                    src={step.img}
+                                    alt={`Step ${step.number}`}
+                                />
+                                <div class="step-number">{step.number}</div>
+                            </div>
+                            <div class="step-info">
+                                <h4><Text client:only="react" i18nKey={`steps.step${index + 1}.title`} /></h4>
+                                <p><Text client:only="react" i18nKey={`steps.step${index + 1}.text`} /></p>
+                            </div>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .steps-section {
+        width: 100%;
+        position: relative;
+        background-color: var(--azul3);
+        color: var(--background);
+    }
+
+    .steps-wrapper {
+        /* Permite hacer scroll vertical durante "3 pantallas" mientras el contenido se desliza horizontalmente */
+        height: 300vh;
+        width: 100%;
+        position: relative;
+    }
+
+    .sticky-container {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        width: 100vw;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    .title-container {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 5vh;
+    }
+
+    .title {
+        width: 90%;
+        font-size: clamp(2rem, 4vw, 6rem);
+        text-align: left;
+    }
+
+    .title h3 {
+        margin: 0;
+        font-weight: bold;
+        color: inherit;
+    }
+
+    .cards-track {
+        display: flex;
+        gap: 3vw;
+        padding-left: 5vw;
+        width: fit-content; /* Se expande según las tarjetas que tenga */
+        will-change: transform;
+    }
+
+    .step-wrapper {
+        width: 40vw; /* Ocupa un 40% de la pantalla para que se vea parte de la siguiente */
+        min-width: 320px;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .step-card {
+        width: 100%;
+        height: 55vh;
+        position: relative;
+        overflow: hidden;
+        background-color: var(--background);
+        border-radius: 4px; /* Un toque estético a la imagen solitaria */
+    }
+
+    .step-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.8s ease;
+    }
+
+    .step-wrapper:hover .step-img {
+        transform: scale(1.05); /* Zoom sutil al pasar el puntero */
+    }
+
+    .step-number {
+        position: absolute;
+        bottom: -20px;
+        right: 20px;
+        font-size: 8rem;
+        font-weight: 900;
+        color: rgba(255, 255, 255, 0.8); /* Blanco translúcido */
+        font-family: inherit;
+        z-index: 2;
+        line-height: 1;
+    }
+
+    .step-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .step-info h4 {
+        font-size: clamp(1.5rem, 2vw, 2.5rem);
+        color: var(--background); /* Combinar con el fondo azul */
+        margin-bottom: 0.5rem;
+    }
+
+    .step-info p {
+        font-size: clamp(1rem, 1.2vw, 1.5rem);
+        color: var(--background);
+        opacity: 0.9;
+        font-weight: 400;
+        margin: 0;
+    }
+
+    /* Diseño responsivo para pantallas pequeñas */
+    @media (max-width: 768px) {
+        .step-wrapper {
+            width: 80vw;
+        }
+        .step-card {
+            height: 50vh;
+        }
+    }
+</style>
+
+<script>
+    let stepsScrollHandler;
+
+    function initStepsScroll() {
+        // En Astro, asegúrate de acceder correctamente a los elementos cada vez que se ejecuten
+        const wrapper = document.querySelector(".steps-wrapper");
+        const track = document.querySelector(".cards-track");
+
+        if (!wrapper || !track) return;
+
+        // Limpiar para evitar múltiples eventos por transiciones de página
+        if (stepsScrollHandler) {
+            window.removeEventListener("scroll", stepsScrollHandler);
+        }
+
+        stepsScrollHandler = () => {
+            const rect = wrapper.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+
+            // La distancia exacta sobre la cual la sección está encajada en pantalla
+            const scrollableDistance = rect.height - windowHeight;
+            // Cuánto del scrollableDistance ya hemos bajado
+            const scrolled = -rect.top;
+
+            // Calculamos cuánto debemos mover la pista a la izquierda (scroll horizontal fake)
+            // (Ancho total del track) - (Ancho de la pantalla) + (Margen de 5vw a la derecha)
+            const margin = window.innerWidth * 0.05;
+            const maxTranslate = track.scrollWidth - window.innerWidth + margin;
+
+            // Si el contenido cabe entero en pantalla, no lo animamos
+            if (maxTranslate <= 0) return;
+
+            if (scrolled >= 0 && scrolled <= scrollableDistance) {
+                // Estamos dentro del rango "Sticky", calculamos el % de progreso
+                const progress = scrolled / scrollableDistance;
+                track.style.transform = `translateX(-${progress * maxTranslate}px)`;
+            } else if (scrolled < 0) {
+                // Aún no llegamos a la sección, está en la posición original
+                track.style.transform = `translateX(0px)`;
+            } else if (scrolled > scrollableDistance) {
+                // Ya pasamos la sección, se queda al final
+                track.style.transform = `translateX(-${maxTranslate}px)`;
+            }
+        };
+
+        window.addEventListener("scroll", stepsScrollHandler, {
+            passive: true,
+        });
+
+        // Forzamos un chequeo inicial por si recargamos a mitad de página
+        stepsScrollHandler();
+    }
+
+    document.addEventListener("DOMContentLoaded", initStepsScroll);
+    document.addEventListener("astro:page-load", initStepsScroll);
+</script>

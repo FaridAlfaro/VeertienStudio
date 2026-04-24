@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="33.23455mm"
+   height="33.23455mm"
+   viewBox="0 0 33.23455 33.23455"
+   version="1.1"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1">
+    <linearGradient
+       id="swatch2">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop2" />
+    </linearGradient>
+  </defs>
+  <g
+     id="layer1"
+     style="display:inline"
+     transform="translate(-21.220703,-196.14723)">
+    <g
+       id="g51">
+      <rect
+         style="display:inline;fill:#000000;stroke-width:2.061;paint-order:markers fill stroke"
+         id="rect1-3-4"
+         width="33.23455"
+         height="33.23455"
+         x="21.220703"
+         y="196.14723" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:34.0569px;font-family:Gigi;-inkscape-font-specification:'Gigi, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;letter-spacing:0.924662px;word-spacing:0.145812px;text-anchor:middle;display:inline;fill:#ffffff;fill-opacity:1;stroke-width:9.53324;paint-order:markers fill stroke"
+         x="38.644501"
+         y="221.65289"
+         id="text1-2-3-6"><tspan
+           id="tspan1-1-9-3"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:34.0569px;font-family:Gigi;-inkscape-font-specification:'Gigi, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:9.53324"
+           x="39.106831"
+           y="221.65289">s</tspan></text>
+    </g>
+  </g>
+</svg>

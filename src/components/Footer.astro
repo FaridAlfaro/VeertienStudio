@@ -1,0 +1,309 @@
+---
+import Text from './Text.jsx';
+import { TranslatedInput, TranslatedTextarea } from './TranslatedInputs.jsx';
+---
+
+<footer id="footer" class="footer-section">
+    <div class="footer-container">
+        <!-- Columna Izquierda: Copy, Contacto y Animaciones -->
+        <div class="footer-info">
+            <h2 class="footer-title scramble-title">
+                <span data-text="Get in touch.">Get in touch.</span>
+            </h2>
+            <p class="footer-subtitle">
+                <Text client:only="react" i18nKey="footer.ready" />
+            </p>
+
+            <a href="mailto:hello@guro.com" class="footer-link">
+                <h3 class="scramble-title">
+                    <span data-text="hello@guro.com">hello@guro.com</span>
+                </h3>
+            </a>
+
+            <a href="tel:+1234567890" class="footer-link">
+                <h3 class="scramble-title">
+                    <span data-text="+1 (234) 567-890">+1 (234) 567-890</span>
+                </h3>
+            </a>
+
+            <button class="footer-cta system-btn"
+                ><Text client:only="react" i18nKey="footer.schedule" /> <span>&rarr;</span></button
+            >
+
+            <div class="footer-bottom">
+                <p>
+                    &copy; {new Date().getFullYear()} Guro. <Text client:only="react" i18nKey="footer.rights" />
+                </p>
+                <div class="social-links">
+                    <a href="#">Instagram</a>
+                    <a href="#">LinkedIn</a>
+                    <a href="#">X / Twitter</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Columna Derecha: Formulario Netlify -->
+        <div class="footer-form-container">
+            <!-- Atributos requeridos por Netlify Forms: data-netlify="true" o netlify -->
+            <form
+                class="contact-form"
+                name="contact"
+                method="POST"
+                data-netlify="true"
+            >
+                <!-- Campo escondido requerido por Netlify para el ruteo de forms -->
+                <input type="hidden" name="form-name" value="contact" />
+
+                <div class="form-group">
+                    <label for="name"><Text client:only="react" i18nKey="footer.name" /></label>
+                    <TranslatedInput
+                        client:only="react"
+                        type="text"
+                        id="name"
+                        name="name"
+                        required
+                        i18nKeyPlaceholder="footer.name_ph"
+                    />
+                </div>
+
+                <div class="form-group">
+                    <label for="email"><Text client:only="react" i18nKey="footer.email" /></label>
+                    <TranslatedInput
+                        client:only="react"
+                        type="email"
+                        id="email"
+                        name="email"
+                        required
+                        i18nKeyPlaceholder="footer.email_ph"
+                    />
+                </div>
+
+                <div class="form-group">
+                    <label for="message"><Text client:only="react" i18nKey="footer.message" /></label>
+                    <TranslatedTextarea
+                        client:only="react"
+                        id="message"
+                        name="message"
+                        rows="5"
+                        required
+                        i18nKeyPlaceholder="footer.message_ph"
+                    />
+                </div>
+
+                <button type="submit" class="submit-btn system-btn"
+                    ><Text client:only="react" i18nKey="footer.send" /> <span>&rarr;</span></button
+                >
+            </form>
+        </div>
+    </div>
+</footer>
+
+<style>
+    .footer-section {
+        width: 100%;
+        min-height: 100vh;
+        background-color: #050505; /* Fondo negro profundo */
+        color: #ffffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10vh 5vw;
+        box-sizing: border-box;
+        position: relative;
+        z-index: 10;
+    }
+
+    .footer-container {
+        width: 100%;
+        max-width: 1400px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5vw;
+        height: 100%;
+    }
+
+    /* ==== LADO IZQUIERDO ==== */
+    .footer-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+    }
+
+    .footer-title {
+        font-size: clamp(3rem, 6vw, 8rem);
+        margin: 0 0 1rem 0;
+        line-height: 1;
+        letter-spacing: -0.02em;
+    }
+
+    .footer-subtitle {
+        font-size: clamp(1.2rem, 1.5vw, 2rem);
+        color: #a0a0a0;
+        margin-bottom: 3rem;
+        font-weight: 300;
+        max-width: 80%;
+    }
+
+    .footer-link {
+        text-decoration: none;
+        color: inherit;
+        display: block;
+        width: fit-content;
+        margin-bottom: 1rem;
+    }
+
+    .footer-link h3 {
+        font-size: clamp(1.5rem, 2.5vw, 3rem);
+        margin: 0;
+        font-weight: 400;
+        transition: color 0.3s ease;
+    }
+
+    .footer-link:hover h3 {
+        color: var(--azul3);
+    }
+
+    .footer-cta {
+        margin-top: 2rem;
+        margin-bottom: auto;
+    }
+
+    .footer-bottom {
+        margin-top: 5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 2rem;
+        font-size: 0.9rem;
+        color: #888;
+    }
+
+    .social-links {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .social-links a {
+        color: #888;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .social-links a:hover {
+        color: #fff;
+    }
+
+    /* ==== BOTONES GLOBALES ADAPTADOS ==== */
+    .system-btn {
+        background: transparent;
+        color: white;
+        border: none;
+        padding: 0;
+        font-size: clamp(1.2rem, 1.5vw, 2rem);
+        font-weight: 600;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.8rem;
+        position: relative;
+        font-family: inherit;
+        width: fit-content;
+    }
+
+    .system-btn::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: -4px;
+        left: 0;
+        background-color: white;
+        transform: scaleX(0);
+        transform-origin: right center;
+        transition: transform 0.3s ease-out;
+    }
+
+    .system-btn:hover::after {
+        transform: scaleX(1);
+        transform-origin: left center;
+    }
+
+    /* ==== FORMULARIO ==== */
+    .footer-form-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.02);
+        padding: 4vw;
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .form-group label {
+        font-size: 1rem;
+        color: #a0a0a0;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        color: white;
+        font-size: 1.2rem;
+        padding: 0.5rem 0;
+        font-family: inherit;
+        transition: border-color 0.3s ease;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+        outline: none;
+        border-bottom-color: var(--azul3);
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+        color: rgba(255, 255, 255, 0.15);
+    }
+
+    .submit-btn {
+        margin-top: 1rem;
+    }
+
+    /* ==== RESPONSIVE DESIGN ==== */
+    @media (max-width: 900px) {
+        .footer-container {
+            grid-template-columns: 1fr;
+            gap: 4rem;
+        }
+
+        .footer-bottom {
+            flex-direction: column;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+
+        .footer-section {
+            padding-top: 15vh;
+        }
+    }
+</style>

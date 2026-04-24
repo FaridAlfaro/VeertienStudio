@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="33.23455mm"
+   height="33.23455mm"
+   viewBox="0 0 33.23455 33.23455"
+   version="1.1"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1">
+    <linearGradient
+       id="swatch2">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop2" />
+    </linearGradient>
+  </defs>
+  <g
+     id="layer1"
+     style="display:inline"
+     transform="translate(-21.220703,-159.80159)">
+    <g
+       id="g50">
+      <rect
+         style="display:inline;fill:#000000;stroke-width:2.061;paint-order:markers fill stroke"
+         id="rect1-6-4"
+         width="33.23455"
+         height="33.23455"
+         x="21.220703"
+         y="159.80159" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:27.1533px;font-family:'ROG Fonts';-inkscape-font-specification:'ROG Fonts, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;letter-spacing:0.737222px;word-spacing:0.116254px;text-anchor:middle;display:inline;fill:#ffffff;stroke-width:7.60071;paint-order:markers fill stroke"
+         x="37.837982"
+         y="185.9225"
+         id="text1-24-6"><tspan
+           id="tspan1-8-8"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:27.1533px;font-family:'ROG Fonts';-inkscape-font-specification:'ROG Fonts, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;stroke-width:7.60071"
+           x="38.206593"
+           y="185.9225">s</tspan></text>
+    </g>
+  </g>
+</svg>

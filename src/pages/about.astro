@@ -1,0 +1,94 @@
+---
+import Layout from "../layouts/Layout.astro";
+import NavBar from "../components/NavBar.astro";
+import Footer from "../components/Footer.astro";
+import Text from "../components/Text.jsx";
+import ScrambleText from "../components/ScrambleText.jsx";
+---
+
+<Layout>
+    <NavBar />
+    
+    <main class="page-container">
+        <header class="page-header">
+            <h1 class="page-title"><Text client:only="react" i18nKey="page_about.title" /></h1>
+            <p class="page-subtitle"><Text client:only="react" i18nKey="page_about.subtitle" /></p>
+        </header>
+
+        <section class="about-content">
+            <div class="text-block">
+                <Text client:only="react" i18nKey="page_about.p1" />
+            </div>
+            <div class="text-block secondary">
+                <Text client:only="react" i18nKey="page_about.p2" />
+            </div>
+        </section>
+    </main>
+
+    <Footer />
+</Layout>
+
+<style>
+    .page-container {
+        padding-top: 20vh;
+        min-height: 100vh;
+        width: 90%;
+        margin: 0 auto;
+        color: var(--contrast);
+    }
+
+    .page-header {
+        margin-bottom: 15vh;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .page-title {
+        font-size: clamp(4rem, 8vw, 8rem);
+        margin-bottom: 2rem;
+        line-height: 1;
+        letter-spacing: -0.02em;
+    }
+
+    .page-subtitle {
+        font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+        color: var(--azul3);
+        max-width: 800px;
+        line-height: 1.4;
+        font-weight: 500;
+    }
+
+    .about-content {
+        display: flex;
+        flex-direction: column;
+        gap: 10vh;
+        padding-bottom: 20vh;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .text-block {
+        font-size: clamp(2rem, 4vw, 4rem);
+        line-height: 1.4;
+        font-weight: 300;
+        letter-spacing: -0.01em;
+        opacity: 0;
+        transform: translateY(40px);
+        animation: fadeUp 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    }
+
+    .text-block.secondary {
+        color: var(--gris2);
+        text-align: right;
+        animation-delay: 0.3s;
+    }
+
+    @keyframes fadeUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>

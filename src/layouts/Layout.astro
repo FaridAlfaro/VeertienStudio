@@ -1,0 +1,116 @@
+---
+import { ClientRouter } from "astro:transitions";
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro Basics</title>
+		<ClientRouter />
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+	@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100..900&family=Montserrat:wght@100..900&family=Space+Mono&display=swap");
+	@import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap");
+	@import url("https://fonts.googleapis.com/css2?family=Victor+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+
+	:root {
+		--background: #ffffff; /* Fondo general claro */
+		--contrast: #000000; /* Color principal */
+
+		--azul3: #4f42e4; /* Hover / íconos activos */
+		--azul2: #7a73ec; /* Fondos secundarios */
+		--azul1: #b4b1f7; /* Fondo pastel / muy claro */
+
+		--azul4: #2218b2; /* Hover oscuro / contraste */
+		--azul5: #1a1287; /* Fondo profundo / modo oscuro */
+		--gris2: #888888; /* Texto oscuro o complementario */
+		--gris1: #e0e0f0; /* Divisores o bordes sutiles */
+
+		--paleta1: #d1d1d1;
+		--paleta2: #f0f0c9;
+		--paleta3: #000000;
+		--paleta4: #3626a7;
+
+		--paletaA: #db2763;
+		--paletaB: #b0db43;
+	}
+	.victor-mono-<uniquifier > {
+		font-family: "Victor Mono", monospace;
+		font-optical-sizing: auto;
+		font-weight: <weight>;
+		font-style: normal;
+	}
+	* {
+		margin: 0;
+		padding: 0;
+	}
+	html,
+	body {
+		box-sizing: border-box;
+		margin: 0;
+		font-family: "Montserrat", sans-serif;
+		font-weight: 00;
+		font-size: 12px;
+	}
+	body::-webkit-scrollbar {
+		display: none; /* Oculta la barra de scroll principal */
+	}
+	body {
+		background-color: var(--background);
+		color: var(--contrast);
+		transition:
+			background-color 0.5s ease,
+			color 0.5s ease;
+	}
+
+	body.dark-mode {
+		background-color: var(--contrast);
+		color: var(--background);
+	}
+
+	body.dark-mode img[src$=".svg"],
+	body.dark-mode svg {
+		filter: invert(1);
+	}
+
+	img,
+	svg {
+		transition: filter 0.5s ease;
+	}
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-family: "Montserrat", sans-serif;
+	}
+
+	p,
+	li,
+	button,
+	input,
+	textarea {
+		font-family: "Montserrat", sans-serif;
+	}
+	a,
+	label {
+		text-decoration: none;
+	}
+
+	span {
+		font-family: "Victor Mono";
+		font-style: italic;
+		font-weight: 400;
+	}
+</style>

@@ -1,0 +1,418 @@
+---
+import Layout from "../layouts/Layout.astro";
+import NavBar from "../components/NavBar.astro";
+import Footer from "../components/Footer.astro";
+import Text from "../components/Text.jsx";
+import WordHighlighter from "../components/WordHighlighter.jsx";
+import ServicesGrid from "../components/Services/ServicesGrid.astro";
+---
+
+<Layout>
+    <NavBar />
+
+    <main class="page-container">
+        
+        <!-- HERO HEADER -->
+        <header class="page-header">
+            <h1 class="page-title">
+                <WordHighlighter
+                    client:only="react"
+                    i18nKey="page_services.title"
+                    highlightWords={["a tu medida", "Solutions", "por Setor"]}
+                />
+            </h1>
+            <p class="page-subtitle">
+                <Text
+                    client:only="react"
+                    i18nKey="page_services.subtitle"
+                />
+            </p>
+        </header>
+
+        <hr class="section-divider" style="margin-bottom: 8vh;" />
+
+        <!-- CALL TO ACTION (Filter) -->
+        <div class="cta-header">
+            <h2 class="cta-title">
+                <WordHighlighter
+                    client:only="react"
+                    i18nKey="page_services.filter_title"
+                    highlightWords={["sector", "niche?", "indústria"]}
+                />
+            </h2>
+            <p class="cta-subtitle">
+                <Text
+                    client:only="react"
+                    i18nKey="page_services.filter_subtitle"
+                />
+            </p>
+        </div>
+
+        <!-- FILTER BUTTONS -->
+        <div class="filter-controls">
+            <button class="filter-btn" data-filter="pymes"
+                ><Text
+                    client:only="react"
+                    i18nKey="page_services.cat_pymes"
+                /></button
+            >
+            <button class="filter-btn" data-filter="gastro"
+                ><Text
+                    client:only="react"
+                    i18nKey="page_services.cat_gastro"
+                /></button
+            >
+            <button class="filter-btn" data-filter="ecommerce"
+                ><Text
+                    client:only="react"
+                    i18nKey="page_services.cat_ecommerce"
+                /></button
+            >
+        </div>
+
+        <!-- SPECIFIC CARDS (Hidden by default) -->
+        <div
+            class="specific-cards-wrapper"
+            id="specificCardsWrapper"
+            style="display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.6s cubic-bezier(0.25, 1, 0.5, 1);"
+        >
+            <div style="overflow: hidden;">
+                <div
+                    class="container specific-container"
+                    id="specificCardsContainer"
+                >
+                    <!-- PYMES -->
+                    <div
+                        class="card specific-card"
+                        data-category="pymes"
+                        style="display: none;"
+                    >
+                        <div
+                            class="card-bg"
+                            style="background-image: url('https://images.unsplash.com/photo-1602052793312-b99c2a92b5c7?auto=format&fit=crop&w=600&q=80');"
+                        >
+                        </div>
+                        <div class="card-inner mod">
+                            <h2>
+                                <Text
+                                    client:only="react"
+                                    i18nKey="page_services.cat_pymes"
+                                />
+                            </h2>
+                            <div class="card-content">
+                                <p style="font-size: 1.4rem;">
+                                    &rarr; <Text
+                                        client:only="react"
+                                        i18nKey="page_services.pymes_service1"
+                                    /><br /><br />
+                                    &rarr; <Text
+                                        client:only="react"
+                                        i18nKey="page_services.pymes_service2"
+                                    />
+                                </p>
+                                <button class="read-more"
+                                    ><Text
+                                        client:only="react"
+                                        i18nKey="services.read_more"
+                                    /> &gt;</button
+                                >
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- GASTRO -->
+                    <div
+                        class="card specific-card"
+                        data-category="gastro"
+                        style="display: none;"
+                    >
+                        <div
+                            class="card-bg"
+                            style="background-image: url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=600&q=80');"
+                        >
+                        </div>
+                        <div class="card-inner mod">
+                            <h2>
+                                <Text
+                                    client:only="react"
+                                    i18nKey="page_services.cat_gastro"
+                                />
+                            </h2>
+                            <div class="card-content">
+                                <p style="font-size: 1.4rem;">
+                                    &rarr; <Text
+                                        client:only="react"
+                                        i18nKey="page_services.gastro_service1"
+                                    /><br /><br />
+                                    &rarr; <Text
+                                        client:only="react"
+                                        i18nKey="page_services.gastro_service2"
+                                    />
+                                </p>
+                                <button class="read-more"
+                                    ><Text
+                                        client:only="react"
+                                        i18nKey="services.read_more"
+                                    /> &gt;</button
+                                >
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ECOMMERCE -->
+                    <div
+                        class="card specific-card"
+                        data-category="ecommerce"
+                        style="display: none;"
+                    >
+                        <div
+                            class="card-bg"
+                            style="background-image: url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=600&q=80');"
+                        >
+                        </div>
+                        <div class="card-inner">
+                            <h2>
+                                <Text
+                                    client:only="react"
+                                    i18nKey="page_services.cat_ecommerce"
+                                />
+                            </h2>
+                            <div class="card-content">
+                                <p style="font-size: 1.4rem;">
+                                    &rarr; <Text
+                                        client:only="react"
+                                        i18nKey="page_services.ecommerce_service1"
+                                    /><br /><br />
+                                    &rarr; <Text
+                                        client:only="react"
+                                        i18nKey="page_services.ecommerce_service2"
+                                    />
+                                </p>
+                                <button class="read-more"
+                                    ><Text
+                                        client:only="react"
+                                        i18nKey="services.read_more"
+                                    /> &gt;</button
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr class="section-divider" style="margin-top: 5vh;" />
+
+        <div
+            class="intro-section"
+            style="margin-bottom: 8vh; padding-left: 5vw; text-align: left;"
+        >
+            <h2 style="font-size: 4rem; color: var(--contrast);">
+                <WordHighlighter
+                    client:only="react"
+                    i18nKey="page_services.basic_title"
+                    highlightWords={["IT", "Core IT Essentials", "Core de TI"]}
+                />
+            </h2>
+            <p style="font-size: 1.5rem; color: var(--gris2);">
+                <Text
+                    client:only="react"
+                    i18nKey="page_services.basic_subtitle"
+                />
+            </p>
+        </div>
+
+        <!-- General Services Grid -->
+        <ServicesGrid />
+    </main>
+
+    <Footer />
+</Layout>
+
+<script>
+    function setupFilters() {
+        const buttons = document.querySelectorAll(".filter-btn");
+        const specificCards = document.querySelectorAll(".specific-card");
+        const wrapper = document.getElementById("specificCardsWrapper");
+        const container = document.getElementById("specificCardsContainer");
+
+        if (!wrapper || !buttons.length) return;
+
+        let activeCategory = null;
+
+        buttons.forEach((btn) => {
+            btn.addEventListener("click", () => {
+                const category = btn.getAttribute("data-filter");
+
+                if (activeCategory === category) {
+                    activeCategory = null;
+                    wrapper.style.gridTemplateRows = "0fr";
+                    wrapper.style.marginBottom = "0";
+                    buttons.forEach((b) => {
+                        b.style.background = "transparent";
+                        b.style.color = "var(--contrast)";
+                        b.style.borderColor = "var(--gris1)";
+                    });
+
+                    // Hide after animation to keep DOM clean
+                    setTimeout(() => {
+                        specificCards.forEach(
+                            (card) => (card.style.display = "none"),
+                        );
+                    }, 600);
+                } else {
+                    activeCategory = category;
+
+                    buttons.forEach((b) => {
+                        if (b === btn) {
+                            b.style.background = "var(--azul3)";
+                            b.style.color = "#fff";
+                            b.style.borderColor = "var(--azul3)";
+                        } else {
+                            b.style.background = "transparent";
+                            b.style.color = "var(--contrast)";
+                            b.style.borderColor = "var(--gris1)";
+                        }
+                    });
+
+                    // First set display block for all, flex for matching
+                    specificCards.forEach((card) => {
+                        card.style.display = "none";
+                        card.style.opacity = "0";
+                        card.style.transform = "translateY(-20px)";
+                    });
+
+                    // Show matched
+                    const matchedCards = document.querySelectorAll(
+                        `.specific-card[data-category="${category}"]`,
+                    );
+                    matchedCards.forEach((card) => {
+                        card.style.display = "flex";
+                        // Force reflow
+                        void card.offsetWidth;
+
+                        card.style.transition =
+                            "opacity 0.6s ease, transform 0.6s ease";
+                        card.style.opacity = "1";
+                        card.style.transform = "translateY(0)";
+                    });
+
+                    // Expand wrapper
+                    wrapper.style.gridTemplateRows = "1fr";
+                    wrapper.style.marginBottom = "5vh";
+                    container.style.padding = "4vh 0";
+                }
+            });
+        });
+    }
+
+    document.addEventListener("DOMContentLoaded", setupFilters);
+    document.addEventListener("astro:page-load", setupFilters);
+</script>
+
+<style>
+    .page-container {
+        padding-top: 15vh;
+        min-height: 100vh;
+        width: 100%;
+        margin: 0 auto;
+        color: var(--contrast);
+        padding-bottom: 10vh;
+    }
+
+    .page-header {
+        text-align: left;
+        width: 90%;
+        margin: 0 auto 5vh auto;
+    }
+
+    .page-title {
+        font-size: clamp(3rem, 6vw, 6rem);
+        margin-bottom: 2rem;
+        line-height: 1.1;
+        color: var(--contrast);
+    }
+
+    .page-subtitle {
+        font-size: clamp(1.2rem, 2vw, 2rem);
+        color: var(--gris2);
+        max-width: 800px;
+        line-height: 1.5;
+    }
+
+    .cta-header {
+        margin-bottom: 6vh;
+        text-align: center;
+    }
+
+    .cta-title {
+        font-size: clamp(3rem, 5vw, 6rem);
+        margin-bottom: 2rem;
+        line-height: 1.1;
+        color: var(--contrast);
+    }
+
+    .cta-subtitle {
+        font-size: clamp(1.2rem, 1.8vw, 2rem);
+        color: var(--gris2);
+        max-width: 800px;
+        margin: 0 auto;
+        line-height: 1.5;
+    }
+
+    .filter-controls {
+        display: flex;
+        gap: 1.5rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: 4vh;
+    }
+
+    .filter-btn {
+        padding: 1rem 2.5rem;
+        font-size: 1.2rem;
+        font-weight: bold;
+        border-radius: 50px;
+        border: 2px solid var(--gris1);
+        background: transparent;
+        color: var(--contrast);
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+        font-family: inherit;
+    }
+
+    .filter-btn:hover {
+        border-color: var(--azul3);
+        transform: translateY(-2px);
+    }
+
+    .section-divider {
+        margin: 5vh auto;
+        border: none;
+        height: 1px;
+        background: var(--gris1);
+        width: 80%;
+    }
+
+    /* Container specfically configured to be identical to ServicesGrid grid */
+    .specific-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2vw;
+        width: 100%;
+        max-width: 90vw;
+        margin: 0 auto;
+    }
+
+    @media (max-width: 1024px) {
+        .specific-container {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 600px) {
+        .specific-container {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>

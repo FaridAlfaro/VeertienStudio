@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="33.23455mm"
+   height="33.23455mm"
+   viewBox="0 0 33.23455 33.23455"
+   version="1.1"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1">
+    <linearGradient
+       id="swatch2">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop2" />
+    </linearGradient>
+  </defs>
+  <g
+     id="layer1"
+     style="display:inline"
+     transform="translate(-21.220703,-87.110283)">
+    <g
+       id="g42">
+      <rect
+         style="fill:#000000;stroke-width:2.061;paint-order:markers fill stroke"
+         id="rect1-6"
+         width="33.23455"
+         height="33.23455"
+         x="21.220703"
+         y="87.110283" />
+      <text
+         xml:space="preserve"
+         style="font-style:italic;font-variant:normal;font-weight:100;font-stretch:normal;font-size:29.4231px;font-family:'Victor Mono';-inkscape-font-specification:'Victor Mono, Thin Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;letter-spacing:0.79885px;word-spacing:0.125972px;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:8.23612;paint-order:markers fill stroke"
+         x="38.720673"
+         y="112.81929"
+         id="text1-2"><tspan
+           id="tspan1-1"
+           style="font-style:italic;font-variant:normal;font-weight:100;font-stretch:normal;font-size:29.4231px;font-family:'Victor Mono';-inkscape-font-specification:'Victor Mono, Thin Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:8.23612"
+           x="39.120098"
+           y="112.81929">s</tspan></text>
+    </g>
+  </g>
+</svg>

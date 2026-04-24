@@ -1,0 +1,142 @@
+{
+  "nav": {
+    "what_we_do": "What we do",
+    "works": "Works",
+    "who_we_are": "Who we are",
+    "contact": "Contact us"
+  },
+  "welcome": {
+    "title_start": "Where technology and ",
+    "emotions": "emotions",
+    "title_end": " meet",
+    "subtitle": "We provide solutions to real problems using technology."
+  },
+  "steps": {
+    "title": "Our way of working",
+    "step1": {
+      "title": "Requirements Meeting",
+      "text": "We have a meeting to gather requirements."
+    },
+    "step2": {
+      "title": "Development",
+      "text": "We develop the solution."
+    },
+    "step3": {
+      "title": "Final Delivery",
+      "text": "We deliver the project."
+    }
+  },
+  "sistem": {
+    "card1": {
+      "title": "We design your brand",
+      "text": "Giving you a unique digital identity that truly connects with your audience.",
+      "btn": "See more"
+    },
+    "card2": {
+      "title": "Custom software development",
+      "text": "To cover your specific needs (from landing pages to web apps for businesses).",
+      "btn": "Learn more"
+    },
+    "card3": {
+      "title": "Support and Optimization",
+      "text": "We optimize processes and provide IT support so your business grows without limits.",
+      "btn": "Discover"
+    }
+  },
+  "works": {
+    "title_start": "Our work reflects how we ",
+    "solve": "solve real needs",
+    "title_end": " for our clients",
+    "img_work1": "Work Image 1",
+    "img_work2": "Work Image 2",
+    "img_work3": "Work Image 3"
+  },
+  "services": {
+    "title_start": "Resolve your ",
+    "problems": "problems",
+    "title_mid": ", increase your ",
+    "sales": "sales",
+    "title_mid2": " and have an ",
+    "identity": "identity",
+    "title_end": " with software",
+    "read_more": "Read more",
+    "view_all": "View All Services",
+    "web_dev": {
+      "title": "Web Development",
+      "text": "We build scalable, modern web applications tailored to your business needs."
+    },
+    "data_analysis": {
+      "title": "Data Analysis",
+      "text": "Transform raw data into actionable insights to drive your business forward."
+    },
+    "mobile_apps": {
+      "title": "Mobile Apps",
+      "text": "Native and cross-platform mobile solutions for iOS and Android."
+    },
+    "cybersec": {
+      "title": "Cybersecurity",
+      "text": "Protect your digital assets with top-tier security protocols."
+    },
+    "cloud": {
+      "title": "Cloud Hosting",
+      "text": "Reliable and fast cloud architecture for your demanding projects."
+    },
+    "uiux": {
+      "title": "UI/UX Design",
+      "text": "Crafting intuitive and beautiful interfaces for your users."
+    },
+    "ai": {
+      "title": "AI Solutions",
+      "text": "Integrate cutting-edge artificial intelligence into your workflow."
+    },
+    "seo": {
+      "title": "SEO Strategy",
+      "text": "Rank higher and reach more customers organically."
+    }
+  },
+  "footer": {
+    "ready": "Ready to take your project to the next level?",
+    "schedule": "Schedule a call",
+    "rights": "All rights reserved.",
+    "name": "Name",
+    "name_ph": "Your name",
+    "email": "Email Address",
+    "email_ph": "you@email.com",
+    "message": "Message",
+    "message_ph": "Tell us about your project...",
+    "send": "Send Message"
+  },
+  "page_works": {
+    "title": "Recent Projects",
+    "subtitle": "Discover what we have built to transform our clients' operations.",
+    "work1_title": "Gastronomic Reservation System",
+    "work1_desc": "Complete development of a reservation platform for restaurants, with real-time table management and interactive QR menus.",
+    "work2_title": "B2B E-Commerce Platform",
+    "work2_desc": "Optimized virtual store with integrated payment gateway and automated inventory management for wholesale SMEs.",
+    "work3_title": "Admin Dashboard and CRM",
+    "work3_desc": "Custom internal dashboard for stock control, sales analytics, and corporate customer relationship management."
+  },
+  "page_services": {
+    "title": "Industry-Specific Solutions",
+    "subtitle": "Tech built for your business model so you can scale faster.",
+    "filter_title": "What's your business niche?",
+    "filter_subtitle": "Pick your sector to see how we can help you grow.",
+    "basic_title": "Core IT Essentials",
+    "basic_subtitle": "Building the robust tech and apps your business runs on.",
+    "cat_pymes": "SMEs & Local Shops",
+    "pymes_service1": "Automated WhatsApp channels to boost reach.",
+    "pymes_service2": "All-in-one billing and inventory management.",
+    "cat_gastro": "Food & Beverage",
+    "gastro_service1": "Smart QR menus that streamline ordering.",
+    "gastro_service2": "Seamless online booking and order systems.",
+    "cat_ecommerce": "E-Commerce & Retail",
+    "ecommerce_service1": "High-performance stores that never lag.",
+    "ecommerce_service2": "Smooth payment and shipping integrations."
+  },
+  "page_about": {
+    "title": "Who we are",
+    "subtitle": "We transform complex ideas into simple and beautiful digital products.",
+    "p1": "At Guro, we are a team of developers and designers passionate about technology and visual aesthetics.",
+    "p2": "We believe in software as a tool to empower businesses, eliminating daily friction through efficient and robust code solutions."
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "nav": {
+    "what_we_do": "Qué hacemos",
+    "works": "Trabajos",
+    "who_we_are": "Quiénes somos",
+    "contact": "Contáctanos"
+  },
+  "welcome": {
+    "title_start": "Donde la tecnología y las ",
+    "emotions": "emociones",
+    "title_end": " se encuentran",
+    "subtitle": "Brindamos soluciones a problemas reales usando tecnología."
+  },
+  "steps": {
+    "title": "Nuestra forma de trabajar",
+    "step1": {
+      "title": "Reunión de Requerimientos",
+      "text": "Tenemos una reunión para relevar requerimientos."
+    },
+    "step2": {
+      "title": "Desarrollo",
+      "text": "Desarrollamos la solución."
+    },
+    "step3": {
+      "title": "Entrega Final",
+      "text": "Entregamos el proyecto."
+    }
+  },
+  "sistem": {
+    "card1": {
+      "title": "Diseñamos tu marca",
+      "text": "Dándote una identidad digital única que conecte verdaderamente con tu público.",
+      "btn": "Ver más"
+    },
+    "card2": {
+      "title": "Desarrollo de software a medida",
+      "text": "Para cubrir tus necesidades específicas (desde landing pages hasta web apps para empresas).",
+      "btn": "Saber más"
+    },
+    "card3": {
+      "title": "Soporte y Optimización",
+      "text": "Optimizamos procesos y brindamos soporte IT para que tu negocio crezca sin límites.",
+      "btn": "Descubrir"
+    }
+  },
+  "works": {
+    "title_start": "Nuestro trabajo refleja como ",
+    "solve": "resolvemos necesidades reales",
+    "title_end": " de nuestros clientes",
+    "img_work1": "Imagen del Trabajo 1",
+    "img_work2": "Imagen del Trabajo 2",
+    "img_work3": "Imagen del Trabajo 3"
+  },
+  "services": {
+    "title_start": "Resuelve tus ",
+    "problems": "problemas",
+    "title_mid": ", aumenta tus ",
+    "sales": "ventas",
+    "title_mid2": " y construye una ",
+    "identity": "identidad",
+    "title_end": " con software",
+    "read_more": "Leer más",
+    "view_all": "Ver Todos los Servicios",
+    "web_dev": {
+      "title": "Desarrollo Web",
+      "text": "Construimos aplicaciones web escalables y modernas adaptadas a las necesidades de tu negocio."
+    },
+    "data_analysis": {
+      "title": "Análisis de Datos",
+      "text": "Transformamos datos en bruto en ideas accionables para impulsar tu negocio."
+    },
+    "mobile_apps": {
+      "title": "Aplicaciones Móviles",
+      "text": "Soluciones móviles nativas y multiplataforma para iOS y Android."
+    },
+    "cybersec": {
+      "title": "Ciberseguridad",
+      "text": "Protegemos tus activos digitales con protocolos de seguridad de primer nivel."
+    },
+    "cloud": {
+      "title": "Hosting en la Nube",
+      "text": "Arquitectura en la nube rápida y confiable para tus proyectos exigentes."
+    },
+    "uiux": {
+      "title": "Diseño UI/UX",
+      "text": "Creamos interfaces intuitivas y hermosas para tus usuarios."
+    },
+    "ai": {
+      "title": "Soluciones AI",
+      "text": "Integramos inteligencia artificial de vanguardia en tu flujo de trabajo."
+    },
+    "seo": {
+      "title": "Estrategia SEO",
+      "text": "Posiciónate mejor y llega a más clientes de forma orgánica."
+    }
+  },
+  "footer": {
+    "ready": "¿Listo para llevar tu proyecto al siguiente nivel?",
+    "schedule": "Agendar una llamada",
+    "rights": "Todos los derechos reservados.",
+    "name": "Nombre",
+    "name_ph": "Tu nombre",
+    "email": "Correo Electrónico",
+    "email_ph": "tu@correo.com",
+    "message": "Mensaje",
+    "message_ph": "Cuéntanos sobre tu proyecto...",
+    "send": "Enviar Mensaje"
+  },
+  "page_works": {
+    "title": "Proyectos recientes",
+    "subtitle": "Conoce lo que hemos construido para transformar la operación de nuestros clientes.",
+    "work1_title": "Sistema de Reservas Gastronómico",
+    "work1_desc": "Desarrollo completo de una plataforma de reservas para restaurantes, con gestión de mesas en tiempo real y menú interactivo QR.",
+    "work2_title": "Plataforma E-Commerce B2B",
+    "work2_desc": "Tienda virtual optimizada con pasarela de pagos integrada y gestión de inventario automatizado para pymes mayoristas.",
+    "work3_title": "Panel de Administración y CRM",
+    "work3_desc": "Dashboard interno a medida para el control de stock, analítica de ventas y gestión de relaciones con clientes corporativos."
+  },
+  "page_services": {
+    "title": "Soluciones a tu medida",
+    "subtitle": "Tecnología que se adapta a tu ritmo para que escales sin frenos.",
+    "filter_title": "¿En qué sector se mueve tu negocio?",
+    "filter_subtitle": "Elige tu rubro y mira cómo podemos potenciarlo.",
+    "basic_title": "Esenciales de IT",
+    "basic_subtitle": "Infraestructura sólida y apps modernas para el día a día.",
+    "cat_pymes": "PyMEs y Negocios Locales",
+    "pymes_service1": "Ventas en automático con difusión por WhatsApp.",
+    "pymes_service2": "Control total: Facturación y stock sin vueltas.",
+    "cat_gastro": "Gastronomía",
+    "gastro_service1": "Menús con QR que venden por ti.",
+    "gastro_service2": "Gestión de pedidos y reservas en tiempo real.",
+    "cat_ecommerce": "E-Commerce",
+    "ecommerce_service1": "Tiendas online rápidas que no se caen nunca.",
+    "ecommerce_service2": "Pagos y envíos integrados para vender más."
+  },
+  "page_about": {
+    "title": "Quiénes somos",
+    "subtitle": "Transformamos ideas complejas en productos digitales simples y hermosos.",
+    "p1": "En Guro, somos un equipo de desarrolladores y diseñadores apasionados por la tecnología y la estética visual.",
+    "p2": "Creemos en el software como una herramienta para empoderar a los negocios, eliminando la fricción diaria a través de soluciones de código eficientes y robustas."
+  }
+}
