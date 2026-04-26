@@ -60,7 +60,7 @@
     "identity": "identidad",
     "title_end": " con software",
     "read_more": "Leer más",
-    "view_all": "Ver Todos los Servicios",
+    "view_all": "Nuestros servicios",
     "web_dev": {
       "title": "Desarrollo Web",
       "text": "Construimos aplicaciones web escalables y modernas adaptadas a las necesidades de tu negocio."
@@ -95,8 +95,8 @@
     }
   },
   "footer": {
-    "ready": "¿Listo para llevar tu proyecto al siguiente nivel?",
-    "schedule": "Agendar una llamada",
+    "ready": "¿Listo para escalar tu empresa?",
+    "schedule": "Solicitar Auditoría IT Gratuita",
     "rights": "Todos los derechos reservados.",
     "name": "Nombre",
     "name_ph": "Tu nombre",
@@ -220,5 +220,32 @@
     "subtitle": "Transformamos ideas complejas en productos digitales simples y hermosos.",
     "p1": "En Guro, somos un equipo de desarrolladores y diseñadores apasionados por la tecnología y la estética visual.",
     "p2": "Creemos en el software como una herramienta para empoderar a los negocios, eliminando la fricción diaria a través de soluciones de código eficientes y robustas."
+  },
+  "social_proof": {
+    "title": "Empresas que escalan con nosotros"
+  },
+  "faq": {
+    "title": "Preguntas Frecuentes",
+    "q1": "¿Cuál es el tiempo de ejecución promedio?",
+    "a1": "Dependiendo de la envergadura del proyecto, podemos lanzar un MVP en 4-6 semanas.",
+    "q2": "¿Hacen mantenimiento post-lanzamiento?",
+    "a2": "Sí, proveemos monitoreo de métricas, seguridad y escalabilidad continua mensual.",
+    "q3": "¿Cuál es la inversión inicial mínima?",
+    "a3": "Nuestros proyectos core comienzan desde los modelos a la medida según el presupuesto (desde $1500 USD).",
+    "q4": "¿Cómo miden el éxito del proyecto?",
+    "a4": "Planteamos KPIs en la fase de descubrimiento (CRO, retención o tiempo de carga) para garantizar tu retorno de inversión."
+  },
+  "audit_cta": {
+    "title": "La tecnología impulsa o frena tu negocio?",
+    "subtitle": "AUDITORÍA ESTRATÉGICA IT 100% BONIFICADA",
+    "item1_title": "Diagnóstico Operativo",
+    "item1_desc": "Detectamos procesos manuales y cuellos de botella que limitan la escalabilidad de tu empresa.",
+    "item2_title": "Ecosistema de Software",
+    "item2_desc": "Evaluamos tu infraestructura actual, sistemas de gestión y la viabilidad de soluciones a medida.",
+    "item3_title": "Presencia y Branding",
+    "item3_desc": "Analizamos la percepción de tu identidad digital, experiencia de usuario (UX) y conversión.",
+    "item4_title": "Roadmap de Transformación",
+    "item4_desc": "Te entregamos un plan de acción a 90 días para modernizar y escalar con tecnología.",
+    "btn": "Agendar Auditoría Gratuita"
   }
 }

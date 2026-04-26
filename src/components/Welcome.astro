@@ -3,16 +3,16 @@ import Text from "./Text.jsx";
 import ScrambleText from "./ScrambleText.jsx";
 ---
 
-<header>
+<header aria-labelledby="hero-title">
 	<div class="container">
-		<h4>
+		<h1 id="hero-title" class="hero-main-title">
 			<Text client:only="react" i18nKey="welcome.title_start" />
 			<ScrambleText client:only="react" i18nKey="welcome.emotions" />
 			<Text client:only="react" i18nKey="welcome.title_end" />
-		</h4>
-		<p><Text client:only="react" i18nKey="welcome.subtitle" /></p>
+		</h1>
+		<p class="hero-subtitle"><Text client:only="react" i18nKey="welcome.subtitle" /></p>
 	</div>
-	<video src="/video/file.mp4" autoplay muted playsinline loop></video>
+	<video src="/video/file.mp4" autoplay muted playsinline loop aria-hidden="true"></video>
 </header>
 
 <style>
@@ -36,8 +36,9 @@ import ScrambleText from "./ScrambleText.jsx";
 		animation-timeline: scroll(root);
 		animation-range: 0vh 100vh;
 	}
-	h4 {
+	h1.hero-main-title {
 		font-size: clamp(2rem, calc(2vw * 1.618), 6rem);
+		margin: 0;
 	}
 	p {
 		font-size: clamp(1rem, 2vw, 4rem);

@@ -95,8 +95,8 @@
     }
   },
   "footer": {
-    "ready": "Pronto para levar seu projeto para o próximo nível?",
-    "schedule": "Agendar uma chamada",
+    "ready": "Pronto para escalar sua empresa?",
+    "schedule": "Solicite Auditoria de TI Gratuita",
     "rights": "Todos os direitos reservados.",
     "name": "Nome",
     "name_ph": "Seu nome",
@@ -220,5 +220,27 @@
     "subtitle": "Transformamos ideias complexas em produtos digitais simples e bonitos.",
     "p1": "Na Guro, somos uma equipe de desenvolvedores e designers apaixonados por tecnologia e estética visual.",
     "p2": "Acreditamos no software como uma ferramenta para capacitar os negócios, eliminando o atrito diário através de soluções de código eficientes e robustas."
+  },
+  "social_proof": {
+    "title": "Empresas escalando conosco"
+  },
+  "faq": {
+    "title": "Perguntas Frequentes",
+    "q1": "Qual é o tempo médio de execução?",
+    "a1": "Dependendo do escopo do projeto, podemos lançar um MVP em 4-6 semanas.",
+    "q2": "Vocês fornecem manutenção pós-lançamento?",
+    "a2": "Sim, fornecemos monitoramento de métricas, segurança e escalabilidade contínua mensal.",
+    "q3": "Qual é o investimento inicial mínimo?",
+    "a3": "Nossos projetos core começam a partir de modelos customizados baseados no seu orçamento (a partir de $1500 USD).",
+    "q4": "Como vocês medem o sucesso do projeto?",
+    "a4": "Definimos KPIs na fase de descoberta (CRO, retenção ou tempo de carregamento) para garantir seu ROI."
+  },
+  "audit_cta": {
+    "title": "O seu site está perdendo clientes? Descubra agora.",
+    "subtitle": "AUDITORIA DE CRESCIMENTO 100% GRÁTIS",
+    "item1": "Detecção de fugas de faturamento no seu funil.",
+    "item2": "Análise de conversão (CRO) orientada a vendas.",
+    "item3": "Auditoria de Core Web Vitals e SEO para dominar o Google.",
+    "item4": "Roadmap estratégico de escalabilidade a 90 dias."
   }
 }

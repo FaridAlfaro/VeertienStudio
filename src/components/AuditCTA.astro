@@ -1,0 +1,419 @@
+---
+import Text from "./Text.jsx";
+---
+
+<section class="audit-cta-section">
+    <div class="audit-bg">
+        <img
+            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1920&q=80"
+            alt="Consultoría IT y Análisis de Datos Empresariales"
+            loading="lazy"
+        />
+        <div class="audit-overlay"></div>
+    </div>
+
+    <div class="audit-container">
+        <div class="audit-header">
+            <div class="free-kicker">
+                <span class="pulsing-dot"></span>
+                <span>EVALUACIÓN SIN COSTO</span>
+            </div>
+
+            <h2 class="content-title">
+                <Text client:only="react" i18nKey="audit_cta.title" />
+            </h2>
+
+            <div class="editorial-badge">
+                <Text client:only="react" i18nKey="audit_cta.subtitle" />
+            </div>
+        </div>
+
+        <div class="audit-grid">
+            <article class="glass-step">
+                <div class="step-header">
+                    <span class="step-number" aria-hidden="true">01</span>
+                    <h3 class="step-title">
+                        <Text
+                            client:only="react"
+                            i18nKey="audit_cta.item1_title"
+                        />
+                    </h3>
+                </div>
+                <p class="step-desc">
+                    <Text client:only="react" i18nKey="audit_cta.item1_desc" />
+                </p>
+            </article>
+
+            <article class="glass-step">
+                <div class="step-header">
+                    <span class="step-number" aria-hidden="true">02</span>
+                    <h3 class="step-title">
+                        <Text
+                            client:only="react"
+                            i18nKey="audit_cta.item2_title"
+                        />
+                    </h3>
+                </div>
+                <p class="step-desc">
+                    <Text client:only="react" i18nKey="audit_cta.item2_desc" />
+                </p>
+            </article>
+
+            <article class="glass-step">
+                <div class="step-header">
+                    <span class="step-number" aria-hidden="true">03</span>
+                    <h3 class="step-title">
+                        <Text
+                            client:only="react"
+                            i18nKey="audit_cta.item3_title"
+                        />
+                    </h3>
+                </div>
+                <p class="step-desc">
+                    <Text client:only="react" i18nKey="audit_cta.item3_desc" />
+                </p>
+            </article>
+
+            <article class="glass-step">
+                <div class="step-header">
+                    <span class="step-number" aria-hidden="true">04</span>
+                    <h3 class="step-title">
+                        <Text
+                            client:only="react"
+                            i18nKey="audit_cta.item4_title"
+                        />
+                    </h3>
+                </div>
+                <p class="step-desc">
+                    <Text client:only="react" i18nKey="audit_cta.item4_desc" />
+                </p>
+            </article>
+        </div>
+
+        <div class="audit-footer">
+            <a href="/contact" class="primary-btn">
+                <Text client:only="react" i18nKey="audit_cta.btn" />
+                <span class="arrow">&rarr;</span>
+            </a>
+            <p class="cta-note">
+                * Servicio <strong>100% GRATIS</strong>. Limitado a 5 empresas
+                al mes para garantizar la máxima calidad. (Valor real: $497 USD)
+            </p>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* =========================================
+       1. SECCIÓN PRINCIPAL Y FONDO
+       ========================================= */
+    .audit-cta-section {
+        position: relative;
+        min-height: 120vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        overflow: hidden;
+        padding: 15vh 5%;
+    }
+
+    .audit-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+    }
+
+    .audit-bg img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        filter: grayscale(100%);
+    }
+
+    .audit-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        /* Fondo base Azul3 combinado con oscurecimiento para lectura */
+        background-color: var(--azul3);
+        background-image: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.4) 0%,
+            rgba(0, 0, 0, 0.2) 50%,
+            rgba(0, 0, 0, 0.6) 100%
+        );
+        mix-blend-mode: multiply; /* Fusiona la imagen con el color azul */
+    }
+
+    /* Agregamos una capa extra plana para legibilidad si la imagen es muy ruidosa */
+    .audit-bg::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--azul3);
+        opacity: 0.85; /* Define la opacidad del azul sobre la imagen */
+    }
+
+    /* =========================================
+       2. CONTENEDOR CENTRAL
+       ========================================= */
+    .audit-container {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        max-width: 1400px;
+        display: flex;
+        flex-direction: column;
+        color: #ffffff;
+    }
+
+    /* =========================================
+       3. ENCABEZADO
+       ========================================= */
+    .audit-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 5rem;
+    }
+
+    .free-kicker {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        font-size: 1rem;
+        font-weight: 800;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin-bottom: 1.5rem;
+        color: #fff;
+        background: rgba(0, 0, 0, 0.2);
+        padding: 0.5rem 1.5rem;
+        border-radius: 50px;
+    }
+
+    .pulsing-dot {
+        width: 10px;
+        height: 10px;
+        background-color: #00ff88; /* Verde flúor o cian para destacar "activo/gratis" */
+        border-radius: 50%;
+        box-shadow: 0 0 12px #00ff88;
+        animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+        0% {
+            transform: scale(0.95);
+            box-shadow: 0 0 0 0 rgba(0, 255, 136, 0.7);
+        }
+        70% {
+            transform: scale(1);
+            box-shadow: 0 0 0 10px rgba(0, 255, 136, 0);
+        }
+        100% {
+            transform: scale(0.95);
+            box-shadow: 0 0 0 0 rgba(0, 255, 136, 0);
+        }
+    }
+
+    .content-title {
+        font-size: clamp(3rem, 5vw, 5rem);
+        line-height: 1.1;
+        letter-spacing: -1px;
+        font-weight: 500;
+        max-width: 900px;
+        margin: 0 0 2rem 0;
+    }
+
+    .editorial-badge {
+        font-size: clamp(1.2rem, 1.5vw, 1.5rem);
+        font-weight: 400;
+        color: rgba(255, 255, 255, 0.9);
+        letter-spacing: 1px;
+    }
+
+    /* =========================================
+       4. GRID DE PASOS (GLASSMORPHISM)
+       ========================================= */
+    .audit-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+        margin-bottom: 5rem;
+    }
+
+    .glass-step {
+        background: rgba(
+            255,
+            255,
+            255,
+            0.05
+        ); /* Cristal más claro por el fondo azul */
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-radius: 16px;
+        padding: 2.5rem 2rem;
+        display: flex;
+        flex-direction: column;
+        transition:
+            transform 0.3s ease,
+            background 0.3s ease;
+    }
+
+    .glass-step:hover {
+        background: rgba(255, 255, 255, 0.1);
+        transform: translateY(-5px);
+    }
+
+    .step-header {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1.5rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        padding-bottom: 1.5rem;
+    }
+
+    .step-number {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #ffffff; /* Blanco para contrastar sobre azul */
+        opacity: 0.5;
+        margin-bottom: 0.5rem;
+    }
+
+    .step-title {
+        font-size: clamp(1.3rem, 1.6vw, 1.8rem);
+        font-weight: 500;
+        margin: 0;
+        line-height: 1.2;
+    }
+
+    .step-desc {
+        font-size: clamp(1rem, 1.1vw, 1.2rem);
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.8);
+        margin: 0;
+    }
+
+    /* =========================================
+       5. CALL TO ACTION (FOOTER DE LA SECCIÓN)
+       ========================================= */
+    .audit-footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .primary-btn {
+        background-color: #ffffff; /* Botón blanco destaca sobre azul */
+        color: var(--azul3); /* Texto azul */
+        padding: 1.5rem 4rem;
+        font-size: 1.3rem;
+        font-weight: 900;
+        border-radius: 50px;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        display: inline-flex;
+        align-items: center;
+        gap: 1rem;
+        transition:
+            transform 0.3s ease,
+            box-shadow 0.3s ease;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .primary-btn .arrow {
+        transition: transform 0.3s ease;
+        font-size: 1.6rem;
+    }
+
+    .primary-btn:hover {
+        transform: translateY(-4px) scale(1.02);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .primary-btn:hover .arrow {
+        transform: translateX(6px);
+    }
+
+    .cta-note {
+        font-size: 1.1rem;
+        color: rgba(255, 255, 255, 0.7);
+        margin: 0;
+        text-align: center;
+    }
+
+    .cta-note strong {
+        color: #fff;
+        font-weight: 800;
+        background: rgba(0, 0, 0, 0.2);
+        padding: 0.2rem 0.5rem;
+        border-radius: 4px;
+    }
+
+    /* =========================================
+       6. RESPONSIVE
+       ========================================= */
+    @media (max-width: 1024px) {
+        .audit-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .content-title {
+            font-size: 3.5rem;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .audit-cta-section {
+            padding: 10vh 5%;
+        }
+
+        .audit-header {
+            align-items: flex-start;
+            text-align: left;
+        }
+
+        .content-title {
+            font-size: 2.8rem;
+        }
+
+        .audit-grid {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .glass-step:hover {
+            transform: none;
+        }
+
+        .primary-btn {
+            width: 100%;
+            justify-content: center;
+            box-sizing: border-box;
+            text-align: center;
+            padding: 1.2rem 1.5rem;
+        }
+
+        .audit-footer {
+            align-items: stretch;
+            text-align: center;
+        }
+    }
+</style>

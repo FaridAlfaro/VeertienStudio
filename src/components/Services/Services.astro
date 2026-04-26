@@ -19,8 +19,6 @@ const { hideButton = false, animateBg = true } = Astro.props;
         </h3>
     </div>
 
-    <ServicesGrid />
-
     {
         !hideButton && (
             <a href="/services" class="services-button">
@@ -182,8 +180,8 @@ const { hideButton = false, animateBg = true } = Astro.props;
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 10vh;
-        margin: 10vh auto;
+        height: auto;
+        margin: 5vh auto;
         width: 60%;
         font-size: 6rem;
         text-align: center;

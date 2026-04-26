@@ -78,6 +78,17 @@ import { TranslatedInput, TranslatedTextarea } from './TranslatedInputs.jsx';
                     />
                 </div>
 
+                <!-- LEAD SCORING FIELDS -->
+                <div class="form-group lead-scoring-group">
+                    <label for="budget">Presupuesto Estimado / Budget</label>
+                    <select id="budget" name="budget" required class="select-field">
+                        <option value="" disabled selected>Selecciona un rango...</option>
+                        <option value="<2k">Menos de $2,000 USD</option>
+                        <option value="2k-5k">$2,000 - $5,000 USD</option>
+                        <option value="5k+">Más de $5,000 USD (Corporativo)</option>
+                    </select>
+                </div>
+
                 <div class="form-group">
                     <label for="message"><Text client:only="react" i18nKey="footer.message" /></label>
                     <TranslatedTextarea
@@ -262,7 +273,8 @@ import { TranslatedInput, TranslatedTextarea } from './TranslatedInputs.jsx';
     }
 
     .form-group input,
-    .form-group textarea {
+    .form-group textarea,
+    .form-group select {
         width: 100%;
         background: transparent;
         border: none;
@@ -274,8 +286,14 @@ import { TranslatedInput, TranslatedTextarea } from './TranslatedInputs.jsx';
         transition: border-color 0.3s ease;
     }
 
+    .form-group select option {
+        background: #050505;
+        color: white;
+    }
+
     .form-group input:focus,
-    .form-group textarea:focus {
+    .form-group textarea:focus,
+    .form-group select:focus {
         outline: none;
         border-bottom-color: var(--azul3);
     }

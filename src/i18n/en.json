@@ -60,7 +60,7 @@
     "identity": "identity",
     "title_end": " with software",
     "read_more": "Read more",
-    "view_all": "View All Services",
+    "view_all": "Our Services",
     "web_dev": {
       "title": "Web Development",
       "text": "We build scalable, modern web applications tailored to your business needs."
@@ -95,8 +95,8 @@
     }
   },
   "footer": {
-    "ready": "Ready to take your project to the next level?",
-    "schedule": "Schedule a call",
+    "ready": "Ready to scale your business?",
+    "schedule": "Request Free IT Audit",
     "rights": "All rights reserved.",
     "name": "Name",
     "name_ph": "Your name",
@@ -220,5 +220,32 @@
     "subtitle": "We transform complex ideas into simple and beautiful digital products.",
     "p1": "At Guro, we are a team of developers and designers passionate about technology and visual aesthetics.",
     "p2": "We believe in software as a tool to empower businesses, eliminating daily friction through efficient and robust code solutions."
+  },
+  "social_proof": {
+    "title": "Companies scaling with us"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "q1": "What is the average execution time?",
+    "a1": "Depending on the project scope, we can launch an MVP in 4-6 weeks.",
+    "q2": "Do you provide post-launch maintenance?",
+    "a2": "Yes, we provide metrics monitoring, security, and continuous monthly scalability.",
+    "q3": "What is the minimum initial investment?",
+    "a3": "Our core projects start from custom models based on your budget (starting at $1500 USD).",
+    "q4": "How do you measure project success?",
+    "a4": "We set KPIs in the discovery phase (CRO, retention, or load time) to guarantee your ROI."
+  },
+  "audit_cta": {
+    "title": "Is your technology driving or stalling your business?",
+    "subtitle": "100% COMPLIMENTARY IT STRATEGIC AUDIT",
+    "item1_title": "Operational Diagnosis",
+    "item1_desc": "We identify manual processes and bottlenecks that are limiting your company's scalability.",
+    "item2_title": "Software Ecosystem",
+    "item2_desc": "We evaluate your current infrastructure, management systems, and the feasibility of custom solutions.",
+    "item3_title": "Presence & Branding",
+    "item3_desc": "We analyze your digital identity perception, user experience (UX), and conversion rates.",
+    "item4_title": "Transformation Roadmap",
+    "item4_desc": "We provide a 90-day action plan to modernize and scale through technology.",
+    "btn": "Schedule Free Audit"
   }
 }

@@ -1,0 +1,104 @@
+---
+import Text from "./Text.jsx";
+
+const faqs = [
+    { qKey: "faq.q1", aKey: "faq.a1" },
+    { qKey: "faq.q2", aKey: "faq.a2" },
+    { qKey: "faq.q3", aKey: "faq.a3" },
+    { qKey: "faq.q4", aKey: "faq.a4" },
+];
+---
+
+<section class="faq-section" itemscope itemtype="https://schema.org/FAQPage">
+    <h2 class="faq-main-title">
+        <Text client:only="react" i18nKey="faq.title" />
+    </h2>
+    <div class="faq-container">
+        {
+            faqs.map((faq) => (
+                <details
+                    class="faq-item"
+                    itemscope
+                    itemprop="mainEntity"
+                    itemtype="https://schema.org/Question"
+                >
+                    <summary itemprop="name">
+                        <Text client:only="react" i18nKey={faq.qKey} />
+                        <span class="cross">+</span>
+                    </summary>
+                    <div
+                        itemscope
+                        itemprop="acceptedAnswer"
+                        itemtype="https://schema.org/Answer"
+                        class="faq-answer"
+                    >
+                        <p itemprop="text">
+                            <Text client:only="react" i18nKey={faq.aKey} />
+                        </p>
+                    </div>
+                </details>
+            ))
+        }
+    </div>
+</section>
+
+<style>
+    .faq-section {
+        padding: 10vh 5%;
+        max-width: 900px;
+        margin: 0 auto;
+        background: var(--background);
+        position: relative;
+        z-index: 2;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: left;
+    }
+    .faq-main-title {
+        font-size: clamp(2.5rem, 4vw, 4rem);
+        margin-bottom: 3rem;
+        text-align: center;
+        letter-spacing: -1px;
+    }
+    .faq-item {
+        border-bottom: 1px solid var(--gris1);
+        padding: 1.5rem 0;
+        cursor: pointer;
+    }
+    .faq-item:first-of-type {
+        border-top: 1px solid var(--gris1);
+    }
+    summary {
+        font-size: clamp(1.2rem, 1.5vw, 1.5rem);
+        font-weight: 500;
+        outline: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        list-style: none; /* Hide default arrow */
+    }
+    summary::-webkit-details-marker {
+        display: none;
+    }
+    details[open] summary .cross {
+        transform: rotate(45deg);
+    }
+    .cross {
+        font-size: 2rem;
+        font-weight: 300;
+        transition: transform 0.3s ease;
+        line-height: 1;
+        color: var(--azul3);
+    }
+    .faq-answer {
+        overflow: hidden;
+    }
+    .faq-item p {
+        margin-top: 1.5rem;
+        color: var(--gris2);
+        font-size: clamp(1rem, 1.2vw, 1.2rem);
+        line-height: 1.6;
+    }
+</style>

@@ -1,6 +1,27 @@
 ---
 import { ClientRouter } from "astro:transitions";
-const { title = "Guro Studio", description = "Soluciones tecnológicas y desarrollo de software a tu medida." } = Astro.props;
+const { 
+  title = "Veertien | Consultora de Servicios IT y Desarrollo de Software", 
+  description = "Soluciones tecnológicas y desarrollo a medida. Aceleramos tu crecimiento con estrategias digitales y sistemas escalables.",
+  image = "/og-veertien.jpg" 
+} = Astro.props;
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Veertien",
+  "image": "https://veertien.com" + image,
+  "description": description,
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Global"
+  },
+  "offerCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Servicios de Desarrollo y Crecimiento"
+  },
+  "url": "https://veertien.com"
+};
 ---
 
 <!doctype html>
@@ -12,6 +33,24 @@ const { title = "Guro Studio", description = "Soluciones tecnológicas y desarro
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
 		<meta name="description" content={description} />
+		
+		<!-- Open Graph / Meta-Tags Dinámicos -->
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={image} />
+		<meta property="og:type" content="website" />
+		<meta name="twitter:card" content="summary_large_image" />
+		
+		<!-- SEO Técnico: Schema Markup -->
+		<script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+		
+		<!-- Resource Hinting para fuentes -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100..900&family=Montserrat:wght@100..900&family=Space+Mono&display=swap" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css2?family=Victor+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet" />
+
 		<title>{title}</title>
 		<ClientRouter />
 	</head>
@@ -21,9 +60,6 @@ const { title = "Guro Studio", description = "Soluciones tecnológicas y desarro
 </html>
 
 <style is:global>
-	@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100..900&family=Montserrat:wght@100..900&family=Space+Mono&display=swap");
-	@import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap");
-	@import url("https://fonts.googleapis.com/css2?family=Victor+Mono:ital,wght@0,100..700;1,100..700&display=swap");
 
 	:root {
 		--background: #ffffff; /* Fondo general claro */
