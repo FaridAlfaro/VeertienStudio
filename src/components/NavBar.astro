@@ -117,10 +117,10 @@ import Text from "./Text.jsx";
 <style>
     .navbar {
         position: fixed;
-        top: 1.618%;
-        left: 5%;
-        width: 90%;
-        height: 6vh;
+        top: 0;
+        left: 0%;
+        width: 100%;
+        height: 8vh;
         min-height: 30px;
         display: flex;
         justify-content: space-between;
@@ -128,9 +128,10 @@ import Text from "./Text.jsx";
         padding: 0 5%;
         box-sizing: border-box;
         z-index: 1000;
-        background: var(--background); /* Blanco */
+        background: rgba(255, 255, 255, 0.75);
+        backdrop-filter: blur(7.5px);
+        -webkit-backdrop-filter: blur(7.5px);
         color: var(--contrast); /* Negro */
-        border-radius: 14px;
         transition:
             transform 1s cubic-bezier(0.25, 1, 0.5, 1),
             background-color 0.5s ease;

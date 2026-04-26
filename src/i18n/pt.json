@@ -133,6 +133,88 @@
     "ecommerce_service1": "Lojas virtuais escaláveis e de alto desempenho.",
     "ecommerce_service2": "Integrações com meios de pagamento e envios."
   },
+  "core_services": {
+    "dev": {
+      "title": "Desenvolvimento de Software",
+      "desc": "Soluções sob medida construídas com código robusto e arquiteturas modernas.",
+      "web": {
+        "title": "Desenvolvimento Web e Apps",
+        "text": "Criamos aplicações web ultrarrápidas e aplicativos móveis nativos."
+      },
+      "systems": {
+        "title": "Sistemas de Gestão",
+        "text": "Sistemas ERP e CRM personalizados para automatizar operações."
+      },
+      "ecommerce": {
+        "title": "Plataformas E-Commerce",
+        "text": "Lojas virtuais seguras e escaláveis para maximizar conversões."
+      },
+      "api": {
+        "title": "Integrações e APIs",
+        "text": "Conexão fluida entre seus sistemas e ferramentas de terceiros."
+      }
+    },
+    "design": {
+      "title": "Branding e Design",
+      "desc": "Criando experiências digitais visualmente impressionantes que convertem.",
+      "identity": {
+        "title": "Identidade Visual",
+        "text": "Da criação do logotipo ao manual da marca completo."
+      },
+      "uxui": {
+        "title": "Design UX / UI",
+        "text": "Interfaces intuitivas e jornadas de usuário fluidas."
+      },
+      "systems": {
+        "title": "Sistemas de Design",
+        "text": "Bibliotecas de componentes para consistência em seus produtos."
+      },
+      "motion": {
+        "title": "Motion Graphics",
+        "text": "Animações e microinterações que dão vida à sua interface."
+      }
+    },
+    "marketing": {
+      "title": "Marketing e Publicidade",
+      "desc": "Estratégias baseadas em dados para posicionar sua marca no ecossistema digital.",
+      "ads": {
+        "title": "Campanhas Digitais",
+        "text": "Anúncios segmentados para reduzir custos de aquisição."
+      },
+      "seo": {
+        "title": "SEO e Conteúdo",
+        "text": "Estratégias de crescimento orgânico e otimização técnica."
+      },
+      "social": {
+        "title": "Mídias Sociais",
+        "text": "Gestão estratégica de comunidades para fidelizar seu público."
+      },
+      "email": {
+        "title": "Automação de E-mail",
+        "text": "Fluxos de e-mail personalizados para nutrir e reter clientes."
+      }
+    },
+    "consulting": {
+      "title": "Consultoria em TI",
+      "desc": "Orientação estratégica para navegar pela transformação digital de sua empresa.",
+      "transformation": {
+        "title": "Transformação Digital",
+        "text": "Modernizamos seu fluxo de trabalho aumentando a eficiência."
+      },
+      "cloud": {
+        "title": "Infraestrutura em Nuvem",
+        "text": "Hospedagem em nuvem segura, escalável e de alta disponibilidade."
+      },
+      "security": {
+        "title": "Cibersegurança",
+        "text": "Avaliações e protocolos robustos para proteger seus dados."
+      },
+      "data": {
+        "title": "Análise de Dados",
+        "text": "Soluções de Business Intelligence para decisões baseadas em dados."
+      }
+    }
+  },
   "page_about": {
     "title": "Quem somos",
     "subtitle": "Transformamos ideias complexas em produtos digitais simples e bonitos.",

@@ -4,20 +4,21 @@ import NavBar from "../components/NavBar.astro";
 import Footer from "../components/Footer.astro";
 import Text from "../components/Text.jsx";
 import WordHighlighter from "../components/WordHighlighter.jsx";
-import ServicesGrid from "../components/Services/ServicesGrid.astro";
 ---
 
-<Layout>
+<Layout
+    title="Servicios | Guro Studio"
+    description="Descubre nuestros servicios a tu medida. Tecnología que se adapta a tu ritmo para que escales sin frenos, construyendo sistemas, software y estrategias digitales."
+>
     <NavBar />
 
     <main class="page-container">
-        <!-- HERO HEADER -->
         <header class="page-header">
             <h1 class="page-title">
                 <WordHighlighter
                     client:only="react"
                     i18nKey="page_services.title"
-                    highlightWords={["a tu medida", "Solutions", "por Setor"]}
+                    highlightWords={["servicios", "services", "serviços"]}
                 />
             </h1>
             <p class="page-subtitle">
@@ -25,201 +26,633 @@ import ServicesGrid from "../components/Services/ServicesGrid.astro";
             </p>
         </header>
 
-        <hr class="section-divider" style="margin-bottom: 8vh;" />
-
-        <!-- CALL TO ACTION (Filter) -->
-        <div class="cta-header">
-            <h2 class="cta-title">
-                <WordHighlighter
-                    client:only="react"
-                    i18nKey="page_services.filter_title"
-                    highlightWords={["sector", "niche?", "indústria"]}
-                />
-            </h2>
-            <p class="cta-subtitle">
-                <Text
-                    client:only="react"
-                    i18nKey="page_services.filter_subtitle"
-                />
-            </p>
-        </div>
-
-        <!-- FILTER BUTTONS -->
-        <div class="filter-controls">
-            <button class="filter-btn" data-filter="pymes"
-                ><Text
-                    client:only="react"
-                    i18nKey="page_services.cat_pymes"
-                /></button
-            >
-            <button class="filter-btn" data-filter="gastro"
-                ><Text
-                    client:only="react"
-                    i18nKey="page_services.cat_gastro"
-                /></button
-            >
-            <button class="filter-btn" data-filter="ecommerce"
-                ><Text
-                    client:only="react"
-                    i18nKey="page_services.cat_ecommerce"
-                /></button
-            >
-        </div>
-
-        <!-- SPECIFIC CARDS (Hidden by default) -->
-        <div
-            class="specific-cards-wrapper"
-            id="specificCardsWrapper"
-            style="display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.6s cubic-bezier(0.25, 1, 0.5, 1);"
-        >
-            <div style="overflow: hidden;">
-                <div
-                    class="container specific-container"
-                    id="specificCardsContainer"
-                >
-                    <!-- PYMES -->
-                    <div
-                        class="card specific-card"
-                        data-category="pymes"
-                        style="display: none;"
-                    >
-                        <div
-                            class="card-bg"
-                            style="background-image: url('https://images.unsplash.com/photo-1602052793312-b99c2a92b5c7?auto=format&fit=crop&w=600&q=80');"
-                        >
-                        </div>
-                        <div class="card-inner mod">
-                            <h2>
+        <div class="core-services-wrapper">
+            <section class="sticky-card bg-black" aria-labelledby="title-dev">
+                <div class="card-top-half">
+                    <span class="category-number" aria-hidden="true">01</span>
+                    <h2 id="title-dev" class="core-category-title">
+                        <Text
+                            client:only="react"
+                            i18nKey="core_services.dev.title"
+                        />
+                    </h2>
+                    <p class="core-category-desc">
+                        <Text
+                            client:only="react"
+                            i18nKey="core_services.dev.desc"
+                        />
+                    </p>
+                </div>
+                <div class="card-bottom-half">
+                    <div class="glass-cards-grid">
+                        <article class="glass-card">
+                            <span class="glass-num" aria-hidden="true">1.</span>
+                            <h3>
                                 <Text
                                     client:only="react"
-                                    i18nKey="page_services.cat_pymes"
+                                    i18nKey="core_services.dev.web.title"
                                 />
-                            </h2>
-                            <div class="card-content">
-                                <p style="font-size: 1.4rem;">
-                                    &rarr; <Text
-                                        client:only="react"
-                                        i18nKey="page_services.pymes_service1"
-                                    /><br /><br />
-                                    &rarr; <Text
-                                        client:only="react"
-                                        i18nKey="page_services.pymes_service2"
-                                    />
-                                </p>
-                                <button class="read-more"
-                                    ><Text
-                                        client:only="react"
-                                        i18nKey="services.read_more"
-                                    /> &gt;</button
-                                >
-                            </div>
-                        </div>
+                            </h3>
+                            <p>
+                                <Text
+                                    client:only="react"
+                                    i18nKey="core_services.dev.web.text"
+                                />
+                            </p>
+                        </article>
+                        <article class="glass-card">
+                            <span class="glass-num" aria-hidden="true">2.</span>
+                            <h3>
+                                <Text
+                                    client:only="react"
+                                    i18nKey="core_services.dev.systems.title"
+                                />
+                            </h3>
+                            <p>
+                                <Text
+                                    client:only="react"
+                                    i18nKey="core_services.dev.systems.text"
+                                />
+                            </p>
+                        </article>
+                        <article class="glass-card">
+                            <span class="glass-num" aria-hidden="true">3.</span>
+                            <h3>
+                                <Text
+                                    client:only="react"
+                                    i18nKey="core_services.dev.ecommerce.title"
+                                />
+                            </h3>
+                            <p>
+                                <Text
+                                    client:only="react"
+                                    i18nKey="core_services.dev.ecommerce.text"
+                                />
+                            </p>
+                        </article>
+                        <article class="glass-card">
+                            <span class="glass-num" aria-hidden="true">4.</span>
+                            <h3>
+                                <Text
+                                    client:only="react"
+                                    i18nKey="core_services.dev.api.title"
+                                />
+                            </h3>
+                            <p>
+                                <Text
+                                    client:only="react"
+                                    i18nKey="core_services.dev.api.text"
+                                />
+                            </p>
+                        </article>
+                    </div>
+                    <a href="/contact" class="main-section-cta">
+                        <Text client:only="react" i18nKey="footer.schedule" />
+                        <span class="arrow">&rarr;</span>
+                    </a>
+                </div>
+            </section>
+
+            <section class="sticky-card bg-blue" aria-labelledby="title-design">
+                <div class="card-top-half">
+                    <span class="category-number" aria-hidden="true">02</span>
+                    <h2 id="title-design" class="core-category-title">
+                        <Text
+                            client:only="react"
+                            i18nKey="core_services.design.title"
+                        />
+                    </h2>
+                    <p class="core-category-desc">
+                        <Text
+                            client:only="react"
+                            i18nKey="core_services.design.desc"
+                        />
+                    </p>
+                </div>
+                <div class="card-bottom-half">
+                    <div class="glass-cards-grid">
+                        <article class="glass-card">
+                            <span class="glass-num" aria-hidden="true">1.</span>
+                            <h3>
+                                <Text
+                                    client:only="react"
+                                    i18nKey="core_services.design.identity.title"
+                                />
+                            </h3>
+                            <p>
+                                <Text
+                                    client:only="react"
+                                    i18nKey="core_services.design.identity.text"
+                                />
+                            </p>
+                        </article>
+                        <article class="glass-card">
+                            <span class="glass-num" aria-hidden="true">2.</span>
+                            <h3>
+                                <Text
+                                    client:only="react"
+                                    i18nKey="core_services.design.uxui.title"
+                                />
+                            </h3>
+                            <p>
+                                <Text
+                                    client:only="react"
+                                    i18nKey="core_services.design.uxui.text"
+                                />
+                            </p>
+                        </article>
+                        <article class="glass-card">
+                            <span class="glass-num" aria-hidden="true">3.</span>
+                            <h3>
+                                <Text
+                                    client:only="react"
+                                    i18nKey="core_services.design.systems.title"
+                                />
+                            </h3>
+                            <p>
+                                <Text
+                                    client:only="react"
+                                    i18nKey="core_services.design.systems.text"
+                                />
+                            </p>
+                        </article>
+                        <article class="glass-card">
+                            <span class="glass-num" aria-hidden="true">4.</span>
+                            <h3>
+                                <Text
+                                    client:only="react"
+                                    i18nKey="core_services.design.motion.title"
+                                />
+                            </h3>
+                            <p>
+                                <Text
+                                    client:only="react"
+                                    i18nKey="core_services.design.motion.text"
+                                />
+                            </p>
+                        </article>
+                    </div>
+                    <a href="/contact" class="main-section-cta">
+                        <Text client:only="react" i18nKey="footer.schedule" />
+                        <span class="arrow">&rarr;</span>
+                    </a>
+                </div>
+            </section>
+
+            <section
+                class="sticky-card bg-white"
+                aria-labelledby="title-marketing"
+            >
+                <div class="card-top-half">
+                    <span class="category-number" aria-hidden="true">03</span>
+                    <h2 id="title-marketing" class="core-category-title">
+                        <Text
+                            client:only="react"
+                            i18nKey="core_services.marketing.title"
+                        />
+                    </h2>
+                    <p class="core-category-desc">
+                        <Text
+                            client:only="react"
+                            i18nKey="core_services.marketing.desc"
+                        />
+                    </p>
+                </div>
+                <div class="card-bottom-half">
+                    <div class="glass-cards-grid">
+                        <article class="glass-card">
+                            <span class="glass-num" aria-hidden="true">1.</span>
+                            <h3>
+                                <Text
+                                    client:only="react"
+                                    i18nKey="core_services.marketing.ads.title"
+                                />
+                            </h3>
+                            <p>
+                                <Text
+                                    client:only="react"
+                                    i18nKey="core_services.marketing.ads.text"
+                                />
+                            </p>
+                        </article>
+                        <article class="glass-card">
+                            <span class="glass-num" aria-hidden="true">2.</span>
+                            <h3>
+                                <Text
+                                    client:only="react"
+                                    i18nKey="core_services.marketing.seo.title"
+                                />
+                            </h3>
+                            <p>
+                                <Text
+                                    client:only="react"
+                                    i18nKey="core_services.marketing.seo.text"
+                                />
+                            </p>
+                        </article>
+                        <article class="glass-card">
+                            <span class="glass-num" aria-hidden="true">3.</span>
+                            <h3>
+                                <Text
+                                    client:only="react"
+                                    i18nKey="core_services.marketing.social.title"
+                                />
+                            </h3>
+                            <p>
+                                <Text
+                                    client:only="react"
+                                    i18nKey="core_services.marketing.social.text"
+                                />
+                            </p>
+                        </article>
+                        <article class="glass-card">
+                            <span class="glass-num" aria-hidden="true">4.</span>
+                            <h3>
+                                <Text
+                                    client:only="react"
+                                    i18nKey="core_services.marketing.email.title"
+                                />
+                            </h3>
+                            <p>
+                                <Text
+                                    client:only="react"
+                                    i18nKey="core_services.marketing.email.text"
+                                />
+                            </p>
+                        </article>
+                    </div>
+                    <a href="/contact" class="main-section-cta">
+                        <Text client:only="react" i18nKey="footer.schedule" />
+                        <span class="arrow">&rarr;</span>
+                    </a>
+                </div>
+            </section>
+
+            <section
+                class="sticky-card bg-dark"
+                aria-labelledby="title-consulting"
+            >
+                <div class="card-top-half">
+                    <span class="category-number" aria-hidden="true">04</span>
+                    <h2 id="title-consulting" class="core-category-title">
+                        <Text
+                            client:only="react"
+                            i18nKey="core_services.consulting.title"
+                        />
+                    </h2>
+                    <p class="core-category-desc">
+                        <Text
+                            client:only="react"
+                            i18nKey="core_services.consulting.desc"
+                        />
+                    </p>
+                </div>
+                <div class="card-bottom-half">
+                    <div class="glass-cards-grid">
+                        <article class="glass-card">
+                            <span class="glass-num" aria-hidden="true">1.</span>
+                            <h3>
+                                <Text
+                                    client:only="react"
+                                    i18nKey="core_services.consulting.transformation.title"
+                                />
+                            </h3>
+                            <p>
+                                <Text
+                                    client:only="react"
+                                    i18nKey="core_services.consulting.transformation.text"
+                                />
+                            </p>
+                        </article>
+                        <article class="glass-card">
+                            <span class="glass-num" aria-hidden="true">2.</span>
+                            <h3>
+                                <Text
+                                    client:only="react"
+                                    i18nKey="core_services.consulting.cloud.title"
+                                />
+                            </h3>
+                            <p>
+                                <Text
+                                    client:only="react"
+                                    i18nKey="core_services.consulting.cloud.text"
+                                />
+                            </p>
+                        </article>
+                        <article class="glass-card">
+                            <span class="glass-num" aria-hidden="true">3.</span>
+                            <h3>
+                                <Text
+                                    client:only="react"
+                                    i18nKey="core_services.consulting.security.title"
+                                />
+                            </h3>
+                            <p>
+                                <Text
+                                    client:only="react"
+                                    i18nKey="core_services.consulting.security.text"
+                                />
+                            </p>
+                        </article>
+                        <article class="glass-card">
+                            <span class="glass-num" aria-hidden="true">4.</span>
+                            <h3>
+                                <Text
+                                    client:only="react"
+                                    i18nKey="core_services.consulting.data.title"
+                                />
+                            </h3>
+                            <p>
+                                <Text
+                                    client:only="react"
+                                    i18nKey="core_services.consulting.data.text"
+                                />
+                            </p>
+                        </article>
+                    </div>
+                    <a href="/contact" class="main-section-cta">
+                        <Text client:only="react" i18nKey="footer.schedule" />
+                        <span class="arrow">&rarr;</span>
+                    </a>
+                </div>
+            </section>
+
+            <section
+                class="sticky-card bg-main niche-section"
+                aria-labelledby="title-niche"
+            >
+                <div class="card-top-half niche-top">
+                    <h2 id="title-niche" class="cta-title">
+                        <WordHighlighter
+                            client:only="react"
+                            i18nKey="page_services.filter_title"
+                            highlightWords={["sector", "niche?", "indústria"]}
+                        />
+                    </h2>
+                    <p class="cta-subtitle">
+                        <Text
+                            client:only="react"
+                            i18nKey="page_services.filter_subtitle"
+                        />
+                    </p>
+                </div>
+
+                <div class="card-bottom-half niche-bottom">
+                    <div class="niche-controls">
+                        <button
+                            class="niche-btn active"
+                            data-filter="pymes"
+                            aria-label="Sector Pymes"
+                        >
+                            <Text
+                                client:only="react"
+                                i18nKey="page_services.cat_pymes"
+                            />
+                        </button>
+                        <button
+                            class="niche-btn"
+                            data-filter="gastro"
+                            aria-label="Sector Gastronomía"
+                        >
+                            <Text
+                                client:only="react"
+                                i18nKey="page_services.cat_gastro"
+                            />
+                        </button>
+                        <button
+                            class="niche-btn"
+                            data-filter="ecommerce"
+                            aria-label="Sector Ecommerce"
+                        >
+                            <Text
+                                client:only="react"
+                                i18nKey="page_services.cat_ecommerce"
+                            />
+                        </button>
                     </div>
 
-                    <!-- GASTRO -->
                     <div
-                        class="card specific-card"
-                        data-category="gastro"
-                        style="display: none;"
+                        class="specific-cards-wrapper"
+                        id="specificCardsWrapper"
+                        style="display: grid; grid-template-rows: 1fr; transition: grid-template-rows 0.6s cubic-bezier(0.25, 1, 0.5, 1);"
                     >
-                        <div
-                            class="card-bg"
-                            style="background-image: url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=600&q=80');"
-                        >
-                        </div>
-                        <div class="card-inner mod">
-                            <h2>
-                                <Text
-                                    client:only="react"
-                                    i18nKey="page_services.cat_gastro"
-                                />
-                            </h2>
-                            <div class="card-content">
-                                <p style="font-size: 1.4rem;">
-                                    &rarr; <Text
-                                        client:only="react"
-                                        i18nKey="page_services.gastro_service1"
-                                    /><br /><br />
-                                    &rarr; <Text
-                                        client:only="react"
-                                        i18nKey="page_services.gastro_service2"
-                                    />
-                                </p>
-                                <button class="read-more"
-                                    ><Text
-                                        client:only="react"
-                                        i18nKey="services.read_more"
-                                    /> &gt;</button
+                        <div style="overflow: hidden;">
+                            <div
+                                class="container specific-container"
+                                id="specificCardsContainer"
+                            >
+                                <article
+                                    class="agency-category"
+                                    data-category="pymes"
+                                    style="display: block; opacity: 1; transform: translateY(0);"
                                 >
-                            </div>
-                        </div>
-                    </div>
+                                    <div class="agency-body">
+                                        <div class="agency-media">
+                                            <img
+                                                src="https://images.unsplash.com/photo-1602052793312-b99c2a92b5c7?auto=format&fit=crop&w=800&q=80"
+                                                alt="Desarrollo de software y automatización IT para PYMES"
+                                            />
+                                        </div>
+                                        <div class="agency-content">
+                                            <h3 class="agency-category-title">
+                                                <Text
+                                                    client:only="react"
+                                                    i18nKey="page_services.cat_pymes"
+                                                />
+                                            </h3>
+                                            <div class="agency-services-list">
+                                                <div
+                                                    class="agency-service-item"
+                                                >
+                                                    <span
+                                                        class="service-number"
+                                                        aria-hidden="true"
+                                                        >01</span
+                                                    >
+                                                    <p>
+                                                        <Text
+                                                            client:only="react"
+                                                            i18nKey="page_services.pymes_service1"
+                                                        />
+                                                    </p>
+                                                </div>
+                                                <div
+                                                    class="agency-service-item"
+                                                >
+                                                    <span
+                                                        class="service-number"
+                                                        aria-hidden="true"
+                                                        >02</span
+                                                    >
+                                                    <p>
+                                                        <Text
+                                                            client:only="react"
+                                                            i18nKey="page_services.pymes_service2"
+                                                        />
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <a
+                                                href="/contact"
+                                                class="agency-explore text-btn"
+                                            >
+                                                <Text
+                                                    client:only="react"
+                                                    i18nKey="footer.schedule"
+                                                />
+                                                <span class="arrow">&rarr;</span
+                                                >
+                                            </a>
+                                        </div>
+                                    </div>
+                                </article>
 
-                    <!-- ECOMMERCE -->
-                    <div
-                        class="card specific-card"
-                        data-category="ecommerce"
-                        style="display: none;"
-                    >
-                        <div
-                            class="card-bg"
-                            style="background-image: url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=600&q=80');"
-                        >
-                        </div>
-                        <div class="card-inner">
-                            <h2>
-                                <Text
-                                    client:only="react"
-                                    i18nKey="page_services.cat_ecommerce"
-                                />
-                            </h2>
-                            <div class="card-content">
-                                <p style="font-size: 1.4rem;">
-                                    &rarr; <Text
-                                        client:only="react"
-                                        i18nKey="page_services.ecommerce_service1"
-                                    /><br /><br />
-                                    &rarr; <Text
-                                        client:only="react"
-                                        i18nKey="page_services.ecommerce_service2"
-                                    />
-                                </p>
-                                <button class="read-more"
-                                    ><Text
-                                        client:only="react"
-                                        i18nKey="services.read_more"
-                                    /> &gt;</button
+                                <article
+                                    class="agency-category"
+                                    data-category="gastro"
+                                    style="display: none;"
                                 >
+                                    <div class="agency-body">
+                                        <div class="agency-media">
+                                            <img
+                                                src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=800&q=80"
+                                                alt="Sistemas de reservas y menús digitales para el sector gastronómico"
+                                            />
+                                        </div>
+                                        <div class="agency-content">
+                                            <h3 class="agency-category-title">
+                                                <Text
+                                                    client:only="react"
+                                                    i18nKey="page_services.cat_gastro"
+                                                />
+                                            </h3>
+                                            <div class="agency-services-list">
+                                                <div
+                                                    class="agency-service-item"
+                                                >
+                                                    <span
+                                                        class="service-number"
+                                                        aria-hidden="true"
+                                                        >01</span
+                                                    >
+                                                    <p>
+                                                        <Text
+                                                            client:only="react"
+                                                            i18nKey="page_services.gastro_service1"
+                                                        />
+                                                    </p>
+                                                </div>
+                                                <div
+                                                    class="agency-service-item"
+                                                >
+                                                    <span
+                                                        class="service-number"
+                                                        aria-hidden="true"
+                                                        >02</span
+                                                    >
+                                                    <p>
+                                                        <Text
+                                                            client:only="react"
+                                                            i18nKey="page_services.gastro_service2"
+                                                        />
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <a
+                                                href="/contact"
+                                                class="agency-explore text-btn"
+                                            >
+                                                <Text
+                                                    client:only="react"
+                                                    i18nKey="footer.schedule"
+                                                />
+                                                <span class="arrow">&rarr;</span
+                                                >
+                                            </a>
+                                        </div>
+                                    </div>
+                                </article>
+
+                                <article
+                                    class="agency-category"
+                                    data-category="ecommerce"
+                                    style="display: none;"
+                                >
+                                    <div class="agency-body">
+                                        <div class="agency-media">
+                                            <img
+                                                src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80"
+                                                alt="Desarrollo de plataformas E-commerce y tiendas online de alto rendimiento"
+                                            />
+                                        </div>
+                                        <div class="agency-content">
+                                            <h3 class="agency-category-title">
+                                                <Text
+                                                    client:only="react"
+                                                    i18nKey="page_services.cat_ecommerce"
+                                                />
+                                            </h3>
+                                            <div class="agency-services-list">
+                                                <div
+                                                    class="agency-service-item"
+                                                >
+                                                    <span
+                                                        class="service-number"
+                                                        aria-hidden="true"
+                                                        >01</span
+                                                    >
+                                                    <p>
+                                                        <Text
+                                                            client:only="react"
+                                                            i18nKey="page_services.ecommerce_service1"
+                                                        />
+                                                    </p>
+                                                </div>
+                                                <div
+                                                    class="agency-service-item"
+                                                >
+                                                    <span
+                                                        class="service-number"
+                                                        aria-hidden="true"
+                                                        >02</span
+                                                    >
+                                                    <p>
+                                                        <Text
+                                                            client:only="react"
+                                                            i18nKey="page_services.ecommerce_service2"
+                                                        />
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <a
+                                                href="/contact"
+                                                class="agency-explore text-btn"
+                                            >
+                                                <Text
+                                                    client:only="react"
+                                                    i18nKey="footer.schedule"
+                                                />
+                                                <span class="arrow">&rarr;</span
+                                                >
+                                            </a>
+                                        </div>
+                                    </div>
+                                </article>
                             </div>
                         </div>
                     </div>
                 </div>
+            </section>
+        </div>
+
+        <section class="final-cta-section">
+            <div class="final-cta-content">
+                <h2><Text client:only="react" i18nKey="footer.ready" /></h2>
+                <a href="/contact" class="primary-btn">
+                    <Text client:only="react" i18nKey="footer.schedule" />
+                </a>
             </div>
-        </div>
-
-        <hr class="section-divider" style="margin-top: 5vh;" />
-
-        <div
-            class="intro-section"
-            style="margin-bottom: 8vh; padding-left: 5vw; text-align: left;"
-        >
-            <h2 style="font-size: 4rem; color: var(--contrast);">
-                <WordHighlighter
-                    client:only="react"
-                    i18nKey="page_services.basic_title"
-                    highlightWords={["IT", "Core IT Essentials", "Core de TI"]}
-                />
-            </h2>
-            <p style="font-size: 1.5rem; color: var(--gris2);">
-                <Text
-                    client:only="react"
-                    i18nKey="page_services.basic_subtitle"
-                />
-            </p>
-        </div>
-
-        <!-- General Services Grid -->
-        <ServicesGrid />
+        </section>
     </main>
 
     <Footer />
@@ -227,77 +660,52 @@ import ServicesGrid from "../components/Services/ServicesGrid.astro";
 
 <script>
     function setupFilters() {
-        const buttons = document.querySelectorAll(".filter-btn");
-        const specificCards = document.querySelectorAll(".specific-card");
+        const buttons = document.querySelectorAll(".niche-btn");
+        const specificCards = document.querySelectorAll(".agency-category");
         const wrapper = document.getElementById("specificCardsWrapper");
-        const container = document.getElementById("specificCardsContainer");
 
         if (!wrapper || !buttons.length) return;
 
-        let activeCategory = null;
+        // Inicializamos con pymes activo, ya que en el HTML está así por defecto
+        let activeCategory = "pymes";
 
         buttons.forEach((btn) => {
             btn.addEventListener("click", () => {
                 const category = btn.getAttribute("data-filter");
 
-                if (activeCategory === category) {
-                    activeCategory = null;
-                    wrapper.style.gridTemplateRows = "0fr";
-                    wrapper.style.marginBottom = "0";
-                    buttons.forEach((b) => {
-                        b.style.background = "transparent";
-                        b.style.color = "var(--contrast)";
-                        b.style.borderColor = "var(--gris1)";
-                    });
+                // Si se hace clic en la categoría que ya está abierta, no hacemos nada
+                // para evitar que el estado quede vacío.
+                if (activeCategory === category) return;
 
-                    // Hide after animation to keep DOM clean
-                    setTimeout(() => {
-                        specificCards.forEach(
-                            (card) => (card.style.display = "none"),
-                        );
-                    }, 600);
-                } else {
-                    activeCategory = category;
+                activeCategory = category;
 
-                    buttons.forEach((b) => {
-                        if (b === btn) {
-                            b.style.background = "var(--azul3)";
-                            b.style.color = "#fff";
-                            b.style.borderColor = "var(--azul3)";
-                        } else {
-                            b.style.background = "transparent";
-                            b.style.color = "var(--contrast)";
-                            b.style.borderColor = "var(--gris1)";
-                        }
-                    });
+                // Actualizar estado activo en botones
+                buttons.forEach((b) => {
+                    b.classList.toggle("active", b === btn);
+                });
 
-                    // First set display block for all, flex for matching
-                    specificCards.forEach((card) => {
-                        card.style.display = "none";
-                        card.style.opacity = "0";
-                        card.style.transform = "translateY(-20px)";
-                    });
+                // Ocultar todas las tarjetas y preparar animación
+                specificCards.forEach((card) => {
+                    card.style.display = "none";
+                    card.style.opacity = "0";
+                    card.style.transform = "translateY(20px)";
+                });
 
-                    // Show matched
-                    const matchedCards = document.querySelectorAll(
-                        `.specific-card[data-category="${category}"]`,
-                    );
-                    matchedCards.forEach((card) => {
-                        card.style.display = "flex";
-                        // Force reflow
-                        void card.offsetWidth;
+                // Mostrar y animar la seleccionada
+                const matchedCards = document.querySelectorAll(
+                    `.agency-category[data-category="${category}"]`,
+                );
+                matchedCards.forEach((card) => {
+                    card.style.display = "block";
+                    // Forzar reflow para que la transición de CSS se ejecute
+                    void card.offsetWidth;
+                    card.style.transition =
+                        "opacity 0.6s ease, transform 0.6s ease";
+                    card.style.opacity = "1";
+                    card.style.transform = "translateY(0)";
+                });
 
-                        card.style.transition =
-                            "opacity 0.6s ease, transform 0.6s ease";
-                        card.style.opacity = "1";
-                        card.style.transform = "translateY(0)";
-                    });
-
-                    // Expand wrapper
-                    wrapper.style.gridTemplateRows = "1fr";
-                    wrapper.style.marginBottom = "5vh";
-                    container.style.padding = "4vh 0";
-                }
+                wrapper.style.gridTemplateRows = "1fr";
             });
         });
     }
@@ -307,28 +715,32 @@ import ServicesGrid from "../components/Services/ServicesGrid.astro";
 </script>
 
 <style>
+    /* =========================================
+       1. ESTILOS BASE Y HERO SECTION
+       ========================================= */
     .page-container {
-        padding-top: 15vh;
-        min-height: 100vh;
         width: 100%;
-        margin: 0 auto;
         color: var(--contrast);
-        padding-bottom: 10vh;
+        box-sizing: border-box;
     }
 
     .page-header {
-        text-align: left;
-        width: 90%;
-        margin: 0 auto 5vh auto;
-        background: red;
+        height: 50vh;
+        width: 100%;
         display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 0 5%;
+        box-sizing: border-box;
     }
 
     .page-title {
-        font-size: clamp(3rem, 6vw, 6rem);
+        font-size: clamp(3rem, 6vw, 6.5rem);
         margin-bottom: 2rem;
         line-height: 1.1;
         color: var(--contrast);
+        letter-spacing: -1px;
     }
 
     .page-subtitle {
@@ -338,79 +750,477 @@ import ServicesGrid from "../components/Services/ServicesGrid.astro";
         line-height: 1.5;
     }
 
-    .cta-header {
-        margin-bottom: 6vh;
-        text-align: center;
+    /* =========================================
+       2. EFECTO STICKY STACKING
+       ========================================= */
+    .core-services-wrapper {
+        position: relative;
+        width: 100%;
     }
 
+    .sticky-card {
+        position: sticky;
+        top: 0;
+        height: 130vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+
+    /* COLORES DE LAS CARDS */
+    .bg-main {
+        background-color: var(--background);
+        color: var(--contrast);
+        --overlay: linear-gradient(
+            180deg,
+            rgba(128, 128, 128, 0.05) 0%,
+            rgba(0, 0, 0, 0) 100%
+        );
+    }
+
+    .bg-black {
+        background-color: #0a0a0a;
+        color: #ffffff;
+        --overlay: linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.6) 0%,
+            rgba(0, 0, 0, 0) 100%
+        );
+        --glass-bg: rgba(255, 255, 255, 0.05);
+        --glass-border: rgba(255, 255, 255, 0.1);
+        --glass-hover: rgba(255, 255, 255, 0.08);
+    }
+
+    .bg-blue {
+        background-color: var(--azul3, #0044ff);
+        color: #ffffff;
+        --overlay: linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.4) 0%,
+            rgba(0, 0, 0, 0) 100%
+        );
+        --glass-bg: rgba(255, 255, 255, 0.1);
+        --glass-border: rgba(255, 255, 255, 0.2);
+        --glass-hover: rgba(255, 255, 255, 0.15);
+    }
+
+    .bg-white {
+        background-color: #ffffff;
+        color: #0a0a0a;
+        --overlay: linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.06) 0%,
+            rgba(0, 0, 0, 0) 100%
+        );
+        --glass-bg: rgba(0, 0, 0, 0.03);
+        --glass-border: rgba(0, 0, 0, 0.1);
+        --glass-hover: rgba(0, 0, 0, 0.06);
+    }
+
+    .bg-dark {
+        background-color: #1a1a1a;
+        color: #ffffff;
+        --overlay: linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.5) 0%,
+            rgba(0, 0, 0, 0) 100%
+        );
+        --glass-bg: rgba(255, 255, 255, 0.05);
+        --glass-border: rgba(255, 255, 255, 0.1);
+        --glass-hover: rgba(255, 255, 255, 0.08);
+    }
+
+    /* === 40% SUPERIOR DE CADA CARD === */
+    .card-top-half {
+        height: 40vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 5%;
+        background: var(--overlay);
+    }
+
+    .niche-section {
+        height: auto;
+        min-height: 100vh;
+        overflow: visible;
+        padding-bottom: 5vh;
+    }
+
+    .niche-top {
+        height: auto;
+        padding-top: 10vh;
+        padding-bottom: 5vh;
+    }
+
+    .category-number {
+        font-size: 2rem;
+        font-weight: bold;
+        opacity: 0.6;
+        margin-bottom: 1rem;
+    }
+
+    .core-category-title {
+        font-size: clamp(3rem, 5vw, 5.5rem);
+        margin: 0 0 1rem 0;
+        font-weight: 500;
+        letter-spacing: -1px;
+        line-height: 1.1;
+    }
+
+    .core-category-desc {
+        font-size: clamp(1.2rem, 1.5vw, 3rem);
+        line-height: 1.5;
+        opacity: 0.8;
+        max-width: 800px;
+        margin: 0;
+    }
+
+    /* === 60% INFERIOR === */
+    .card-bottom-half {
+        height: 60vh;
+        padding: 3vh 5% 5vh 5%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2rem;
+        box-sizing: border-box;
+    }
+
+    .niche-bottom {
+        height: auto;
+        justify-content: flex-start;
+        padding-top: 1rem;
+        padding-bottom: 2rem;
+        overflow-y: visible;
+    }
+
+    /* =========================================
+       3. GLASS CARDS (Servicios Core)
+       ========================================= */
+    .glass-cards-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5vw;
+        align-items: stretch;
+        width: 100%;
+    }
+
+    .glass-card {
+        background: var(--glass-bg);
+        border: 1px solid var(--glass-border);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-radius: 16px;
+        padding: 2rem 1.5rem;
+        display: flex;
+        flex-direction: column;
+        aspect-ratio: 1 / 1.1;
+        transition:
+            background 0.3s ease,
+            transform 0.3s ease;
+    }
+
+    .glass-card:hover {
+        background: var(--glass-hover);
+        transform: translateY(-5px);
+    }
+
+    .glass-num {
+        font-size: clamp(1.2rem, 1.5vw, 2rem);
+        font-weight: 700;
+        opacity: 0.5;
+        margin-bottom: auto;
+    }
+
+    .glass-card h3 {
+        font-size: clamp(1.3rem, 1.6vw, 3rem);
+        margin: 0 0 0.8rem 0;
+        font-weight: 500;
+        line-height: 1.2;
+    }
+
+    .glass-card p {
+        font-size: clamp(0.9rem, 1vw, 2rem);
+        line-height: 1.5;
+        opacity: 0.85;
+        margin: 0;
+    }
+
+    .main-section-cta {
+        align-self: flex-start;
+        background-color: var(--background);
+        color: var(--azul3);
+        padding: 1rem 2.5rem;
+        border-radius: 50px;
+        font-size: clamp(0.9rem, 1vw, 2rem);
+        font-weight: bold;
+        text-transform: uppercase;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition:
+            transform 0.3s ease,
+            box-shadow 0.3s ease;
+        margin-top: 1rem;
+    }
+
+    .bg-white .main-section-cta {
+        background-color: var(--azul3);
+        color: #fff;
+    }
+
+    .main-section-cta:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    /* =========================================
+       4. NICHE SELECTOR (ÚLTIMA CARD - UX MEJORADO)
+       ========================================= */
     .cta-title {
-        font-size: clamp(3rem, 5vw, 6rem);
-        margin-bottom: 2rem;
+        font-size: clamp(3rem, 6vw, 5.5rem);
+        margin-bottom: 1rem;
         line-height: 1.1;
         color: var(--contrast);
+        letter-spacing: -1px;
     }
 
     .cta-subtitle {
-        font-size: clamp(1.2rem, 1.8vw, 2rem);
+        font-size: clamp(1.2rem, 1.5vw, 1.5rem);
         color: var(--gris2);
         max-width: 800px;
-        margin: 0 auto;
         line-height: 1.5;
+        margin: 0;
     }
 
-    .filter-controls {
+    /* BOTONES PILL MEJORADOS (UI/UX Magnético) */
+    .niche-controls {
         display: flex;
-        gap: 1.5rem;
-        justify-content: center;
+        gap: 1rem;
+        justify-content: flex-start;
         flex-wrap: wrap;
-        margin-bottom: 4vh;
+        margin-bottom: 2rem;
+        padding-top: 0.5rem; /* Evita que el shadow superior se corte al hacer hover */
     }
 
-    .filter-btn {
-        padding: 1rem 2.5rem;
-        font-size: 1.2rem;
-        font-weight: bold;
-        border-radius: 50px;
-        border: 2px solid var(--gris1);
+    .niche-btn {
         background: transparent;
-        color: var(--contrast);
+        border: 1px solid var(--gris1);
+        border-radius: 50px;
+        font-size: clamp(1.1rem, 1.3vw, 1.3rem);
+        color: var(--gris2);
         cursor: pointer;
+        padding: 0.8rem 2rem;
+        font-weight: 500;
         transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
         font-family: inherit;
     }
 
-    .filter-btn:hover {
-        border-color: var(--azul3);
+    .niche-btn:hover {
+        border-color: var(--contrast);
+        color: var(--contrast);
         transform: translateY(-2px);
     }
 
-    .section-divider {
-        margin: 5vh auto;
-        border: none;
-        height: 1px;
-        background: var(--gris1);
-        width: 80%;
+    .niche-btn.active {
+        background: var(--azul3);
+        color: #fff;
+        border-color: var(--azul3);
+        font-weight: 600;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(0, 68, 255, 0.25); /* Resplandor activo */
     }
 
-    /* Container specfically configured to be identical to ServicesGrid grid */
+    /* Contenido dinámico del filtro */
     .specific-container {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 2vw;
         width: 100%;
-        max-width: 90vw;
-        margin: 0 auto;
+        height: auto;
     }
 
-    @media (max-width: 1024px) {
-        .specific-container {
-            grid-template-columns: repeat(2, 1fr);
+    .agency-category {
+        padding: 2vh 0 4vh 0;
+    }
+
+    .agency-body {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5vw;
+        align-items: flex-start;
+    }
+
+    .agency-media img {
+        width: 100%;
+        aspect-ratio: 16/9;
+        object-fit: cover;
+        border-radius: 12px;
+    }
+
+    .agency-category-title {
+        font-size: clamp(2rem, 3vw, 3rem);
+        margin: 0 0 1.5rem 0;
+    }
+
+    .agency-services-list {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 2rem;
+    }
+
+    .agency-service-item {
+        display: flex;
+        gap: 1.5rem;
+        padding: 1.5rem 0;
+        border-top: 1px solid var(--gris1);
+    }
+
+    .agency-service-item:last-child {
+        border-bottom: 1px solid var(--gris1);
+    }
+
+    .agency-service-item p {
+        font-size: 1.1rem;
+        margin: 0;
+    }
+
+    .text-btn {
+        background: transparent;
+        border: none;
+        font-size: 1.1rem;
+        font-weight: bold;
+        color: var(--contrast);
+        cursor: pointer;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        text-decoration: none;
+    }
+
+    .text-btn:hover .arrow {
+        transform: translateX(8px);
+    }
+
+    .arrow {
+        transition: transform 0.3s ease;
+    }
+
+    /* =========================================
+       5. GRAN CTA FINAL (BOTTOM OF FUNNEL)
+       ========================================= */
+    .final-cta-section {
+        padding: 15vh 5%;
+        height: 80vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--background);
+        text-align: center;
+    }
+
+    .final-cta-content {
+        max-width: 900px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem;
+    }
+
+    .final-cta-content h2 {
+        font-size: clamp(3rem, 5vw, 5.5rem);
+        color: var(--contrast);
+        line-height: 1.1;
+        letter-spacing: -1px;
+        margin: 0;
+    }
+
+    .primary-btn {
+        background-color: var(--azul3, #0044ff);
+        color: #fff;
+        padding: 1.2rem 3.5rem;
+        font-size: 1.3rem;
+        font-weight: bold;
+        border-radius: 50px;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition:
+            transform 0.3s ease,
+            box-shadow 0.3s ease;
+    }
+
+    .primary-btn:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    /* =========================================
+       6. RESPONSIVE
+       ========================================= */
+    @media (max-width: 1440px) {
+        .glass-card {
+            aspect-ratio: auto;
+            min-height: 250px;
         }
     }
 
-    @media (max-width: 600px) {
-        .specific-container {
+    @media (max-width: 1024px) {
+        .agency-body {
             grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .glass-cards-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .card-bottom-half {
+            gap: 2rem;
+            padding: 4vh 5%;
+        }
+
+        .glass-card {
+            padding: 2rem;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .card-top-half {
+            height: 35vh;
+        }
+
+        .card-bottom-half {
+            justify-content: flex-start;
+            overflow-y: auto;
+            padding-top: 4vh;
+            padding-bottom: 10vh;
+        }
+
+        .niche-bottom {
+            padding-top: 1rem;
+            height: auto;
+        }
+
+        .glass-cards-grid {
+            grid-template-columns: 1fr;
+            margin-bottom: 2rem;
+        }
+
+        .glass-card {
+            min-height: auto;
+        }
+
+        .glass-card:hover,
+        .niche-btn:hover {
+            transform: none;
+        }
+
+        .main-section-cta {
+            align-self: stretch;
+            justify-content: center;
         }
     }
 </style>

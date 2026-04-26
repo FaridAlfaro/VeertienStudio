@@ -87,7 +87,7 @@
     },
     "ai": {
       "title": "Soluciones AI",
-      "text": "Integramos inteligencia artificial de vanguardia en tu flujo de trabajo."
+      "text": "Integre inteligencia artificial de vanguardia en su flujo de trabajo."
     },
     "seo": {
       "title": "Estrategia SEO",
@@ -117,7 +117,7 @@
     "work3_desc": "Dashboard interno a medida para el control de stock, analítica de ventas y gestión de relaciones con clientes corporativos."
   },
   "page_services": {
-    "title": "Soluciones a tu medida",
+    "title": "Nuestro servicios",
     "subtitle": "Tecnología que se adapta a tu ritmo para que escales sin frenos.",
     "filter_title": "¿En qué sector se mueve tu negocio?",
     "filter_subtitle": "Elige tu rubro y mira cómo podemos potenciarlo.",
@@ -132,6 +132,88 @@
     "cat_ecommerce": "E-Commerce",
     "ecommerce_service1": "Tiendas online rápidas que no se caen nunca.",
     "ecommerce_service2": "Pagos y envíos integrados para vender más."
+  },
+  "core_services": {
+    "dev": {
+      "title": "Desarrollo de Software",
+      "desc": "Soluciones a medida construidas con código robusto y arquitecturas modernas.",
+      "web": {
+        "title": "Desarrollo Web & Apps",
+        "text": "Creamos aplicaciones web ultra rápidas y apps móviles nativas."
+      },
+      "systems": {
+        "title": "Sistemas de Gestión",
+        "text": "Sistemas ERP y CRM personalizados para automatizar operaciones."
+      },
+      "ecommerce": {
+        "title": "Plataformas E-Commerce",
+        "text": "Tiendas online seguras y escalables para maximizar conversiones."
+      },
+      "api": {
+        "title": "Integraciones y APIs",
+        "text": "Conexión fluida entre tus sistemas y herramientas de terceros."
+      }
+    },
+    "design": {
+      "title": "Branding & Diseño",
+      "desc": "Creando experiencias digitales visualmente impactantes que convierten.",
+      "identity": {
+        "title": "Identidad Visual",
+        "text": "Desde la creación del logo hasta el manual de marca completo."
+      },
+      "uxui": {
+        "title": "Diseño UX / UI",
+        "text": "Interfaces intuitivas y recorridos de usuario fluidos."
+      },
+      "systems": {
+        "title": "Sistemas de Diseño",
+        "text": "Librerías de componentes para consistencia en tus productos."
+      },
+      "motion": {
+        "title": "Motion Graphics",
+        "text": "Animaciones y micro-interacciones que dan vida a tu interfaz."
+      }
+    },
+    "marketing": {
+      "title": "Marketing & Publicidad",
+      "desc": "Estrategias basadas en datos para posicionar tu marca en el ecosistema digital.",
+      "ads": {
+        "title": "Campañas Digitales",
+        "text": "Anuncios segmentados diseñados para bajar costos de adquisición."
+      },
+      "seo": {
+        "title": "SEO & Contenido",
+        "text": "Estrategias de crecimiento orgánico y optimización técnica."
+      },
+      "social": {
+        "title": "Social Media",
+        "text": "Gestión estratégica de comunidades para fidelizar a tu audiencia."
+      },
+      "email": {
+        "title": "Email Automation",
+        "text": "Flujos de correos para nutrir leads y retener clientes."
+      }
+    },
+    "consulting": {
+      "title": "Consultoría IT",
+      "desc": "Orientación estratégica para guiar la transformación digital de tu empresa.",
+      "transformation": {
+        "title": "Transformación Digital",
+        "text": "Modernizamos tu flujo de trabajo incrementando la eficiencia."
+      },
+      "cloud": {
+        "title": "Infraestructura Cloud",
+        "text": "Hosting en la nube seguro, escalable y con alta disponibilidad."
+      },
+      "security": {
+        "title": "Ciberseguridad",
+        "text": "Auditorías y protocolos robustos para proteger tus datos."
+      },
+      "data": {
+        "title": "Data Analytics",
+        "text": "Soluciones de Business Intelligence para decisiones basadas en datos."
+      }
+    }
   },
   "page_about": {
     "title": "Quiénes somos",

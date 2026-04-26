@@ -348,6 +348,9 @@ import Text from "../Text.jsx";
     .read-more:hover::after {
         transform: scaleX(1);
     }
+    .hide-on-mobile {
+        display: block;
+    }
 
     /* ==== RESPONSIVE ==== */
     @media (max-width: 1440px) {
@@ -370,6 +373,9 @@ import Text from "../Text.jsx";
         }
         .read-more {
             font-size: 1.4rem;
+        }
+        .hide-on-mobile {
+            display: block;
         }
     }
 
@@ -421,7 +427,7 @@ import Text from "../Text.jsx";
 
         /* OCULTAMOS LAS TARJETAS 5 Y 6 EN MÓVIL CON LA CLASE DIRECTA */
         .hide-on-mobile {
-            display: none !important;
+            display: none;
         }
     }
 </style>

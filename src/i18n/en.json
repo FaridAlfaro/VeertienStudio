@@ -117,7 +117,7 @@
     "work3_desc": "Custom internal dashboard for stock control, sales analytics, and corporate customer relationship management."
   },
   "page_services": {
-    "title": "Industry-Specific Solutions",
+    "title": "Our Services",
     "subtitle": "Tech built for your business model so you can scale faster.",
     "filter_title": "What's your business niche?",
     "filter_subtitle": "Pick your sector to see how we can help you grow.",
@@ -132,6 +132,88 @@
     "cat_ecommerce": "E-Commerce & Retail",
     "ecommerce_service1": "High-performance stores that never lag.",
     "ecommerce_service2": "Smooth payment and shipping integrations."
+  },
+  "core_services": {
+    "dev": {
+      "title": "Software Development",
+      "desc": "Custom solutions built with robust code and modern architectures.",
+      "web": {
+        "title": "Web & Mobile Apps",
+        "text": "Lightning-fast web applications and native mobile apps."
+      },
+      "systems": {
+        "title": "Enterprise Systems",
+        "text": "Custom CRM, ERP, and billing systems to automate operations."
+      },
+      "ecommerce": {
+        "title": "E-Commerce Platforms",
+        "text": "Scalable and secure online stores built to maximize conversions."
+      },
+      "api": {
+        "title": "API Integrations",
+        "text": "Seamless connection between your systems and third-party services."
+      }
+    },
+    "design": {
+      "title": "Branding & Design",
+      "desc": "Creating visually stunning digital experiences that convert.",
+      "identity": {
+        "title": "Brand Identity",
+        "text": "From logo creation to full cohesive brand guidelines."
+      },
+      "uxui": {
+        "title": "UX / UI Design",
+        "text": "Intuitive interfaces and seamless user journeys."
+      },
+      "systems": {
+        "title": "Design Systems",
+        "text": "Scalable component libraries for consistency across products."
+      },
+      "motion": {
+        "title": "Motion Graphics",
+        "text": "Engaging animations and micro-interactions for your UI."
+      }
+    },
+    "marketing": {
+      "title": "Marketing & Advertising",
+      "desc": "Data-driven strategies to position your brand in the digital space.",
+      "ads": {
+        "title": "Digital Campaigns",
+        "text": "Targeted ad campaigns designed to lower acquisition costs."
+      },
+      "seo": {
+        "title": "SEO & Content",
+        "text": "Organic growth strategies and technical SEO optimization."
+      },
+      "social": {
+        "title": "Social Media",
+        "text": "Strategic community management to build brand loyalty."
+      },
+      "email": {
+        "title": "Email Automation",
+        "text": "Personalized email flows designed to nurture and retain leads."
+      }
+    },
+    "consulting": {
+      "title": "IT Consulting",
+      "desc": "Strategic guidance to navigate the digital transformation of your company.",
+      "transformation": {
+        "title": "Digital Transformation",
+        "text": "We modernize your workflow and increase overall efficiency."
+      },
+      "cloud": {
+        "title": "Cloud Infrastructure",
+        "text": "Secure, scalable, and reliable cloud hosting architecture."
+      },
+      "security": {
+        "title": "Cybersecurity",
+        "text": "Vulnerability assessments and protocols to protect your data."
+      },
+      "data": {
+        "title": "Data Analytics",
+        "text": "Business intelligence solutions to turn data into insights."
+      }
+    }
   },
   "page_about": {
     "title": "Who we are",
