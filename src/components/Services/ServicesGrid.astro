@@ -11,23 +11,14 @@ import Text from "../Text.jsx";
         </div>
         <div class="card-inner mod">
             <h2>
-                <Text
-                    client:only="react"
-                    i18nKey="services.web_dev.title"
-                />
+                <Text client:only="react" i18nKey="services.web_dev.title" />
             </h2>
             <div class="card-content">
                 <p>
-                    <Text
-                        client:only="react"
-                        i18nKey="services.web_dev.text"
-                    />
+                    <Text client:only="react" i18nKey="services.web_dev.text" />
                 </p>
                 <button class="read-more"
-                    ><Text
-                        client:only="react"
-                        i18nKey="services.read_more"
-                    /> &gt;</button
+                    ><Text client:only="react" i18nKey="services.read_more" /> &gt;</button
                 >
             </div>
         </div>
@@ -53,10 +44,7 @@ import Text from "../Text.jsx";
                     />
                 </p>
                 <button class="read-more"
-                    ><Text
-                        client:only="react"
-                        i18nKey="services.read_more"
-                    /> &gt;</button
+                    ><Text client:only="react" i18nKey="services.read_more" /> &gt;</button
                 >
             </div>
         </div>
@@ -82,10 +70,7 @@ import Text from "../Text.jsx";
                     />
                 </p>
                 <button class="read-more"
-                    ><Text
-                        client:only="react"
-                        i18nKey="services.read_more"
-                    /> &gt;</button
+                    ><Text client:only="react" i18nKey="services.read_more" /> &gt;</button
                 >
             </div>
         </div>
@@ -98,10 +83,7 @@ import Text from "../Text.jsx";
         </div>
         <div class="card-inner">
             <h2>
-                <Text
-                    client:only="react"
-                    i18nKey="services.cybersec.title"
-                />
+                <Text client:only="react" i18nKey="services.cybersec.title" />
             </h2>
             <div class="card-content">
                 <p>
@@ -111,16 +93,13 @@ import Text from "../Text.jsx";
                     />
                 </p>
                 <button class="read-more"
-                    ><Text
-                        client:only="react"
-                        i18nKey="services.read_more"
-                    /> &gt;</button
+                    ><Text client:only="react" i18nKey="services.read_more" /> &gt;</button
                 >
             </div>
         </div>
     </div>
 
-    <div class="card">
+    <div class="card hide-on-mobile">
         <div
             class="card-bg"
             style="background-image: url('https://images.unsplash.com/photo-1504639725590-34d0984388bd?auto=format&fit=crop&w=600&q=80');"
@@ -132,21 +111,15 @@ import Text from "../Text.jsx";
             </h2>
             <div class="card-content">
                 <p>
-                    <Text
-                        client:only="react"
-                        i18nKey="services.cloud.text"
-                    />
+                    <Text client:only="react" i18nKey="services.cloud.text" />
                 </p>
                 <button class="read-more"
-                    ><Text
-                        client:only="react"
-                        i18nKey="services.read_more"
-                    /> &gt;</button
+                    ><Text client:only="react" i18nKey="services.read_more" /> &gt;</button
                 >
             </div>
         </div>
     </div>
-    <div class="card">
+    <div class="card hide-on-mobile">
         <div
             class="card-bg"
             style="background-image: url('https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=600&q=80');"
@@ -158,62 +131,10 @@ import Text from "../Text.jsx";
             </h2>
             <div class="card-content">
                 <p>
-                    <Text
-                        client:only="react"
-                        i18nKey="services.uiux.text"
-                    />
+                    <Text client:only="react" i18nKey="services.uiux.text" />
                 </p>
                 <button class="read-more"
-                    ><Text
-                        client:only="react"
-                        i18nKey="services.read_more"
-                    /> &gt;</button
-                >
-            </div>
-        </div>
-    </div>
-    <div class="card">
-        <div
-            class="card-bg"
-            style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80');"
-        >
-        </div>
-        <div class="card-inner mod">
-            <h2>
-                <Text client:only="react" i18nKey="services.ai.title" />
-            </h2>
-            <div class="card-content">
-                <p>
-                    <Text client:only="react" i18nKey="services.ai.text" />
-                </p>
-                <button class="read-more"
-                    ><Text
-                        client:only="react"
-                        i18nKey="services.read_more"
-                    /> &gt;</button
-                >
-            </div>
-        </div>
-    </div>
-    <div class="card">
-        <div
-            class="card-bg"
-            style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80');"
-        >
-        </div>
-        <div class="card-inner">
-            <h2>
-                <Text client:only="react" i18nKey="services.seo.title" />
-            </h2>
-            <div class="card-content">
-                <p>
-                    <Text client:only="react" i18nKey="services.seo.text" />
-                </p>
-                <button class="read-more"
-                    ><Text
-                        client:only="react"
-                        i18nKey="services.read_more"
-                    /> &gt;</button
+                    ><Text client:only="react" i18nKey="services.read_more" /> &gt;</button
                 >
             </div>
         </div>
@@ -426,5 +347,81 @@ import Text from "../Text.jsx";
 
     .read-more:hover::after {
         transform: scaleX(1);
+    }
+
+    /* ==== RESPONSIVE ==== */
+    @media (max-width: 1440px) {
+        .container {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2vw;
+        }
+        .card {
+            height: 45vh;
+            min-height: 400px;
+        }
+        .card-inner {
+            padding: 1.5rem;
+        }
+        .card h2 {
+            font-size: 2.2rem;
+        }
+        .card-content p {
+            font-size: 1.4rem;
+        }
+        .read-more {
+            font-size: 1.4rem;
+        }
+    }
+
+    @media (max-width: 1024px) {
+        .container {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3vw;
+        }
+        .card {
+            height: auto;
+            min-height: 350px;
+        }
+        .card-inner {
+            padding: 2rem;
+        }
+        .card h2 {
+            font-size: 2.5rem;
+        }
+        .card-content p {
+            font-size: 1.5rem;
+        }
+        .read-more {
+            font-size: 1.5rem;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .container {
+            grid-template-columns: 1fr;
+            gap: 4vw;
+        }
+        .card {
+            height: auto;
+            min-height: 300px;
+        }
+        .card-inner {
+            padding: 2rem;
+        }
+        .card h2 {
+            font-size: 2.2rem;
+        }
+        .card-content p {
+            font-size: 1.3rem;
+            margin: 0 0 1rem 0;
+        }
+        .read-more {
+            font-size: 1.3rem;
+        }
+
+        /* OCULTAMOS LAS TARJETAS 5 Y 6 EN MÓVIL CON LA CLASE DIRECTA */
+        .hide-on-mobile {
+            display: none !important;
+        }
     }
 </style>

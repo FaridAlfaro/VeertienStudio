@@ -290,20 +290,32 @@ import { TranslatedInput, TranslatedTextarea } from './TranslatedInputs.jsx';
     }
 
     /* ==== RESPONSIVE DESIGN ==== */
-    @media (max-width: 900px) {
+    @media (max-width: 1440px) {
+        .footer-title { font-size: clamp(3rem, 5vw, 6rem); }
+        .footer-link h3 { font-size: clamp(1.5rem, 2vw, 2.5rem); }
+        .footer-subtitle { font-size: clamp(1.2rem, 1.5vw, 1.8rem); max-width: 100%; }
+        .footer-container { gap: 4vw; }
+    }
+
+    @media (max-width: 1024px) {
         .footer-container {
             grid-template-columns: 1fr;
             gap: 4rem;
         }
-
+        .footer-title { font-size: clamp(2.5rem, 5vw, 4.5rem); }
+        .footer-link h3 { font-size: clamp(1.2rem, 2vw, 2rem); }
         .footer-bottom {
             flex-direction: column;
             gap: 1.5rem;
             align-items: flex-start;
         }
-
         .footer-section {
             padding-top: 15vh;
         }
+    }
+
+    @media (max-width: 768px) {
+        .footer-title { font-size: clamp(2rem, 6vw, 3rem); }
+        .footer-link h3 { font-size: clamp(1.2rem, 4vw, 1.8rem); }
     }
 </style>

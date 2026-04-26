@@ -31,9 +31,14 @@ export default function LanguageSelector() {
   }, [i18n]);
 
   const changeLanguage = (lng) => {
-    i18n.changeLanguage(lng);
-    localStorage.setItem('language', lng);
-    setIsOpen(false);
+    const currentCode = i18n.language ? i18n.language.split('-')[0] : 'es';
+    if (currentCode !== lng) {
+      localStorage.setItem('language', lng);
+      // Se recarga la página para forzar a Astro/Anime.js a recalcular todos los layouts y textos
+      window.location.reload();
+    } else {
+      setIsOpen(false);
+    }
   };
 
   if (!mounted) return null; // Avoid hydration mismatch

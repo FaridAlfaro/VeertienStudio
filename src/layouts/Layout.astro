@@ -59,9 +59,17 @@ import { ClientRouter } from "astro:transitions";
 		box-sizing: border-box;
 		margin: 0;
 		font-family: "Montserrat", sans-serif;
-		font-weight: 00;
-		font-size: 12px;
+		font-weight: 400;
+		font-size: 12px; /* 1rem = 12px */
 	}
+
+	@media (max-width: 768px) {
+		html,
+		body {
+			font-size: 10px; /* 1rem = 10px en móviles para que ajusten los textos */
+		}
+	}
+
 	body::-webkit-scrollbar {
 		display: none; /* Oculta la barra de scroll principal */
 	}

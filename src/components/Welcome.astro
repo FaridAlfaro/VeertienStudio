@@ -83,10 +83,11 @@ import ScrambleText from "./ScrambleText.jsx";
 			filter: brightness(1);
 		}
 
-		80% {
+		90% {
 			top: 0vh;
 			width: 100vw;
 			height: 100vh;
+			opacity: 1;
 		}
 
 		100% {
@@ -95,6 +96,34 @@ import ScrambleText from "./ScrambleText.jsx";
 			top: 0vh;
 			display: none;
 			filter: brightness(0);
+		}
+	}
+
+	/* ==== RESPONSIVE ==== */
+	@media (max-width: 1440px) {
+		h4 {
+			font-size: clamp(2rem, calc(2vw * 1.618), 5rem);
+		}
+		p {
+			font-size: clamp(1rem, 2vw, 3rem);
+		}
+	}
+
+	@media (max-width: 1024px) {
+		h4 {
+			font-size: clamp(2rem, calc(3vw * 1.618), 4rem);
+		}
+		p {
+			font-size: clamp(1rem, 3vw, 2.5rem);
+		}
+	}
+
+	@media (max-width: 768px) {
+		h4 {
+			font-size: clamp(1.8rem, calc(4vw * 1.618), 3rem);
+		}
+		p {
+			font-size: clamp(1rem, 4vw, 2rem);
 		}
 	}
 </style>

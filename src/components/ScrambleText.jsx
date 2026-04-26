@@ -80,7 +80,7 @@ export default function ScrambleText({ i18nKey, text }) {
                         nextGlitch();
                     }
                 }, 10);
-            }, timeToNext);
+            }, timeToNext); 
         };
         nextGlitch();
     }

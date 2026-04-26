@@ -163,14 +163,28 @@ const steps = [
         margin: 0;
     }
 
-    /* Diseño responsivo para pantallas pequeñas */
+    /* ==== RESPONSIVE ==== */
+    @media (max-width: 1440px) {
+        .title { font-size: clamp(2rem, 4vw, 5rem); }
+        .step-wrapper { width: 45vw; }
+        .step-card { height: 50vh; }
+        .step-number { font-size: 6rem; }
+    }
+
+    @media (max-width: 1024px) {
+        .title { font-size: clamp(1.8rem, 5vw, 4rem); }
+        .step-wrapper { width: 60vw; }
+        .step-card { height: 45vh; }
+        .step-number { font-size: 5rem; }
+    }
+
     @media (max-width: 768px) {
-        .step-wrapper {
-            width: 80vw;
-        }
-        .step-card {
-            height: 50vh;
-        }
+        .title { font-size: clamp(1.5rem, 6vw, 3rem); }
+        .step-wrapper { width: 85vw; }
+        .step-card { height: 40vh; }
+        .step-number { font-size: 4rem; bottom: -10px; right: 10px; }
+        .step-info h4 { font-size: 1.5rem; }
+        .step-info p { font-size: 1rem; }
     }
 </style>
 

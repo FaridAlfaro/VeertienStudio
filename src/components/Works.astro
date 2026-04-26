@@ -1,7 +1,8 @@
 ---
-import Text from './Text.jsx';
-import ScrambleText from './ScrambleText.jsx';
+import Text from "./Text.jsx";
+import ScrambleText from "./ScrambleText.jsx";
 ---
+
 <section class="works">
     <div class="sticky-title-container">
         <div class="title">
@@ -14,9 +15,15 @@ import ScrambleText from './ScrambleText.jsx';
     </div>
 
     <div class="works-gallery">
-        <div class="work-card"><Text client:only="react" i18nKey="works.img_work1" /></div>
-        <div class="work-card"><Text client:only="react" i18nKey="works.img_work2" /></div>
-        <div class="work-card"><Text client:only="react" i18nKey="works.img_work3" /></div>
+        <div class="work-card">
+            <Text client:only="react" i18nKey="works.img_work1" />
+        </div>
+        <div class="work-card">
+            <Text client:only="react" i18nKey="works.img_work2" />
+        </div>
+        <div class="work-card">
+            <Text client:only="react" i18nKey="works.img_work3" />
+        </div>
     </div>
 </section>
 
@@ -119,6 +126,46 @@ import ScrambleText from './ScrambleText.jsx';
         100% {
             opacity: 0;
             display: none;
+        }
+    }
+
+    /* ==== RESPONSIVE ==== */
+    @media (max-width: 1440px) {
+        .title {
+            font-size: clamp(2rem, 4vw, 5rem);
+        }
+        .work-card {
+            height: 50vh;
+        }
+    }
+
+    @media (max-width: 1024px) {
+        .title {
+            font-size: clamp(1.8rem, 5vw, 4rem);
+        }
+        .work-card {
+            height: 40vh;
+            width: 90%;
+        }
+        .works-gallery {
+            gap: 60vh;
+            padding-top: 40vh;
+            padding-bottom: 80vh;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .title {
+            font-size: clamp(1.5rem, 4vw, 3rem);
+        }
+        .work-card {
+            height: 35vh;
+            width: 95%;
+        }
+        .works-gallery {
+            gap: 50vh;
+            padding-top: 30vh;
+            padding-bottom: 60vh;
         }
     }
 </style>

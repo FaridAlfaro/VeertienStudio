@@ -19,31 +19,51 @@ const works = [
         titleKey: "page_works.work3_title",
         descKey: "page_works.work3_desc",
         img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
-    }
+    },
 ];
 ---
 
 <Layout>
     <NavBar />
-    
+
     <main class="page-container">
         <header class="page-header">
-            <h1 class="page-title"><Text client:only="react" i18nKey="page_works.title" /></h1>
-            <p class="page-subtitle"><Text client:only="react" i18nKey="page_works.subtitle" /></p>
+            <h1 class="page-title">
+                <Text client:only="react" i18nKey="page_works.title" />
+            </h1>
+            <p class="page-subtitle">
+                <Text client:only="react" i18nKey="page_works.subtitle" />
+            </p>
         </header>
 
         <section class="works-list">
-            {works.map((work, index) => (
-                <article class="work-card">
-                    <div class="work-img-wrapper">
-                        <img src={work.img} alt={`Work ${index + 1}`} class="work-img" />
-                    </div>
-                    <div class="work-content">
-                        <h2><Text client:only="react" i18nKey={work.titleKey} /></h2>
-                        <p><Text client:only="react" i18nKey={work.descKey} /></p>
-                    </div>
-                </article>
-            ))}
+            {
+                works.map((work, index) => (
+                    <article class="work-card">
+                        <div class="work-img-wrapper">
+                            <img
+                                src={work.img}
+                                alt={`Work ${index + 1}`}
+                                class="work-img"
+                            />
+                        </div>
+                        <div class="work-content">
+                            <h2>
+                                <Text
+                                    client:only="react"
+                                    i18nKey={work.titleKey}
+                                />
+                            </h2>
+                            <p>
+                                <Text
+                                    client:only="react"
+                                    i18nKey={work.descKey}
+                                />
+                            </p>
+                        </div>
+                    </article>
+                ))
+            }
         </section>
     </main>
 
@@ -110,9 +130,8 @@ const works = [
     }
 
     .work-img-wrapper {
-        border-radius: 8px;
         overflow: hidden;
-        box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
         width: 100%;
         aspect-ratio: 16 / 9;
     }

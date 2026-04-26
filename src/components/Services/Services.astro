@@ -146,14 +146,36 @@ const { hideButton = false, animateBg = true } = Astro.props;
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        background: transparent;
-        color: inherit;
+        background: var(
+            --contrast
+        ); /* Solido para ocultar secciones previas al hacer parallax */
+        color: var(--background);
+        position: relative;
+        z-index: 10;
+
+        /* Animación Parallax base impulsada por scroll */
+        animation: subida-parallax linear forwards;
+        animation-timeline: view();
+        animation-range: entry 0% entry 100%;
     }
 
     .animated-bg {
-        animation: cambio-fondo 1s ease-in-out forwards;
-        animation-timeline: view();
-        animation-range: 20% 100%;
+        animation:
+            subida-parallax linear forwards,
+            cambio-fondo 1s ease-in-out forwards;
+        animation-timeline: view(), view();
+        animation-range:
+            entry 0% entry 100%,
+            10% 100%;
+    }
+
+    @keyframes subida-parallax {
+        0% {
+            transform: translateY(10vh);
+        }
+        100% {
+            transform: translateY(0);
+        }
     }
 
     .services-button {
@@ -214,6 +236,13 @@ const { hideButton = false, animateBg = true } = Astro.props;
         font-size: 6rem;
         text-align: left;
         margin: 10vh 0;
+    }
+
+    .title h3 {
+        margin: 0;
+        font-size: inherit; /* Hereda explícitamente el tamaño que le dictan las media queries al div .title */
+        font-weight: 500;
+        line-height: 1.2;
     }
 
     .scramble-title {
@@ -324,18 +353,63 @@ const { hideButton = false, animateBg = true } = Astro.props;
     .read-more:hover::after {
         transform: scaleX(1);
     }
-    @keyframes cambio-fondo {
-        0% {
-            background: transparent;
-            color: var(--background);
+
+    /* ==== RESPONSIVE ==== */
+    @media (max-width: 1440px) {
+        .title {
+            font-size: clamp(
+                3.5rem,
+                5vw,
+                4.5rem
+            ); /* Ajustado explícitamente más chico */
+            height: auto;
+            padding: 5vh 0;
         }
-        20% {
-            background: var(--contrast);
-            color: var(--background);
+        .services-button {
+            font-size: 4rem;
+            height: 8vh;
         }
-        100% {
-            background: var(--contrast);
-            color: var(--background);
+        .services-button span {
+            font-size: 4rem;
+        }
+    }
+
+    @media (max-width: 1024px) {
+        .title {
+            font-size: clamp(
+                2.5rem,
+                5vw,
+                3.5rem
+            ); /* Letras que quepan en tablet sin salir */
+            height: auto;
+            padding: 5vh 0;
+        }
+        .services-button {
+            font-size: 3rem;
+            height: 6vh;
+        }
+        .services-button span {
+            font-size: 3rem;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .title {
+            font-size: clamp(
+                1.8rem,
+                5vw,
+                2.2rem
+            ); /* Letras super optimizadas para que todo encaje en mobile */
+            height: auto;
+            padding: 5vh 0;
+            text-align: center;
+        }
+        .services-button {
+            font-size: 1.8rem;
+            width: 80%;
+        }
+        .services-button span {
+            font-size: 1.8rem;
         }
     }
 </style>
