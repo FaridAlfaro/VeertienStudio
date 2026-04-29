@@ -140,16 +140,17 @@ const { hideButton = false, animateBg = true } = Astro.props;
 <style>
     .services {
         width: 100%;
+        flex: 1;
+        min-height: 0;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        background: var(
-            --contrast
-        ); /* Solido para ocultar secciones previas al hacer parallax */
+        background: var(--contrast);
         color: var(--background);
         position: relative;
         z-index: 10;
+        padding: 0;
 
         /* Animación Parallax base impulsada por scroll */
         animation: subida-parallax linear forwards;
@@ -177,63 +178,110 @@ const { hideButton = false, animateBg = true } = Astro.props;
     }
 
     .services-button {
-        display: flex;
+        display: inline-flex;
         justify-content: center;
         align-items: center;
-        height: auto;
-        margin: 5vh auto;
-        width: 60%;
-        font-size: 6rem;
-        text-align: center;
-        cursor: pointer;
+        gap: 0.75rem;
+        margin: 3vh auto;
+        padding: 1.1rem 2.8rem;
+        font-size: clamp(1rem, 2vw, 1.4rem);
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
         text-decoration: none;
-        color: inherit;
+        color: #fff;
+        background: linear-gradient(
+            135deg,
+            var(--azul3, #3b82f6) 0%,
+            #6366f1 100%
+        );
+        border: none;
+        border-radius: 100px;
+        cursor: pointer;
         position: relative;
-        transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        overflow: hidden;
+        box-shadow:
+            0 0 0 0 rgba(99, 102, 241, 0),
+            0 4px 24px rgba(99, 102, 241, 0.35);
+        transition:
+            transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+            box-shadow 0.3s ease,
+            letter-spacing 0.3s ease;
     }
 
-    .services-button span {
-        margin-left: 1rem;
-        color: var(--azul3);
-        font-size: 6rem;
-        font-family: monospace;
-        transition: margin-left 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    /* Shimmer sweep on hover */
+    .services-button::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            105deg,
+            transparent 30%,
+            rgba(255, 255, 255, 0.25) 50%,
+            transparent 70%
+        );
+        transform: translateX(-100%);
+        transition: transform 0.55s ease;
     }
 
+    /* Bottom glow line */
     .services-button::after {
         content: "";
         position: absolute;
-        width: 100%;
-        height: 4px;
-        bottom: 0;
-        left: 0;
-        background-color: var(--azul3);
-        transform: scaleX(0);
-        transform-origin: center;
-        transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+        bottom: -2px;
+        left: 10%;
+        width: 80%;
+        height: 6px;
+        border-radius: 100px;
+        background: linear-gradient(90deg, var(--azul3, #3b82f6), #6366f1);
+        filter: blur(8px);
+        opacity: 0.7;
+        transition:
+            opacity 0.3s ease,
+            filter 0.3s ease;
+    }
+
+    .services-button span {
+        display: inline-flex;
+        align-items: center;
+        font-size: 1.2em;
+        transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
 
     .services-button:hover {
-        width: 90%;
+        transform: translateY(-3px) scale(1.04);
+        box-shadow:
+            0 0 0 6px rgba(99, 102, 241, 0.15),
+            0 8px 32px rgba(99, 102, 241, 0.5);
+        letter-spacing: 0.1em;
     }
 
-    .services-button:hover span {
-        margin-left: auto;
+    .services-button:hover::before {
+        transform: translateX(100%);
     }
 
     .services-button:hover::after {
-        transform: scaleX(1);
+        opacity: 1;
+        filter: blur(12px);
+    }
+
+    .services-button:hover span {
+        transform: translateX(4px);
+    }
+
+    .services-button:active {
+        transform: translateY(-1px) scale(1.01);
     }
 
     .title {
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 30vh;
         width: 90%;
         font-size: 6rem;
         text-align: left;
-        margin: 10vh 0;
+        margin: 4vh 0 2vh;
+        flex-shrink: 1;
     }
 
     .title h3 {
@@ -355,59 +403,34 @@ const { hideButton = false, animateBg = true } = Astro.props;
     /* ==== RESPONSIVE ==== */
     @media (max-width: 1440px) {
         .title {
-            font-size: clamp(
-                3.5rem,
-                5vw,
-                4.5rem
-            ); /* Ajustado explícitamente más chico */
+            font-size: clamp(3.5rem, 5vw, 4.5rem);
             height: auto;
-            padding: 5vh 0;
-        }
-        .services-button {
-            font-size: 4rem;
-            height: 8vh;
-        }
-        .services-button span {
-            font-size: 4rem;
+            padding: 3vh 0;
         }
     }
 
     @media (max-width: 1024px) {
         .title {
-            font-size: clamp(
-                2.5rem,
-                5vw,
-                3.5rem
-            ); /* Letras que quepan en tablet sin salir */
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
             height: auto;
-            padding: 5vh 0;
+            padding: 3vh 0;
         }
         .services-button {
-            font-size: 3rem;
-            height: 6vh;
-        }
-        .services-button span {
-            font-size: 3rem;
+            font-size: 1.1rem;
+            padding: 1rem 2.2rem;
         }
     }
 
     @media (max-width: 768px) {
         .title {
-            font-size: clamp(
-                1.8rem,
-                5vw,
-                2.2rem
-            ); /* Letras super optimizadas para que todo encaje en mobile */
+            font-size: clamp(1.8rem, 5vw, 2.2rem);
             height: auto;
-            padding: 5vh 0;
+            padding: 3vh 0;
             text-align: center;
         }
         .services-button {
-            font-size: 1.8rem;
-            width: 80%;
-        }
-        .services-button span {
-            font-size: 1.8rem;
+            font-size: 0.95rem;
+            padding: 0.9rem 1.8rem;
         }
     }
 </style>

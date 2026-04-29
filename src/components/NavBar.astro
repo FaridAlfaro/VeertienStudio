@@ -52,6 +52,10 @@ import Text from "./Text.jsx";
         navbar.dataset.scrollInit = "true";
 
         let lastScrollY = window.scrollY;
+        // Acumula cuántos px seguidos ha subido el usuario
+        let upwardAccum = 0;
+        // El usuario debe subir al menos 40% del viewport de forma continua
+        const THRESHOLD = () => window.innerHeight * 0.4;
 
         window.addEventListener(
             "scroll",
@@ -59,13 +63,22 @@ import Text from "./Text.jsx";
                 if (navbar.classList.contains("menu-open")) return;
 
                 const currentScrollY = window.scrollY;
+                const delta = currentScrollY - lastScrollY;
 
                 if (currentScrollY <= 0) {
+                    // Al tope de la página: siempre visible
+                    upwardAccum = 0;
                     navbar.classList.remove("navbar-hidden");
-                } else if (currentScrollY > lastScrollY) {
+                } else if (delta > 0) {
+                    // Scrolleando hacia abajo: ocultar y resetear acumulador
+                    upwardAccum = 0;
                     navbar.classList.add("navbar-hidden");
                 } else {
-                    navbar.classList.remove("navbar-hidden");
+                    // Scrolleando hacia arriba: acumular
+                    upwardAccum += Math.abs(delta);
+                    if (upwardAccum >= THRESHOLD()) {
+                        navbar.classList.remove("navbar-hidden");
+                    }
                 }
 
                 lastScrollY = currentScrollY;

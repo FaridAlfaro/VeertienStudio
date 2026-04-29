@@ -1,0 +1,22 @@
+---
+import Services from "./Services/Services.astro";
+import SocialProof from "./SocialProof.astro";
+---
+
+<section class="services-proof-wrapper">
+    <Services />
+    <SocialProof />
+</section>
+
+<style>
+    .services-proof-wrapper {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        overflow: hidden;
+        position: relative;
+        background: var(--contrast);
+    }
+</style>
