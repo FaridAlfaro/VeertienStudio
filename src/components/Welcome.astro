@@ -13,6 +13,10 @@ import ScrambleText from "./ScrambleText.jsx";
 		<p class="hero-subtitle">
 			<Text client:only="react" i18nKey="welcome.subtitle" />
 		</p>
+		<!-- <a href="#footer" class="hero-cta-btn">
+			<Text client:only="react" i18nKey="welcome.cta" />
+			<span class="arrow">&rarr;</span>
+		</a> -->
 	</div>
 	<video
 		src="/video/file.mp4"
@@ -36,8 +40,9 @@ import ScrambleText from "./ScrambleText.jsx";
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
+		text-align: center;
+		gap: clamp(2rem, 1.2vw, 6rem);
 		top: 40vh;
-		gap: 2rem;
 		position: fixed;
 		z-index: 1;
 		animation: difuminar-scroll 0.5s ease-in-out forwards;
@@ -45,14 +50,90 @@ import ScrambleText from "./ScrambleText.jsx";
 		animation-range: 0vh 100vh;
 	}
 	h1.hero-main-title {
-		font-size: clamp(2rem, calc(2vw * 1.618), 6rem);
+		font-size: clamp(2rem, calc(1.8vw * 1.618), 6rem);
 		margin: 0;
 	}
+	.hero-subtitle {
+	}
 	p {
-		font-size: clamp(1rem, 2vw, 4rem);
+		font-size: clamp(1rem, 1.8vw, 4rem);
 	}
 	span {
 		color: var(--azul3);
+	}
+	.hero-cta-btn {
+		display: inline-flex;
+		width: fit-content;
+		align-items: center;
+		justify-content: center;
+		gap: 0.85rem;
+		padding: 1.1rem 2.8rem;
+		font-size: clamp(1.1rem, 1.6vw, 1.5rem);
+		font-weight: 700;
+		letter-spacing: 0.04em;
+		color: #ffffff;
+		background: linear-gradient(
+			135deg,
+			#4f42e4 0%,
+			#6366f1 50%,
+			#8b5cf6 100%
+		);
+		border-radius: 100px;
+		text-decoration: none;
+		position: relative;
+		overflow: hidden;
+		border: 1px solid rgba(255, 255, 255, 0.25);
+		box-shadow:
+			0 4px 20px rgba(79, 66, 228, 0.4),
+			0 0 15px rgba(99, 102, 241, 0.25);
+		transition:
+			transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+			box-shadow 0.35s ease,
+			letter-spacing 0.35s ease,
+			border-color 0.35s ease;
+		margin-top: 1rem;
+		cursor: pointer;
+	}
+
+	/* Efecto de destello (shimmer sweep) al pasar el mouse */
+	.hero-cta-btn::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: -100%;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(
+			90deg,
+			transparent 0%,
+			rgba(255, 255, 255, 0.4) 50%,
+			transparent 100%
+		);
+		transform: skewX(-20deg);
+		transition: left 0.65s cubic-bezier(0.19, 1, 0.22, 1);
+	}
+
+	.hero-cta-btn:hover {
+		border-color: rgba(255, 255, 255, 0.6);
+		box-shadow:
+			0 0 0 6px rgba(99, 102, 241, 0.2),
+			0 12px 35px rgba(79, 66, 228, 0.65),
+			0 0 25px rgba(139, 92, 246, 0.4);
+	}
+
+	.hero-cta-btn:hover::before {
+		left: 100%;
+	}
+
+	.hero-cta-btn .arrow {
+		color: #ffffff;
+		display: inline-block;
+		font-size: 1.25em;
+		transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+	}
+
+	.hero-cta-btn:hover .arrow {
+		transform: translateX(7px) scale(1.2);
 	}
 	video {
 		object-fit: cover;
@@ -128,11 +209,65 @@ import ScrambleText from "./ScrambleText.jsx";
 	}
 
 	@media (max-width: 768px) {
-		h4 {
-			font-size: clamp(1.8rem, calc(4vw * 1.618), 3rem);
+		.container {
+			top: 30vh;
+			width: 90%;
+			padding: 0;
+			margin: 0;
+			align-items: start;
+			text-align: left;
+			gap: 1rem;
+		}
+		h1.hero-main-title {
+			font-size: clamp(2rem, calc(4vw * 1.618), 5rem);
+			margin: 0;
 		}
 		p {
 			font-size: clamp(1rem, 4vw, 2rem);
+		}
+		@keyframes difuminar-scroll {
+			0% {
+				opacity: 1;
+			}
+			20% {
+				opacity: 0;
+			}
+			100% {
+				opacity: 0;
+				display: none;
+			}
+		}
+		@keyframes expandir-video {
+			0% {
+				width: 100vw;
+				height: 100vh;
+				top: 50%;
+				opacity: 1;
+				filter: brightness(1);
+			}
+
+			40% {
+				top: 0vh;
+				width: 100vw;
+				height: 100vh;
+				opacity: 1;
+				filter: brightness(1);
+			}
+
+			90% {
+				top: 0vh;
+				width: 100vw;
+				height: 100vh;
+				opacity: 1;
+			}
+
+			100% {
+				width: 100vw;
+				height: 100vh;
+				top: 0vh;
+				display: none;
+				filter: brightness(0);
+			}
 		}
 	}
 </style>

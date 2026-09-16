@@ -18,6 +18,9 @@ const { hideButton = false, animateBg = true } = Astro.props;
             <Text client:only="react" i18nKey="services.title_end" />
         </h3>
     </div>
+    <p class="services-subtitle">
+        <Text client:only="react" i18nKey="services.subtitle" />
+    </p>
 
     {
         !hideButton && (
@@ -297,6 +300,17 @@ const { hideButton = false, animateBg = true } = Astro.props;
         color: var(--azul3);
     }
 
+    .services-subtitle {
+        width: 90%;
+        font-size: clamp(1.2rem, 1.8vw, 2.2rem);
+        color: var(--background);
+        opacity: 0.9;
+        text-align: left;
+        margin: 0 0 3vh 0;
+        line-height: 1.5;
+        font-weight: 300;
+    }
+
     .container {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
@@ -414,6 +428,7 @@ const { hideButton = false, animateBg = true } = Astro.props;
             font-size: clamp(2.5rem, 5vw, 3.5rem);
             height: auto;
             padding: 3vh 0;
+            text-align: left;
         }
         .services-button {
             font-size: 1.1rem;
@@ -422,11 +437,18 @@ const { hideButton = false, animateBg = true } = Astro.props;
     }
 
     @media (max-width: 768px) {
+        .services {
+            gap: 0;
+            justify-content: baseline;
+        }
+        .services-subtitle {
+            font-size: clamp(1em, 3vw, 2rem);
+        }
         .title {
-            font-size: clamp(1.8rem, 5vw, 2.2rem);
+            padding: 0;
+            font-size: clamp(1.8rem, 5vw, 3rem);
             height: auto;
-            padding: 3vh 0;
-            text-align: center;
+            text-align: left;
         }
         .services-button {
             font-size: 0.95rem;

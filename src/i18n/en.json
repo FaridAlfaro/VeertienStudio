@@ -6,246 +6,253 @@
     "contact": "Contact us"
   },
   "welcome": {
-    "title_start": "Where technology and ",
-    "emotions": "emotions",
-    "title_end": " meet",
-    "subtitle": "We provide solutions to real problems using technology."
+    "title_start": "We organize, ",
+    "emotions": "connect and scale",
+    "title_end": " your IT ecosystem.",
+    "subtitle": "We cover the complete lifecycle of your digital transformation.",
+    "cta": "Let's talk about your next project."
   },
   "steps": {
-    "title": "Our way of working",
+    "title": "Our Working Process",
     "step1": {
-      "title": "Requirements Meeting",
-      "text": "We have a meeting to gather requirements."
+      "title": "Discovery & Audit",
+      "text": "We evaluate your infrastructure and processes to define clear requirements."
     },
     "step2": {
-      "title": "Development",
-      "text": "We develop the solution."
+      "title": "Design & Development",
+      "text": "We build scalable systems, APIs, and cloud integrations."
     },
     "step3": {
-      "title": "Final Delivery",
-      "text": "We deliver the project."
+      "title": "Deployment & Scalability",
+      "text": "We deploy the solution and optimize ongoing operations."
     }
   },
   "sistem": {
     "card1": {
-      "title": "We design your brand",
-      "text": "Giving you a unique digital identity that truly connects with your audience.",
-      "btn": "See more"
+      "title": "Audit & Functional Analysis",
+      "text": "We gather technical and functional requirements to define exactly what your operation needs before writing a single line of code.",
+      "btn": "Read more"
     },
     "card2": {
-      "title": "Custom software development",
-      "text": "To cover your specific needs (from landing pages to web apps for businesses).",
+      "title": "B2B Systems Design",
+      "text": "We structure transactional portals and internal tools with clean interfaces, ensuring your team adopts the tech.",
       "btn": "Learn more"
     },
     "card3": {
-      "title": "Support and Optimization",
-      "text": "We optimize processes and provide IT support so your business grows without limits.",
+      "title": "Cloud Development & Integrations",
+      "text": "We build robust cloud architectures, connect APIs, and automate complex processes with AI so your systems operate in sync.",
       "btn": "Discover"
     }
   },
   "works": {
-    "title_start": "Our work reflects how we ",
-    "solve": "solve real needs",
-    "title_end": " for our clients",
-    "img_work1": "Work Image 1",
-    "img_work2": "Work Image 2",
-    "img_work3": "Work Image 3"
+    "title_start": "Companies that ",
+    "solve": "modernized their operations",
+    "title_end": " with our engineering solutions",
+    "img_work1": "B2B ERP & Inventory Control System",
+    "img_work2": "Transactional Portal & Cloud APIs",
+    "img_work3": "AI Process Automation"
   },
   "services": {
-    "title_start": "Resolve your ",
-    "problems": "problems",
-    "title_mid": ", increase your ",
-    "sales": "sales",
-    "title_mid2": " and have an ",
-    "identity": "identity",
-    "title_end": " with software",
+    "title_start": "Engineering ",
+    "problems": "solutions",
+    "title_mid": " for ",
+    "sales": "business",
+    "title_mid2": " ",
+    "identity": "challenges.",
+    "title_end": "",
+    "subtitle": "Leaving behind legacy systems and isolated data. We are your tech partner to build custom software, integrate enterprise platforms, and modernize your infrastructure end-to-end.",
     "read_more": "Read more",
     "view_all": "Our Services",
     "web_dev": {
-      "title": "Web Development",
-      "text": "We build scalable, modern web applications tailored to your business needs."
+      "title": "Audit & Functional Analysis",
+      "text": "We gather technical and functional requirements to define exactly what your operation needs before writing a single line of code."
     },
     "data_analysis": {
-      "title": "Data Analysis",
-      "text": "Transform raw data into actionable insights to drive your business forward."
+      "title": "B2B Systems Design",
+      "text": "We structure transactional portals and internal tools with clean interfaces, ensuring your team adopts the tech."
     },
     "mobile_apps": {
-      "title": "Mobile Apps",
-      "text": "Native and cross-platform mobile solutions for iOS and Android."
+      "title": "Cloud Development & Integrations",
+      "text": "We build robust cloud architectures, connect APIs, and automate complex processes with AI so your systems operate in sync."
     },
     "cybersec": {
-      "title": "Cybersecurity",
-      "text": "Protect your digital assets with top-tier security protocols."
+      "title": "Cybersecurity & Governance",
+      "text": "Protecting your information assets and enterprise infrastructure."
     },
     "cloud": {
-      "title": "Cloud Hosting",
-      "text": "Reliable and fast cloud architecture for your demanding projects."
+      "title": "Cloud Architectures & DevOps",
+      "text": "High availability, scalable infrastructure and cloud migration."
     },
     "uiux": {
-      "title": "UI/UX Design",
-      "text": "Crafting intuitive and beautiful interfaces for your users."
+      "title": "B2B Interfaces & Operational UX",
+      "text": "Designing internal tools optimized for day-to-day productivity."
     },
     "ai": {
-      "title": "AI Solutions",
-      "text": "Integrate cutting-edge artificial intelligence into your workflow."
+      "title": "AI Process Automation",
+      "text": "Intelligent models and integrations to streamline complex workflows."
     },
     "seo": {
-      "title": "SEO Strategy",
-      "text": "Rank higher and reach more customers organically."
+      "title": "IT Ecosystem Optimization",
+      "text": "Modernizing legacy software and reducing operational costs."
     }
   },
   "footer": {
-    "ready": "Ready to scale your business?",
-    "schedule": "Request Free IT Audit",
+    "title": "Elevate your company's technology standard.",
+    "ready": "Fill out the form and we will schedule a technical session to evaluate your infrastructure and processes.",
+    "schedule": "Request Technical Evaluation",
     "rights": "All rights reserved.",
     "name": "Name",
-    "name_ph": "Your name",
-    "email": "Email Address",
-    "email_ph": "you@email.com",
+    "name_ph": "Name",
+    "company": "Company",
+    "company_ph": "Company",
+    "email": "Corporate Email",
+    "email_ph": "Corporate Email",
+    "bottleneck": "What system or process creates your biggest bottleneck today?",
+    "bottleneck_ph": "What system or process creates your biggest bottleneck today?",
     "message": "Message",
-    "message_ph": "Tell us about your project...",
-    "send": "Send Message"
+    "message_ph": "Tell us about your infrastructure...",
+    "send": "Request Technical Evaluation"
   },
   "page_works": {
-    "title": "Recent Projects",
-    "subtitle": "Discover what we have built to transform our clients' operations.",
-    "work1_title": "Gastronomic Reservation System",
-    "work1_desc": "Complete development of a reservation platform for restaurants, with real-time table management and interactive QR menus.",
-    "work2_title": "B2B E-Commerce Platform",
-    "work2_desc": "Optimized virtual store with integrated payment gateway and automated inventory management for wholesale SMEs.",
-    "work3_title": "Admin Dashboard and CRM",
-    "work3_desc": "Custom internal dashboard for stock control, sales analytics, and corporate customer relationship management."
+    "title": "B2B Success Stories",
+    "subtitle": "Discover how we have helped modernize the tech operations of our clients.",
+    "work1_title": "ERP & Cloud Logistics Integration",
+    "work1_desc": "Connecting legacy systems with cloud architecture for real-time traceability.",
+    "work2_title": "B2B Portal & Vendor Platform",
+    "work2_desc": "Corporate transactional platform with secure auth and API integration.",
+    "work3_title": "Operational Dashboard & AI Automation",
+    "work3_desc": "Centralizing operational data and automating executive reports."
   },
   "page_services": {
     "title": "Our Services",
-    "subtitle": "Tech built for your business model so you can scale faster.",
-    "filter_title": "What's your business niche?",
-    "filter_subtitle": "Pick your sector to see how we can help you grow.",
-    "basic_title": "Core IT Essentials",
-    "basic_subtitle": "Building the robust tech and apps your business runs on.",
-    "cat_pymes": "SMEs & Local Shops",
-    "pymes_service1": "Automated WhatsApp channels to boost reach.",
-    "pymes_service2": "All-in-one billing and inventory management.",
-    "cat_gastro": "Food & Beverage",
-    "gastro_service1": "Smart QR menus that streamline ordering.",
-    "gastro_service2": "Seamless online booking and order systems.",
-    "cat_ecommerce": "E-Commerce & Retail",
-    "ecommerce_service1": "High-performance stores that never lag.",
-    "ecommerce_service2": "Smooth payment and shipping integrations."
+    "subtitle": "We cover the complete lifecycle of your digital transformation.",
+    "filter_title": "Where do you need to modernize?",
+    "filter_subtitle": "Select the right solution for your IT ecosystem.",
+    "basic_title": "Engineering & B2B Consulting",
+    "basic_subtitle": "Robust infrastructure and custom software to scale without friction.",
+    "cat_pymes": "Operational Modernization",
+    "pymes_service1": "Automating repetitive tasks and data integration.",
+    "pymes_service2": "Centralized control: ERP, CRM, and cloud infrastructure.",
+    "cat_gastro": "Transactional B2B Systems",
+    "gastro_service1": "Customer and vendor portals with API integration.",
+    "gastro_service2": "Real-time management and microservice architecture.",
+    "cat_ecommerce": "Cloud & AI Automation",
+    "ecommerce_service1": "Resilient and scalable cloud infrastructure.",
+    "ecommerce_service2": "Intelligent data processing and workflow integration."
   },
   "core_services": {
     "dev": {
-      "title": "Software Development",
-      "desc": "Custom solutions built with robust code and modern architectures.",
+      "title": "Cloud Development & Integrations",
+      "desc": "We build robust cloud architectures, connect APIs, and automate complex processes.",
       "web": {
-        "title": "Web & Mobile Apps",
-        "text": "Lightning-fast web applications and native mobile apps."
+        "title": "Custom Software Development",
+        "text": "Building enterprise applications and scalable platforms."
       },
       "systems": {
-        "title": "Enterprise Systems",
-        "text": "Custom CRM, ERP, and billing systems to automate operations."
+        "title": "B2B Management Systems",
+        "text": "Custom ERP, CRM, and transactional portal development."
       },
       "ecommerce": {
-        "title": "E-Commerce Platforms",
-        "text": "Scalable and secure online stores built to maximize conversions."
+        "title": "Corporate Portals",
+        "text": "Secure platforms for client and vendor interaction."
       },
       "api": {
-        "title": "API Integrations",
-        "text": "Seamless connection between your systems and third-party services."
+        "title": "API & Legacy Integration",
+        "text": "Seamless connection between legacy systems and modern cloud."
       }
     },
     "design": {
-      "title": "Branding & Design",
-      "desc": "Creating visually stunning digital experiences that convert.",
+      "title": "B2B Systems Design",
+      "desc": "We structure internal tools with clean interfaces ensuring user adoption.",
       "identity": {
-        "title": "Brand Identity",
-        "text": "From logo creation to full cohesive brand guidelines."
+        "title": "Information Architecture",
+        "text": "Clear data structures and efficient workflows."
       },
       "uxui": {
-        "title": "UX / UI Design",
-        "text": "Intuitive interfaces and seamless user journeys."
+        "title": "Operational UX / UI Design",
+        "text": "Intuitive interfaces designed for team productivity."
       },
       "systems": {
-        "title": "Design Systems",
-        "text": "Scalable component libraries for consistency across products."
+        "title": "Corporate Design Systems",
+        "text": "Visual standards and reusable component libraries."
       },
       "motion": {
-        "title": "Motion Graphics",
-        "text": "Engaging animations and micro-interactions for your UI."
+        "title": "Interactive Prototyping",
+        "text": "Functional validation before the engineering phase."
       }
     },
     "marketing": {
-      "title": "Marketing & Advertising",
-      "desc": "Data-driven strategies to position your brand in the digital space.",
+      "title": "Efficiency & Automation",
+      "desc": "Optimizing operational processes by connecting systems with AI.",
       "ads": {
-        "title": "Digital Campaigns",
-        "text": "Targeted ad campaigns designed to lower acquisition costs."
+        "title": "Workflow Automation",
+        "text": "Eliminating repetitive manual tasks between platforms."
       },
       "seo": {
-        "title": "SEO & Content",
-        "text": "Organic growth strategies and technical SEO optimization."
+        "title": "Artificial Intelligence Integration",
+        "text": "Automated processing of unstructured data and documents."
       },
       "social": {
-        "title": "Social Media",
-        "text": "Strategic community management to build brand loyalty."
+        "title": "IT Monitoring & Alerts",
+        "text": "Real-time visibility over your infrastructure state."
       },
       "email": {
-        "title": "Email Automation",
-        "text": "Personalized email flows designed to nurture and retain leads."
+        "title": "Corporate Notifications",
+        "text": "Automated system-to-system communication flows."
       }
     },
     "consulting": {
-      "title": "IT Consulting",
-      "desc": "Strategic guidance to navigate the digital transformation of your company.",
+      "title": "Audit & Functional Analysis",
+      "desc": "Gathering technical requirements to guide your digital evolution.",
       "transformation": {
-        "title": "Digital Transformation",
-        "text": "We modernize your workflow and increase overall efficiency."
+        "title": "Technological Transformation",
+        "text": "End-to-end modernization of corporate processes and software."
       },
       "cloud": {
-        "title": "Cloud Infrastructure",
-        "text": "Secure, scalable, and reliable cloud hosting architecture."
+        "title": "Cloud Architectures",
+        "text": "Secure, scalable, and optimized cloud infrastructure."
       },
       "security": {
-        "title": "Cybersecurity",
-        "text": "Vulnerability assessments and protocols to protect your data."
+        "title": "Information Security",
+        "text": "Infrastructure audits and data protection protocols."
       },
       "data": {
-        "title": "Data Analytics",
-        "text": "Business intelligence solutions to turn data into insights."
+        "title": "Business Intelligence & Data",
+        "text": "Data centralization for strategic decision-making."
       }
     }
   },
   "page_about": {
-    "title": "Who we are",
-    "subtitle": "We transform complex ideas into simple and beautiful digital products.",
-    "p1": "At Veertien, we are a team of developers and designers passionate about technology and visual aesthetics.",
-    "p2": "We believe in software as a tool to empower businesses, eliminating daily friction through efficient and robust code solutions."
+    "title": "Your growth is limited by your current systems.",
+    "subtitle": "Repetitive manual tasks, endless spreadsheets, and software that doesn't communicate. When technology doesn't match commercial operations, costs scale and decision-making slows down. We transform that scenario by connecting your tools and centralizing your information in secure, scalable environments.",
+    "p1": "Repetitive manual tasks, endless spreadsheets, and software that doesn't communicate. When technology doesn't match commercial operations, costs scale and decision-making slows down.",
+    "p2": "We transform that scenario by connecting your tools and centralizing your information in secure, scalable environments."
   },
   "social_proof": {
-    "title": "Companies scaling with us"
+    "title": "Companies that modernized their operations."
   },
   "faq": {
     "title": "Frequently Asked Questions",
-    "q1": "What is the average execution time?",
-    "a1": "Depending on the project scope, we can launch an MVP in 4-6 weeks.",
-    "q2": "Do you provide post-launch maintenance?",
-    "a2": "Yes, we provide metrics monitoring, security, and continuous monthly scalability.",
-    "q3": "What is the minimum initial investment?",
-    "a3": "Our core projects start from custom models based on your budget (starting at $1500 USD).",
-    "q4": "How do you measure project success?",
-    "a4": "We set KPIs in the discovery phase (CRO, retention, or load time) to guarantee your ROI."
+    "q1": "How do you start a technical audit or consulting process?",
+    "a1": "We perform an initial assessment of your processes and infrastructure to identify bottlenecks and prioritize opportunities.",
+    "q2": "Do you work with legacy systems?",
+    "a2": "Yes, we design API-based integration architectures to connect legacy platforms with modern cloud solutions.",
+    "q3": "What is the engagement model?",
+    "a3": "We offer turnkey projects or continuous consulting via technical sprints depending on your IT ecosystem complexity.",
+    "q4": "How do you guarantee user adoption?",
+    "a4": "We design clean B2B interfaces focusing on functional usabilty and provide team onboarding during deployment."
   },
   "audit_cta": {
-    "title": "Is your technology driving or stalling your business?",
-    "subtitle": "100% COMPLIMENTARY IT STRATEGIC AUDIT",
-    "item1_title": "Operational Diagnosis",
-    "item1_desc": "We identify manual processes and bottlenecks that are limiting your company's scalability.",
-    "item2_title": "Software Ecosystem",
-    "item2_desc": "We evaluate your current infrastructure, management systems, and the feasibility of custom solutions.",
-    "item3_title": "Presence & Branding",
-    "item3_desc": "We analyze your digital identity perception, user experience (UX), and conversion rates.",
-    "item4_title": "Transformation Roadmap",
-    "item4_desc": "We provide a 90-day action plan to modernize and scale through technology.",
-    "btn": "Schedule Free Audit"
+    "title": "Elevate your company's technology standard.",
+    "subtitle": "B2B STRATEGIC TECHNICAL AUDIT & EVALUATION",
+    "item1_title": "Audit & Functional Analysis",
+    "item1_desc": "We gather technical and functional requirements to define exactly what your operation needs.",
+    "item2_title": "B2B Systems Design",
+    "item2_desc": "We structure transactional portals and clean interfaces to ensure tech adoption.",
+    "item3_title": "Cloud Development & Integrations",
+    "item3_desc": "We build robust cloud architectures, connect APIs, and automate complex processes with AI.",
+    "item4_title": "Modernization Roadmap",
+    "item4_desc": "We provide an end-to-end action plan to organize, connect, and scale your IT ecosystem.",
+    "btn": "Request Technical Evaluation"
   }
 }
