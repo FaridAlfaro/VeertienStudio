@@ -169,4 +169,72 @@ const schemaData = {
 		font-style: italic;
 		font-weight: 400;
 	}
+
+	/* ==== HERO SCROLL-DRIVEN ANIMATIONS (global para evitar scoping Astro 7) ==== */
+	header > .container {
+		animation: difuminar-scroll 1s ease-in-out forwards;
+		animation-timeline: scroll(root);
+		animation-range: 0vh 100vh;
+	}
+
+	header > video {
+		animation: expandir-video 2s ease-out forwards;
+		animation-timeline: scroll(root);
+		animation-range: 0vh 200vh;
+	}
+
+	@keyframes difuminar-scroll {
+		0% {
+			opacity: 1;
+		}
+		80% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 0;
+			display: none;
+		}
+	}
+
+	@keyframes expandir-video {
+		0% {
+			width: 100vw;
+			height: 100vh;
+			top: 70%;
+			opacity: 1;
+			filter: brightness(1);
+		}
+		40% {
+			top: 0vh;
+			width: 100vw;
+			height: 100vh;
+			opacity: 1;
+			filter: brightness(1);
+		}
+		90% {
+			top: 0vh;
+			width: 100vw;
+			height: 100vh;
+			opacity: 1;
+		}
+		100% {
+			width: 100vw;
+			height: 100vh;
+			top: 0vh;
+			display: none;
+			filter: brightness(0);
+		}
+	}
+
+	@keyframes video-anime {
+		0% {
+			opacity: 1;
+		}
+		70% {
+			opacity: 1;
+		}
+		100% {
+			opacity: 0;
+		}
+	}
 </style>
