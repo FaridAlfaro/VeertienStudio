@@ -27,66 +27,6 @@ import ScrambleText from "./ScrambleText.jsx";
 		aria-hidden="true"></video>
 </header>
 
-<script>
-	function initHeroScrollFallback() {
-		// Detect native CSS Scroll-Driven Animations support
-		const supportsScrollTimeline = typeof CSS !== "undefined" && CSS.supports && (
-			CSS.supports("animation-timeline", "scroll()") ||
-			CSS.supports("animation-timeline", "scroll(root)")
-		);
-
-		if (supportsScrollTimeline) return;
-
-		const container = document.querySelector("header .container");
-		const video = document.querySelector("header video");
-		if (!container && !video) return;
-
-		let ticking = false;
-
-		function onScroll() {
-			if (!ticking) {
-				requestAnimationFrame(() => {
-					const scrollY = window.scrollY;
-					const vh = window.innerHeight;
-					const isMobile = window.innerWidth <= 768;
-
-					if (container) {
-						const fadeDistance = isMobile ? vh * 0.8 : vh * 0.6;
-						const progress = Math.min(Math.max(scrollY / fadeDistance, 0), 1);
-						container.style.opacity = (1 - progress).toString();
-						container.style.pointerEvents = progress >= 0.9 ? "none" : "auto";
-					}
-
-					if (video) {
-						const videoDistance = vh * 2;
-						const progress = Math.min(Math.max(scrollY / videoDistance, 0), 1);
-						const startTop = isMobile ? 50 : 70;
-						const currentTop = startTop * (1 - progress);
-						video.style.top = `${currentTop}vh`;
-						if (progress >= 0.7) {
-							const brightProgress = (progress - 0.7) / 0.3;
-							video.style.filter = `brightness(${1 - brightProgress})`;
-							video.style.opacity = (1 - brightProgress).toString();
-						} else {
-							video.style.filter = "brightness(1)";
-							video.style.opacity = "1";
-						}
-					}
-
-					ticking = false;
-				});
-				ticking = true;
-			}
-		}
-
-		window.addEventListener("scroll", onScroll, { passive: true });
-		onScroll();
-	}
-
-	document.addEventListener("DOMContentLoaded", initHeroScrollFallback);
-	document.addEventListener("astro:page-load", initHeroScrollFallback);
-</script>
-
 <style>
 	header {
 		height: 200vh;
@@ -204,7 +144,7 @@ import ScrambleText from "./ScrambleText.jsx";
 		will-change: top, filter, opacity;
 	}
 
-	@supports (animation-timeline: scroll()) {
+	@supports (animation-timeline: scroll()) or (animation-timeline: scroll(root)) {
 		.container {
 			animation: difuminar-scroll 0.5s ease-in-out forwards;
 			animation-timeline: scroll(root);
@@ -238,6 +178,55 @@ import ScrambleText from "./ScrambleText.jsx";
 			width: 100vw;
 			height: 100vh;
 			top: 70vh;
+			opacity: 1;
+			filter: brightness(1);
+		}
+
+		40% {
+			top: 0vh;
+			width: 100vw;
+			height: 100vh;
+			opacity: 1;
+			filter: brightness(1);
+		}
+
+		90% {
+			top: 0vh;
+			width: 100vw;
+			height: 100vh;
+			opacity: 1;
+			filter: brightness(1);
+		}
+
+		100% {
+			width: 100vw;
+			height: 100vh;
+			top: 0vh;
+			opacity: 0;
+			filter: brightness(0);
+		}
+	}
+
+	@keyframes difuminar-scroll-mobile {
+		0% {
+			opacity: 1;
+			pointer-events: auto;
+		}
+		20% {
+			opacity: 0;
+			pointer-events: none;
+		}
+		100% {
+			opacity: 0;
+			pointer-events: none;
+		}
+	}
+
+	@keyframes expandir-video-mobile {
+		0% {
+			width: 100vw;
+			height: 100vh;
+			top: 50vh;
 			opacity: 1;
 			filter: brightness(1);
 		}
@@ -301,16 +290,14 @@ import ScrambleText from "./ScrambleText.jsx";
 			top: 50vh;
 		}
 
-		@supports (animation-timeline: scroll()) {
+		@supports (animation-timeline: scroll()) or (animation-timeline: scroll(root)) {
 			.container {
-				animation: difuminar-scroll-mobile 0.5s ease-in-out forwards;
-				animation-timeline: scroll(root);
-				animation-range: 0vh 200vh;
+				animation-name: difuminar-scroll-mobile;
+				animation-range: 0vh 100vh;
 			}
 
 			video {
-				animation: expandir-video-mobile 2s ease-out forwards;
-				animation-timeline: scroll(root);
+				animation-name: expandir-video-mobile;
 				animation-range: 0vh 200vh;
 			}
 		}
@@ -322,52 +309,6 @@ import ScrambleText from "./ScrambleText.jsx";
 		p {
 			font-size: clamp(1rem, 4vw, 2rem);
 		}
-		@keyframes difuminar-scroll-mobile {
-			0% {
-				opacity: 1;
-				pointer-events: auto;
-			}
-			20% {
-				opacity: 0;
-				pointer-events: none;
-			}
-			100% {
-				opacity: 0;
-				pointer-events: none;
-			}
-		}
-		@keyframes expandir-video-mobile {
-			0% {
-				width: 100vw;
-				height: 100vh;
-				top: 50vh;
-				opacity: 1;
-				filter: brightness(1);
-			}
-
-			40% {
-				top: 0vh;
-				width: 100vw;
-				height: 100vh;
-				opacity: 1;
-				filter: brightness(1);
-			}
-
-			90% {
-				top: 0vh;
-				width: 100vw;
-				height: 100vh;
-				opacity: 1;
-				filter: brightness(1);
-			}
-
-			100% {
-				width: 100vw;
-				height: 100vh;
-				top: 0vh;
-				opacity: 0;
-				filter: brightness(0);
-			}
-		}
 	}
 </style>
+

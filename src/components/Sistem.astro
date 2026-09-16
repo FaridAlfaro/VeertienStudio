@@ -1,5 +1,5 @@
 ---
-import Text from './Text.jsx';
+import Text from "./Text.jsx";
 
 const cards = [
     {
@@ -25,10 +25,24 @@ const cards = [
                 <div class="overlay" />
                 <div class="sys-content-wrapper">
                     <div class="sys-content">
-                        <h2><Text client:only="react" i18nKey={`sistem.card${index + 1}.title`} /></h2>
-                        <p><Text client:only="react" i18nKey={`sistem.card${index + 1}.text`} /></p>
+                        <h2>
+                            <Text
+                                client:only="react"
+                                i18nKey={`sistem.card${index + 1}.title`}
+                            />
+                        </h2>
+                        <p>
+                            <Text
+                                client:only="react"
+                                i18nKey={`sistem.card${index + 1}.text`}
+                            />
+                        </p>
                         <button class="sys-btn">
-                            <Text client:only="react" i18nKey={`sistem.card${index + 1}.btn`} /> <span>&rarr;</span>
+                            <Text
+                                client:only="react"
+                                i18nKey={`sistem.card${index + 1}.btn`}
+                            />{" "}
+                            <span>&rarr;</span>
                         </button>
                     </div>
                 </div>
@@ -173,24 +187,51 @@ const cards = [
 
     /* ==== RESPONSIVE ==== */
     @media (max-width: 1440px) {
-        h2 { font-size: clamp(2.5rem, 4vw, 5rem); }
-        p { font-size: clamp(1rem, 1.5vw, 1.8rem); margin-bottom: 2rem; }
-        .sys-content { max-width: 500px; }
+        h2 {
+            font-size: clamp(2.5rem, 4vw, 5rem);
+        }
+        p {
+            font-size: clamp(1rem, 1.5vw, 1.8rem);
+            margin-bottom: 2rem;
+        }
+        .sys-content {
+            max-width: 500px;
+        }
     }
 
     @media (max-width: 1024px) {
-        h2 { font-size: clamp(2.2rem, 4vw, 4rem); }
-        p { font-size: clamp(1rem, 2vw, 1.5rem); }
-        .sys-content { max-width: 80%; }
-        .sys-content-wrapper { padding-left: 5vw; padding-right: 5vw; }
+        h2 {
+            font-size: clamp(2.2rem, 4vw, 4rem);
+        }
+        p {
+            font-size: clamp(1rem, 2vw, 1.5rem);
+        }
+        .sys-content {
+            max-width: 80%;
+        }
+        .sys-content-wrapper {
+            padding-left: 5vw;
+            padding-right: 5vw;
+        }
     }
 
     @media (max-width: 768px) {
-        h2 { font-size: clamp(1.8rem, 6vw, 3rem); }
-        p { font-size: clamp(0.9rem, 4vw, 1.2rem); }
-        .sys-content { max-width: 100%; }
-        .sys-content-wrapper { padding-left: 5vw; padding-right: 5vw; }
-        .sys-btn { font-size: 1rem; }
+        h2 {
+            font-size: clamp(1.8rem, 6vw, 3rem);
+        }
+        p {
+            font-size: clamp(0.9rem, 4vw, 1.2rem);
+        }
+        .sys-content {
+            max-width: 100%;
+        }
+        .sys-content-wrapper {
+            padding-left: 5vw;
+            padding-right: 5vw;
+        }
+        .sys-btn {
+            font-size: 1rem;
+        }
     }
 </style>
 
