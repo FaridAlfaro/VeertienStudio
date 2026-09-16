@@ -141,6 +141,7 @@ import ScrambleText from "./ScrambleText.jsx";
 		animation-timeline: scroll(root);
 		animation-range: 0vh 200vh;
 		position: fixed;
+		top: 70vh;
 		z-index: -1;
 	}
 
@@ -160,7 +161,6 @@ import ScrambleText from "./ScrambleText.jsx";
 		0% {
 			width: 100vw;
 			height: 100vh;
-			top: 70vh;
 			opacity: 1;
 			filter: brightness(1);
 		}
@@ -218,6 +218,8 @@ import ScrambleText from "./ScrambleText.jsx";
 			text-align: left;
 			gap: 1rem;
 			animation: difuminar-scroll-mobile 0.5s ease-in-out forwards;
+			animation-timeline: scroll(root);
+			animation-range: 0vh 200vh;
 		}
 		h1.hero-main-title {
 			font-size: clamp(2rem, calc(4vw * 1.618), 5rem);
@@ -240,12 +242,14 @@ import ScrambleText from "./ScrambleText.jsx";
 		}
 		video {
 			animation: expandir-video-mobile 2s ease-out forwards;
+			animation-timeline: scroll(root);
+			animation-range: 0vh 200vh;
+			top: 50vh;
 		}
 		@keyframes expandir-video-mobile {
 			0% {
 				width: 100vw;
 				height: 100vh;
-				top: 70%;
 				opacity: 1;
 				filter: brightness(1);
 			}
