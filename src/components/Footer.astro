@@ -141,15 +141,17 @@ import { TranslatedInput, TranslatedTextarea } from "./TranslatedInputs.jsx";
     .footer-section {
         width: 100%;
         min-height: 100vh;
-        background-color: #050505; /* Fondo negro profundo */
+        max-height: 100vh;
+        background-color: #050505;
         color: #ffffff;
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 10vh 5vw;
+        padding: clamp(4rem, 7vh, 8rem) 5vw;
         box-sizing: border-box;
         position: relative;
         z-index: 10;
+        overflow: hidden;
     }
 
     .footer-container {
@@ -170,16 +172,16 @@ import { TranslatedInput, TranslatedTextarea } from "./TranslatedInputs.jsx";
     }
 
     .footer-title {
-        font-size: clamp(3rem, 6vw, 8rem);
-        margin: 0 0 1rem 0;
+        font-size: clamp(2.5rem, 5vw, 7rem);
+        margin: 0 0 0.75rem 0;
         line-height: 1;
         letter-spacing: -0.02em;
     }
 
     .footer-subtitle {
-        font-size: clamp(1.2rem, 1.5vw, 2rem);
+        font-size: clamp(1rem, 1.3vw, 1.6rem);
         color: #a0a0a0;
-        margin-bottom: 3rem;
+        margin-bottom: clamp(1rem, 2.5vh, 2.5rem);
         font-weight: 300;
         max-width: 80%;
     }
@@ -189,11 +191,11 @@ import { TranslatedInput, TranslatedTextarea } from "./TranslatedInputs.jsx";
         color: inherit;
         display: block;
         width: fit-content;
-        margin-bottom: 1rem;
+        margin-bottom: clamp(0.5rem, 1vh, 1rem);
     }
 
     .footer-link h3 {
-        font-size: clamp(1.5rem, 2.5vw, 3rem);
+        font-size: clamp(1.2rem, 2vw, 2.5rem);
         margin: 0;
         font-weight: 400;
         transition: color 0.3s ease;
@@ -204,18 +206,18 @@ import { TranslatedInput, TranslatedTextarea } from "./TranslatedInputs.jsx";
     }
 
     .footer-cta {
-        margin-top: 2rem;
+        margin-top: clamp(1rem, 2vh, 2rem);
         margin-bottom: auto;
     }
 
     .footer-bottom {
-        margin-top: 5rem;
+        margin-top: clamp(1.5rem, 3vh, 4rem);
         display: flex;
         justify-content: space-between;
         align-items: center;
         border-top: 1px solid rgba(255, 255, 255, 0.1);
-        padding-top: 2rem;
-        font-size: 0.9rem;
+        padding-top: clamp(0.75rem, 1.5vh, 1.5rem);
+        font-size: 0.85rem;
         color: #888;
     }
 
@@ -240,7 +242,7 @@ import { TranslatedInput, TranslatedTextarea } from "./TranslatedInputs.jsx";
         color: white;
         border: none;
         padding: 0;
-        font-size: clamp(1.2rem, 1.5vw, 2rem);
+        font-size: clamp(1rem, 1.2vw, 1.6rem);
         font-weight: 600;
         cursor: pointer;
         display: inline-flex;
@@ -283,7 +285,7 @@ import { TranslatedInput, TranslatedTextarea } from "./TranslatedInputs.jsx";
     .contact-form {
         display: flex;
         flex-direction: column;
-        gap: 2rem;
+        gap: clamp(1rem, 2vh, 1.75rem);
     }
 
     .form-group {
@@ -338,47 +340,63 @@ import { TranslatedInput, TranslatedTextarea } from "./TranslatedInputs.jsx";
     /* ==== RESPONSIVE DESIGN ==== */
     @media (max-width: 1440px) {
         .footer-title {
-            font-size: clamp(3rem, 5vw, 6rem);
+            font-size: clamp(2.5rem, 4.5vw, 5.5rem);
         }
         .footer-link h3 {
-            font-size: clamp(1.5rem, 2vw, 2.5rem);
+            font-size: clamp(1.2rem, 1.8vw, 2.2rem);
         }
         .footer-subtitle {
-            font-size: clamp(1.2rem, 1.5vw, 1.8rem);
+            font-size: clamp(1rem, 1.3vw, 1.6rem);
             max-width: 100%;
         }
         .footer-container {
-            gap: 4vw;
+            gap: 3.5vw;
         }
     }
 
     @media (max-width: 1024px) {
+        .footer-section {
+            min-height: auto;
+            max-height: none;
+            padding: clamp(5rem, 10vh, 8rem) 5vw clamp(3rem, 5vh, 5rem);
+        }
         .footer-container {
             grid-template-columns: 1fr;
-            gap: 4rem;
+            gap: 2.5rem;
         }
         .footer-title {
-            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            font-size: clamp(2.2rem, 5vw, 4rem);
         }
         .footer-link h3 {
-            font-size: clamp(1.2rem, 2vw, 2rem);
+            font-size: clamp(1.1rem, 2vw, 1.8rem);
         }
         .footer-bottom {
             flex-direction: column;
-            gap: 1.5rem;
+            gap: 1rem;
             align-items: flex-start;
-        }
-        .footer-section {
-            padding-top: 15vh;
+            margin-top: clamp(1rem, 2vh, 2.5rem);
         }
     }
 
     @media (max-width: 768px) {
+        .footer-section {
+            padding: clamp(5rem, 10vh, 7rem) 5vw clamp(2rem, 4vh, 3rem);
+        }
         .footer-title {
-            font-size: clamp(2rem, 6vw, 3rem);
+            font-size: clamp(1.8rem, 6vw, 2.8rem);
+        }
+        .footer-subtitle {
+            max-width: 100%;
+            font-size: clamp(0.95rem, 3.5vw, 1.2rem);
         }
         .footer-link h3 {
-            font-size: clamp(1.2rem, 4vw, 1.8rem);
+            font-size: clamp(1rem, 4vw, 1.5rem);
+        }
+        .footer-form-container {
+            padding: 1.5rem 1.25rem;
+        }
+        .contact-form {
+            gap: 1rem;
         }
     }
 </style>
