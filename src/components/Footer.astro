@@ -1,6 +1,6 @@
 ---
-import Text from './Text.jsx';
-import { TranslatedInput, TranslatedTextarea } from './TranslatedInputs.jsx';
+import Text from "./Text.jsx";
+import { TranslatedInput, TranslatedTextarea } from "./TranslatedInputs.jsx";
 ---
 
 <footer id="footer" class="footer-section">
@@ -14,9 +14,11 @@ import { TranslatedInput, TranslatedTextarea } from './TranslatedInputs.jsx';
                 <Text client:only="react" i18nKey="footer.ready" />
             </p>
 
-            <a href="mailto:hello@guro.com" class="footer-link">
+            <a href="mailto:hello@Veertien.com" class="footer-link">
                 <h3 class="scramble-title">
-                    <span data-text="hello@guro.com">hello@guro.com</span>
+                    <span data-text="hello@Veertien.com"
+                        >hello@Veertien.com</span
+                    >
                 </h3>
             </a>
 
@@ -27,12 +29,16 @@ import { TranslatedInput, TranslatedTextarea } from './TranslatedInputs.jsx';
             </a>
 
             <button class="footer-cta system-btn"
-                ><Text client:only="react" i18nKey="footer.schedule" /> <span>&rarr;</span></button
+                ><Text client:only="react" i18nKey="footer.schedule" />
+                <span>&rarr;</span></button
             >
 
             <div class="footer-bottom">
                 <p>
-                    &copy; {new Date().getFullYear()} Guro. <Text client:only="react" i18nKey="footer.rights" />
+                    &copy; {new Date().getFullYear()} Veertien. <Text
+                        client:only="react"
+                        i18nKey="footer.rights"
+                    />
                 </p>
                 <div class="social-links">
                     <a href="#">Instagram</a>
@@ -55,7 +61,12 @@ import { TranslatedInput, TranslatedTextarea } from './TranslatedInputs.jsx';
                 <input type="hidden" name="form-name" value="contact" />
 
                 <div class="form-group">
-                    <label for="name"><Text client:only="react" i18nKey="footer.name" /></label>
+                    <label for="name"
+                        ><Text
+                            client:only="react"
+                            i18nKey="footer.name"
+                        /></label
+                    >
                     <TranslatedInput
                         client:only="react"
                         type="text"
@@ -67,7 +78,12 @@ import { TranslatedInput, TranslatedTextarea } from './TranslatedInputs.jsx';
                 </div>
 
                 <div class="form-group">
-                    <label for="email"><Text client:only="react" i18nKey="footer.email" /></label>
+                    <label for="email"
+                        ><Text
+                            client:only="react"
+                            i18nKey="footer.email"
+                        /></label
+                    >
                     <TranslatedInput
                         client:only="react"
                         type="email"
@@ -81,16 +97,30 @@ import { TranslatedInput, TranslatedTextarea } from './TranslatedInputs.jsx';
                 <!-- LEAD SCORING FIELDS -->
                 <div class="form-group lead-scoring-group">
                     <label for="budget">Presupuesto Estimado / Budget</label>
-                    <select id="budget" name="budget" required class="select-field">
-                        <option value="" disabled selected>Selecciona un rango...</option>
+                    <select
+                        id="budget"
+                        name="budget"
+                        required
+                        class="select-field"
+                    >
+                        <option value="" disabled selected
+                            >Selecciona un rango...</option
+                        >
                         <option value="<2k">Menos de $2,000 USD</option>
                         <option value="2k-5k">$2,000 - $5,000 USD</option>
-                        <option value="5k+">Más de $5,000 USD (Corporativo)</option>
+                        <option value="5k+"
+                            >Más de $5,000 USD (Corporativo)</option
+                        >
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <label for="message"><Text client:only="react" i18nKey="footer.message" /></label>
+                    <label for="message"
+                        ><Text
+                            client:only="react"
+                            i18nKey="footer.message"
+                        /></label
+                    >
                     <TranslatedTextarea
                         client:only="react"
                         id="message"
@@ -102,7 +132,8 @@ import { TranslatedInput, TranslatedTextarea } from './TranslatedInputs.jsx';
                 </div>
 
                 <button type="submit" class="submit-btn system-btn"
-                    ><Text client:only="react" i18nKey="footer.send" /> <span>&rarr;</span></button
+                    ><Text client:only="react" i18nKey="footer.send" />
+                    <span>&rarr;</span></button
                 >
             </form>
         </div>
@@ -309,10 +340,19 @@ import { TranslatedInput, TranslatedTextarea } from './TranslatedInputs.jsx';
 
     /* ==== RESPONSIVE DESIGN ==== */
     @media (max-width: 1440px) {
-        .footer-title { font-size: clamp(3rem, 5vw, 6rem); }
-        .footer-link h3 { font-size: clamp(1.5rem, 2vw, 2.5rem); }
-        .footer-subtitle { font-size: clamp(1.2rem, 1.5vw, 1.8rem); max-width: 100%; }
-        .footer-container { gap: 4vw; }
+        .footer-title {
+            font-size: clamp(3rem, 5vw, 6rem);
+        }
+        .footer-link h3 {
+            font-size: clamp(1.5rem, 2vw, 2.5rem);
+        }
+        .footer-subtitle {
+            font-size: clamp(1.2rem, 1.5vw, 1.8rem);
+            max-width: 100%;
+        }
+        .footer-container {
+            gap: 4vw;
+        }
     }
 
     @media (max-width: 1024px) {
@@ -320,8 +360,12 @@ import { TranslatedInput, TranslatedTextarea } from './TranslatedInputs.jsx';
             grid-template-columns: 1fr;
             gap: 4rem;
         }
-        .footer-title { font-size: clamp(2.5rem, 5vw, 4.5rem); }
-        .footer-link h3 { font-size: clamp(1.2rem, 2vw, 2rem); }
+        .footer-title {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+        }
+        .footer-link h3 {
+            font-size: clamp(1.2rem, 2vw, 2rem);
+        }
         .footer-bottom {
             flex-direction: column;
             gap: 1.5rem;
@@ -333,7 +377,11 @@ import { TranslatedInput, TranslatedTextarea } from './TranslatedInputs.jsx';
     }
 
     @media (max-width: 768px) {
-        .footer-title { font-size: clamp(2rem, 6vw, 3rem); }
-        .footer-link h3 { font-size: clamp(1.2rem, 4vw, 1.8rem); }
+        .footer-title {
+            font-size: clamp(2rem, 6vw, 3rem);
+        }
+        .footer-link h3 {
+            font-size: clamp(1.2rem, 4vw, 1.8rem);
+        }
     }
 </style>

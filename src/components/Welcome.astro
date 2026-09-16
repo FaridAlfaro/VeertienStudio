@@ -10,9 +10,17 @@ import ScrambleText from "./ScrambleText.jsx";
 			<ScrambleText client:only="react" i18nKey="welcome.emotions" />
 			<Text client:only="react" i18nKey="welcome.title_end" />
 		</h1>
-		<p class="hero-subtitle"><Text client:only="react" i18nKey="welcome.subtitle" /></p>
+		<p class="hero-subtitle">
+			<Text client:only="react" i18nKey="welcome.subtitle" />
+		</p>
 	</div>
-	<video src="/video/file.mp4" autoplay muted playsinline loop aria-hidden="true"></video>
+	<video
+		src="/video/file.mp4"
+		autoplay
+		muted
+		playsinline
+		loop
+		aria-hidden="true"></video>
 </header>
 
 <style>
@@ -32,7 +40,7 @@ import ScrambleText from "./ScrambleText.jsx";
 		gap: 2rem;
 		position: fixed;
 		z-index: 1;
-		animation: difuminar-scroll 1s ease-in-out forwards;
+		animation: difuminar-scroll 0.5s ease-in-out forwards;
 		animation-timeline: scroll(root);
 		animation-range: 0vh 100vh;
 	}
@@ -59,7 +67,7 @@ import ScrambleText from "./ScrambleText.jsx";
 		0% {
 			opacity: 1;
 		}
-		80% {
+		30% {
 			opacity: 0;
 		}
 		100% {
