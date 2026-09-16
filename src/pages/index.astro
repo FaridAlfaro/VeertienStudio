@@ -25,31 +25,4 @@ import AuditCTA from "../components/AuditCTA.astro";
 	<Footer />
 </Layout>
 
-<style>
-	video {
-		filter: brightness(1);
-		position: fixed;
-		top: 0;
-		width: 100vw;
-		left: 50%;
-		right: 50%;
-		transform: translate(-50%);
-		animation: video-anime linear forwards;
-		animation-timeline: scroll(root);
-		animation-range: 0vh 200vh;
-	}
-	@keyframes video-anime {
-		0% {
-			opacity: 1;
-			display: block;
-		}
-		70% {
-			opacity: 1;
-			display: block;
-		}
-		100% {
-			opacity: 0;
-			display: none;
-		}
-	}
-</style>
+
